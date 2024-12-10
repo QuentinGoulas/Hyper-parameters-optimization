@@ -1,30 +1,11 @@
+# model.py
 import torch
 import torch.nn as nn
-
-import torchvision
-import torchvision.transforms as transforms
-
-# Do we need this transformation, what does it do ???
-transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-])
-
-# This download the train and test data in CIFAR-10. They are not in the repositorie while they are stored in the folder data in the root
-trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=2)
-
-testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
-testloader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=False, num_workers=2)
-
-# Define the classes in CIFAR-10
-classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
 # Hyperparameters initialization
 in_channels = 1
 conv1_out_channels = 6
 conv1_kernel_size = 5
-conv1_padding = 2
 
 conv2_out_channels = 16
 conv2_kernel_size = 5
@@ -43,7 +24,7 @@ class LeNet5(nn.Module):
         super(LeNet5, self).__init__()
         
         # First convolutional layer (C1)
-        self.conv1 = nn.Conv2d(in_channels, conv1_out_channels, kernel_size=conv1_kernel_size, padding=conv1_padding)
+        self.conv1 = nn.Conv2d(in_channels, conv1_out_channels, kernel_size=conv1_kernel_size)
         self.relu1 = nn.ReLU()
         self.pool1 = nn.AvgPool2d(kernel_size=pool_kernel_size, stride=pool_stride)
         
@@ -75,6 +56,3 @@ class LeNet5(nn.Module):
         x = self.fc2(x)
         
         return x
-
-# Create an instance of the model
-model = LeNet5()
