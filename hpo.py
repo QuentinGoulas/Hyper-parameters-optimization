@@ -1,5 +1,6 @@
 import torch as th
 import numpy as np
+import LE_NET5_1 as ln5
 
 class HyperParameterOptimizer:
     '''
@@ -18,34 +19,60 @@ class HyperParameterOptimizer:
         self.method = method
         self.module = seed
         print("HyperParameterOptimizer initialized")
-    
-    def update_hyperparam(new_hp):
-        '''
-        Update hyperparameter of the optimizer's module
-        '''
-        pass
 
-    def train_module():
+    def load_data(self):
+        self.device = (
+            "cuda"
+            if th.cuda.is_available()
+            else "mps"
+            if th.backends.mps.is_available()
+            else "cpu")
+        print(f"Using {self.device} device")
+
+        self.trainloader,self.testloader = ln5.load_data()
+
+        self.module.to(self.device)
+        # self.trainloader.to(self.device)
+        # self.testloader.to(self.device)
+
+        print("Data loaders have been initialized")
+    
+    def update_hyperparam(self, new_hp):
+        if self.hyperparameter == 'dense':
+            self.module.fc1.out_features = new_hp
+            self.module.fc2.in_features = new_hp
+
+    def train_module(self,epochs):
         '''
         Train the optimizers' module
         '''
-        pass
+        criterion = th.nn.CrossEntropyLoss()
+        optimizer = th.optim.Adam(self.module.parameters(), lr=0.001)
+
+        ln5.train_model(self.module,self.trainloader,criterion,optimizer,self.device,epochs)
+        acc = ln5.test_model(self.module,self.testloader,self.device)
+
+        return acc
 
     def optimize(self):
         if self.method == 'grid_search':
-            hpspace = np.flatten(self.hpspace)
+            hpspace = self.hpspace.flatten()
             accuracy = np.zeros(hpspace.shape)
+            epochs = 2
             
             for i in range(len(hpspace)):
                 self.update_hyperparam(hpspace[i])
-                #################################
-                #           TRAIN MODEL         #
-                #     EVALUATE MODEL ACCURACY   #
-                #################################
+                accuracy[i] = self.train_module(epochs)
 
-            best_hp = np.argmax(accuracy)
+            best_hp = self.hpspace[np.argmax(accuracy)]
             self.result = {
-                'Hyper parameter value':best_hp,
+                'best_hp':best_hp,
             }
 
-            print(f'Hyperparameter optimization finished, best parameter value is %d',self.result['best_hp'])
+            print(f"Hyperparameter optimization finished, best parameter value is {self.result['best_hp']}")
+
+######################### Test script #########################
+if __name__ == '__main__':
+    HPOptim = HyperParameterOptimizer('dense',np.array([10, 50, 84, 160]),'grid_search',seed = ln5.LeNet5())
+    HPOptim.load_data()
+    HPOptim.optimize()

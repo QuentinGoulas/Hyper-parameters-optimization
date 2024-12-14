@@ -28,9 +28,8 @@ classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship'
 
 # our dataset has 10 classes
 num_classes = len(classes)
-print("a")
 
-def train_model(model, trainloader, criterion, otpimizer, device, epochs=10):
+def train_model(model, trainloader, criterion, optimizer, device, epochs=10):
     model.train()
     for epoch in range(epochs):
         running_loss = 0.0
@@ -60,7 +59,7 @@ def test_model(model, testloader, device):
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
     print(f"Accuracy: {100 * correct / total:.2f}%")
-    return 0
+    return correct / total
 
 if __name__ == '__main__':
     device = (
