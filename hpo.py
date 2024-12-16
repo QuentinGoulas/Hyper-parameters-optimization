@@ -1,5 +1,6 @@
 import torch as th
 import numpy as np
+import itertools as iter
 import LE_NET5_1 as ln5
 
 class HyperParameterOptimizer:
@@ -97,6 +98,23 @@ class HyperParameterOptimizer:
             }
 
             print(f"Hyperparameter optimization finished, best parameter value is {self.result['best_hp']}")
+        
+        if self.method == 'random_search':
+            p = kwargs['p'] # proportion of samples to try in the hyperparameter optimization
+            hpspace = (dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values()))
+            ind = np.random.uniform(0,len(hpspace),np.floor(p*len(hpspace))) # choose the hyperparameter configs to try out
+            accuracy = np.zeros(ind.shape)
+            epochs = 2
+
+            for i in ind:
+                self.module = self.seed # always start the optimization from the seed
+                self.update_hyperparam(hpspace[i])
+                accuracy[i] = self.train_module(epochs)
+            
+            best_hp = self.hpspace[ind[np.argmax(accuracy)]]
+            self.result = {
+                'best_hp':best_hp
+            }
 
 ######################### Test script #########################
 if __name__ == '__main__':
