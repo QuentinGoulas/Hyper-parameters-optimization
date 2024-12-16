@@ -2,12 +2,13 @@ import torch as th
 import numpy as np
 import itertools as iter
 import LE_NET5_1 as ln5
+import copy
 
 class HyperParameterOptimizer:
     '''
     A hyper parameter optimizer class to optimize the hyperparameters of a simple CNN
     '''
-    def __init__(self, hpspace, method, seed):
+    def __init__(self, hpspace, seed):
         '''
         Inputs :
         - hpspace : the possible values for the hyperparameter of study (dict of numpy array)
@@ -15,9 +16,8 @@ class HyperParameterOptimizer:
         - seed : a seed model to start the optimization (torch.nn.Module)
         '''
         self.hpspace = hpspace
-        self.method = method
-        self.module = seed
-        self.seed = seed
+        self.module = copy.deepcopy(seed)
+        self.seed = copy.deepcopy(seed)
         print("HyperParameterOptimizer initialized")
 
     def load_data(self):
@@ -38,7 +38,10 @@ class HyperParameterOptimizer:
         print("Data loaders have been initialized")
     
     def update_hyperparam(self, new_hp):
-        for hp in self.hyperparameter:
+        '''
+        A function to update the hyperparameter values of the module
+        '''
+        for hp in self.hpspace:
             # Select the node to modify
             node, next_node = self.fetch_node(hp)
             if hp == 'F6':
@@ -52,6 +55,9 @@ class HyperParameterOptimizer:
             pass
 
     def fetch_node(self, hp):
+        '''
+        A function to fetch the nn Layer of the module with hyperparameter hp, as well as its following layer
+        '''
         if hp == 'F6':
             node = self.module.fc1
             next_node = self.module.fc2
@@ -81,43 +87,66 @@ class HyperParameterOptimizer:
 
         return acc
 
-    def optimize(self,**kwargs):
-        if self.method == 'grid_search':
-            hpspace = (dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values()))
+    def optimize(self, method, **kwargs):
+        '''
+        A method to optimize the hyperparameters of the module on a Le-Net 5 architecture
+        Name value arguments are available to control the algorithm parameters
+        '''
+        if method == 'grid_search':
+            '''
+            Tests all combinations of the hyperparameter space to find the best combination
+            '''
+            hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
             accuracy = np.zeros(hpspace.shape)
             epochs = 2
             
             for i in range(len(hpspace)):
-                self.module = self.seed # always start the optimization from the seed
+                self.module = copy.deepcopy(self.seed) # always start the optimization from the seed
                 self.update_hyperparam(hpspace[i])
                 accuracy[i] = self.train_module(epochs)
 
-            best_hp = self.hpspace[np.argmax(accuracy)]
+            best_hp = hpspace[np.argmax(accuracy)]
             self.result = {
                 'best_hp':best_hp,
             }
 
             print(f"Hyperparameter optimization finished, best parameter value is {self.result['best_hp']}")
         
-        if self.method == 'random_search':
+        if method == 'random_search':
+            '''
+            Selects a proportion p of the hyperparameter configurations and tries all the seleted configs
+            '''
+            assert 'p' in list(kwargs.keys()), "no sampling proportion given at input keyword 'p'"
+
             p = kwargs['p'] # proportion of samples to try in the hyperparameter optimization
-            hpspace = (dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values()))
-            ind = np.random.uniform(0,len(hpspace),np.floor(p*len(hpspace))) # choose the hyperparameter configs to try out
+            hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
+            numel = int(np.fix(p*len(hpspace)))
+            ind = np.random.choice(range(len(hpspace)),numel) # choose the hyperparameter configs to try out
             accuracy = np.zeros(ind.shape)
             epochs = 2
 
-            for i in ind:
-                self.module = self.seed # always start the optimization from the seed
-                self.update_hyperparam(hpspace[i])
+            for i in range(len(ind)):
+                print(f"Testing hyperparameter config : {hpspace[ind[i]]}\n")
+                self.module = copy.deepcopy(self.seed) # always start the optimization from the seed
+                self.update_hyperparam(hpspace[ind[i]])
                 accuracy[i] = self.train_module(epochs)
             
-            best_hp = self.hpspace[ind[np.argmax(accuracy)]]
+            best_hp = hpspace[ind[np.argmax(accuracy)]]
             self.result = {
                 'best_hp':best_hp
             }
 
+        if method == 'pso':
+            '''
+            Runs a particle swarm optimization algorithm to find the best configuration
+            '''
+            pass
+
+        return self.result
+
 ######################### Test script #########################
 if __name__ == '__main__':
-    HPOptim = HyperParameterOptimizer('dense',np.array([10, 50, 84, 160]),'grid_search',seed = ln5.LeNet5())
+    HPOptim = HyperParameterOptimizer({'F6':[80,160],'C3_chan':[6,12]},seed = ln5.LeNet5())
     HPOptim.load_data()
-    HPOptim.optimize()
+    res = HPOptim.optimize('random_search',p=0.5)
+    print(res)
