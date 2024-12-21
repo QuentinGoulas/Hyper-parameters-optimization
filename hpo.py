@@ -4,6 +4,8 @@ import itertools as iter
 import LE_NET5_1 as ln5
 import copy
 
+import pso
+
 class HyperParameterOptimizer:
     '''
     A hyper parameter optimizer class to optimize the hyperparameters of a simple CNN
@@ -87,18 +89,23 @@ class HyperParameterOptimizer:
 
         return acc
 
-    def optimize(self, method, **kwargs):
+    def optimize(self, method, epochs=2, **kwargs):
         '''
         A method to optimize the hyperparameters of the module on a Le-Net 5 architecture
         Name value arguments are available to control the algorithm parameters
+
+        Name value arguments can be fetched through kwargs['PARAMETER NAME']
+
+        Set new hyperparameter config with self.update_hyperparam and train the HPO module
+        with this config with self.train_module
         '''
+
         if method == 'grid_search':
             '''
             Tests all combinations of the hyperparameter space to find the best combination
             '''
             hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
             accuracy = np.zeros(hpspace.shape)
-            epochs = 2
             
             for i in range(len(hpspace)):
                 self.module = copy.deepcopy(self.seed) # always start the optimization from the seed
@@ -106,13 +113,10 @@ class HyperParameterOptimizer:
                 accuracy[i] = self.train_module(epochs)
 
             best_hp = hpspace[np.argmax(accuracy)]
-            self.result = {
-                'best_hp':best_hp,
-            }
 
             print(f"Hyperparameter optimization finished, best parameter value is {self.result['best_hp']}")
         
-        if method == 'random_search':
+        elif method == 'random_search':
             '''
             Selects a proportion p of the hyperparameter configurations and tries all the seleted configs
             '''
@@ -123,7 +127,6 @@ class HyperParameterOptimizer:
             numel = int(np.fix(p*len(hpspace)))
             ind = np.random.choice(range(len(hpspace)),numel) # choose the hyperparameter configs to try out
             accuracy = np.zeros(ind.shape)
-            epochs = 2
 
             for i in range(len(ind)):
                 print(f"Testing hyperparameter config : {hpspace[ind[i]]}\n")
@@ -132,15 +135,63 @@ class HyperParameterOptimizer:
                 accuracy[i] = self.train_module(epochs)
             
             best_hp = hpspace[ind[np.argmax(accuracy)]]
-            self.result = {
+
+        elif method == 'pso':
+            '''
+            Runs a particle swarm algorithm to find the best configuration
+            '''
+            assert 'swarm_size' in list(kwargs.keys()), "no swarm size given at input keyword 'swarm_size'"
+            assert 'local_step_size' in list(kwargs.keys()), "no local step size given at input keyword 'local_step_size'"
+            assert 'global_step_size' in list(kwargs.keys()), "no swarm size given at input keyword 'global_step_size'"
+            assert 'precision' in list(kwargs.keys()), "no stopping criterion given at input keyword 'precision'"
+            
+            hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
+            S = kwargs['swarm_size']
+            phi1 = kwargs['local_step_size']
+            phi2 = kwargs['global_step_size']
+
+            if S>len(hpspace):
+                # If the swarm size is bigger than hpspace, we run the equivalent grid search method
+                Warning('Swarm size bigger than hpspace, which is equivalent to grid search')
+                self.optimize('grid_search')
+            else :
+                x,v = pso.initialize_swarm(S,hpspace)
+                x_old = copy.copy(x)
+                acc_i = np.zeros_like(x) # to keep track of the accuracy at time i
+
+                # Run the first step of the PSO to finish the initialization
+                for j in range(len(x)):
+                    print(f"Testing hyperparameter config : {hpspace[ind[i]]} (PSO initialisation)\n")
+                    self.module = copy.deepcoy(self.seed)
+                    self.update_hyperparam(self.x[j])
+                    acc_i[j] = self.train_module(epochs)
+                P = self.x[np.argmax(acc_i)]
+                accP = np.max(acc_i)
+                pi = P.copy()
+                
+                # Repeat the previous step till convergence
+                while (x-x_old).global_norm() > kwargs['precision']:
+                    x = pso.update_swarm(x,v,pi,P,phi1,phi2)
+
+                    for j in range(len(x)):
+                        print(f"Testing hyperparameter config : {hpspace[ind[i]]} (PSO initialisation)\n")
+                        self.module = copy.deepcoy(self.seed)
+                        self.update_hyperparam(self.x[j])
+                        acc_i[j] = self.train_module(epochs)
+                    pi = self.x[np.argmax(acc_i)]
+                    
+                    # Update the best global hyperparameter config
+                    if np.max(acc_i) > accP:
+                        P = pi.copy()
+                
+                best_hp = P
+        '''
+        End of the different optim methods
+        '''
+
+        self.result = {
                 'best_hp':best_hp
             }
-
-        if method == 'pso':
-            '''
-            Runs a particle swarm optimization algorithm to find the best configuration
-            '''
-            pass
 
         return self.result
 
