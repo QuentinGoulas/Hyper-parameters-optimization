@@ -26,6 +26,8 @@ class Swarm:
     A Swarm class to perform classic algebraic operations on a swarm (pretty much )
     '''
     def __init__(self, particles):
+        if type(particles) is dict:
+            self.x = np.array(particles)
         self.x = particles
 
     def __add__(self,swarm):
@@ -75,8 +77,8 @@ class Swarm:
     
     def __getitem__(self,slice):
         if type(self.x) is dict:
-            return self.x
-        return self.x[slice]
+            return Swarm(self.x)
+        return Swarm(self.x[slice])
     
     def keys(self):
         if type(self.x) is dict:
@@ -125,9 +127,9 @@ if __name__ == '__main__':
     # print(sw1-sw2)
     # print(sw1*3.5)
     # print(sw1**2)
-    # print(sw1[1])
+    print(sw1[1])
     # print(sw1.particular_norm())
     # print(sw1.global_norm())
-    print(sw1.round(sw2))
+    # print(sw1.round(sw2))
 
-    x,v = initialize_swarm(2,np.concatenate((particle1,particle2)))
+    # x,v = initialize_swarm(2,np.concatenate((particle1,particle2)))
