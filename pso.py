@@ -35,10 +35,12 @@ class Swarm:
             assert len(self) == len(swarm), 'Swarms must have the same size or should be broadcastable'
 
             out = [{key:self.x[i][key]+swarm.x[i][key] for key in list(self.keys())} for i in range(len(self))]
-        elif len(self.x)==1:
+        elif len(self)==1:
             out = [{key:self.x[key]+swarm.x[i][key] for key in list(self.keys())} for i in range(len(swarm))]
-        else :
+        elif len(swarm)==1:
             out = (swarm+self).x
+        else:
+            out = {key:self.x[key]+swarm.x[key] for key in list(self.keys())}
         return Swarm(out)
     
     def __sub__(self,swarm):
@@ -48,8 +50,10 @@ class Swarm:
             out = [{key:self.x[i][key]-swarm.x[i][key] for key in list(self.keys())} for i in range(len(self))]
         elif len(self)==1:
             out = [{key:self.x[key]-swarm.x[i][key] for key in list(self.keys())} for i in range(len(swarm))]
-        else :
+        elif len(swarm)==1:
             out = [{key:self.x[i][key]-swarm.x[key] for key in list(self.keys())} for i in range(len(self))]
+        else:
+            out = {key:self.x[key]-swarm.x[key] for key in list(self.keys())}
         return Swarm(out)
     
     def __mul__(self,lamda):
@@ -57,14 +61,19 @@ class Swarm:
         /!\ ONLY right-hand scalar multiplication is available
         '''
         assert np.isscalar(lamda), "multiplying factor must be a scalar value"
-
-        out = [{key:self.x[i][key]*lamda for key in list(self.keys())} for i in range(len(self))]
+        if len(self)>1:
+            out = [{key:self.x[i][key]*lamda for key in list(self.keys())} for i in range(len(self))]
+        else:
+            out = {key:self.x[key]*lamda for key in list(self.keys())}
         return Swarm(out)
     
     def __pow__(self,p):
         assert np.isscalar(p), "exponent must be scalar"
 
-        out = [{key:self.x[i][key]**p for key in list(self.keys())} for i in range(len(self))]
+        if len(self)>1:
+            out = [{key:self.x[i][key]**p for key in list(self.keys())} for i in range(len(self))]
+        else:
+            out = {key:self.x[key]**p for key in list(self.keys())}
         return Swarm(out)
     
     def __len__(self):
@@ -76,9 +85,7 @@ class Swarm:
         return str(self.x)
     
     def __getitem__(self,slice):
-        if type(self.x) is dict:
-            return Swarm(self.x)
-        return Swarm(self.x[slice])
+        return self.x[slice]
     
     def keys(self):
         if type(self.x) is dict:
@@ -109,7 +116,7 @@ class Swarm:
             dist = (Swarm(self[i])-space).particular_norm()
             ind[i] = np.argmin(dist)
         
-        return space[ind]
+        return Swarm(space[ind])
     
 # A test script to validate the swarm object and the PSO functions
 if __name__ == '__main__':
@@ -128,8 +135,10 @@ if __name__ == '__main__':
     # print(sw1*3.5)
     # print(sw1**2)
     print(sw1[1])
+    assert type(sw2.copy()) is Swarm
     # print(sw1.particular_norm())
     # print(sw1.global_norm())
     # print(sw1.round(sw2))
 
-    # x,v = initialize_swarm(2,np.concatenate((particle1,particle2)))
+    x,v = initialize_swarm(2,np.concatenate((particle1,particle2)))
+    x = update_swarm(x,v,Swarm(sw1[0]),Swarm(sw2[1]),20,20)
