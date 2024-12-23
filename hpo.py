@@ -138,7 +138,7 @@ class HyperParameterOptimizer:
 
                 # Run the first step of the PSO to finish the initialization
                 for j in range(S):
-                    print(f"PSO initialization  - Particle {j+1}/{S} - Testing hyperparameter config : {hpspace[j]}")
+                    print(f"PSO initialization  - Particle {j+1}/{S} - Testing hyperparameter config : {x[j]}")
                     self.update_hyperparam(x[j])
                     acc_i[j] = self.train_module(epochs)
 
@@ -147,14 +147,11 @@ class HyperParameterOptimizer:
                 accP = np.max(acc_i) # keep track of the accuracy of the global optimum
                 
                 # Repeat the previous step till convergence and iterate at least once
-                while (x-x_old).global_norm() > kwargs['precision'] or cnt==0:
-                    x = pso.update_swarm(x,v,pi,P,phi1,phi2)
-                    x = x.round(hpspace) # make sure the new config is in the hyperparameter space
-                    x_old = x.copy()
+                while (x-x_old).global_norm() > np.sqrt(S)*kwargs['precision'] or cnt==0:
                     cnt +=1
 
                     for j in range(S):
-                        print(f"PSO step {cnt} - Particle {j+1}/{S} - Testing hyperparameter config : {hpspace[j]}")
+                        print(f"PSO step {cnt} - Particle {j+1}/{S} - Testing hyperparameter config : {x[j]}")
                         self.update_hyperparam(x[j])
                         acc_i[j] = self.train_module(epochs)
                     pi = pso.Swarm(x[np.argmax(acc_i)])
@@ -162,6 +159,11 @@ class HyperParameterOptimizer:
                     # Update the best global hyperparameter config
                     if np.max(acc_i) > accP:
                         P = pi.copy()
+
+                    # update the swarm for the next iteration
+                    x_old = x.copy()
+                    x = pso.update_swarm(x,v,pi,P,phi1,phi2)
+                    x = x.round(hpspace) # make sure the new config is in the hyperparameter space
                 
                 best_hp = P
         '''
