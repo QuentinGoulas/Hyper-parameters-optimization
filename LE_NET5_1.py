@@ -20,10 +20,10 @@ transform = transforms.Compose([
 def load_data():
     # This download the train and test data in CIFAR-10. They are not in the repositorie while they are stored in the folder data in the root
     trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=False, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=0, pin_memory=True)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=32, shuffle=True, num_workers=0, pin_memory=True)
 
     testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=False, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=False, num_workers=0, pin_memory=True)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=32, shuffle=False, num_workers=0, pin_memory=True)
     return trainloader, testloader
 
 # Define the classes in CIFAR-10
