@@ -54,7 +54,7 @@ class HyperParameterOptimizer:
         criterion = th.nn.CrossEntropyLoss()
         optimizer = th.optim.Adam(self.module.parameters(), lr=0.001)
 
-        ln5.train_model(self.module,self.trainloader,criterion,optimizer,self.device,epochs)
+        ln5.train_model(self.module,self.trainloader,criterion,optimizer,self.device,epochs,verbose='partial')
         acc = ln5.test_model(self.module,self.testloader,self.device)
 
         return acc
@@ -86,6 +86,7 @@ class HyperParameterOptimizer:
 
             best_hp = hpspace[np.argmax(accuracy)]
             cnt = len(hpspace)
+            acc = np.max(accuracy)
         
         elif method == 'random_search':
             '''
@@ -108,6 +109,7 @@ class HyperParameterOptimizer:
             
             best_hp = hpspace[ind[np.argmax(accuracy)]]
             cnt = len(ind)
+            acc = np.max(accuracy)
 
         elif method == 'pso':
             '''
@@ -159,6 +161,7 @@ class HyperParameterOptimizer:
                     # Update the best global hyperparameter config
                     if np.max(acc_i) > accP:
                         P = pi.copy()
+                        accP = np.max(acc_i)
 
                     # update the swarm for the next iteration
                     x_old = x.copy()
@@ -166,13 +169,15 @@ class HyperParameterOptimizer:
                     x = x.round(hpspace) # make sure the new config is in the hyperparameter space
                 
                 best_hp = P
+                acc = accP
         '''
         End of the different optim methods
         '''
 
         self.result = {
                 'best_hp':str(best_hp),
-                'number of iterations' : cnt
+                'number of iterations' : cnt,
+                'accuracy' : acc
             }
 
         return self.result

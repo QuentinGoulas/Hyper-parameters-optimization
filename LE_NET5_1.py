@@ -20,10 +20,10 @@ transform = transforms.Compose([
 def load_data():
     # This download the train and test data in CIFAR-10. They are not in the repositorie while they are stored in the folder data in the root
     trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=False, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=32, shuffle=True, num_workers=4, pin_memory=True)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True, num_workers=0, pin_memory=True)
 
     testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=False, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=32, shuffle=False, num_workers=4, pin_memory=True)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False, num_workers=0, pin_memory=True)
     return trainloader, testloader
 
 # Define the classes in CIFAR-10
@@ -32,7 +32,7 @@ classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship'
 # our dataset has 10 classes
 num_classes = len(classes)
 
-def train_model(model, trainloader, criterion, optimizer, device, epochs=10):
+def train_model(model, trainloader, criterion, optimizer, device, epochs=10, verbose='on'):
     model.train()
     torch.backends.cudnn.benchmark = True
 
@@ -56,10 +56,11 @@ def train_model(model, trainloader, criterion, optimizer, device, epochs=10):
         epoch_time = time.time() - start
         total_time += epoch_time
 
-        print(f"Epoch {epoch+1}/{epochs}, "
-              f"Loss: {running_loss/len(trainloader):.4f}, "
-              f"Time: {epoch_time:.2f}s, "
-              f"Memory: {torch.cuda.max_memory_allocated()/1e9:.2f}GB")
+        if verbose=='on' or (verbose=='partial' and epoch%5==0):
+            print(f"Epoch {epoch+1}/{epochs}, "
+                f"Loss: {running_loss/len(trainloader):.4f}, "
+                f"Time: {epoch_time:.2f}s, "
+                f"Memory: {torch.cuda.max_memory_allocated()/1e9:.2f}GB")
 
     return 0
 
