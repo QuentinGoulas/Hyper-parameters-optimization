@@ -1,0 +1,143 @@
+\documentclass[a4 paper,11pt,2]{article}
+
+%les packages utilisés habituellement, permettent de tout faire grosso modo
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{pdflscape}
+
+\usepackage{stmaryrd}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{helvet}
+\usepackage{indentfirst}
+
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz-cd}
+\usetikzlibrary{shadows,shapes,positioning}
+
+\usepackage{hyperref}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\dpart}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\scal}[2]{\langle #1,#2 \rangle}
+\newcommand{\Four}[2]{\mathcal{F}\left\{#1\right\}(#2)}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\indic}{1\!\!1}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{theorem}{Théorème}
+\newtheorem{defin}{Définition}
+
+\DeclareMathOperator*{\argmax}{arg\!\,max}
+\DeclareMathOperator*{\argmin}{arg\!\,min}
+\DeclareMathOperator*{\minimize}{mini\!\,mize}
+\DeclareMathOperator*{\maximize}{maxi\!\,mize}
+
+\setlength{\hoffset}{-18pt}
+\setlength{\oddsidemargin}{0pt} % Marge gauche sur pages impaires
+\setlength{\evensidemargin}{9pt} % Marge gauche sur pages paires
+\setlength{\marginparwidth}{54pt} % Largeur de note dans la marge
+\setlength{\textwidth}{481pt} % Largeur de la zone de texte (17cm)
+\setlength{\voffset}{-18pt} % Bon pour DOS
+\setlength{\marginparsep}{7pt} % Séparation de la marge
+\setlength{\topmargin}{0pt} % Pas de marge en haut
+\setlength{\headheight}{13pt} % Haut de page
+\setlength{\headsep}{10pt} % Entre le haut de page et le texte
+\setlength{\footskip}{27pt} % Bas de page + séparation
+\setlength{\textheight}{708pt} % Hauteur de la zone de texte (25cm)
+
+\pagestyle{fancy}
+\fancyhead[L]{\leftmark} % Positionne le numéro de chapitre dans le coin en haut à gauche
+\fancyhead[R]{} % Rien dans l'en-tête à droite
+\fancyfoot[L]{CentraleSupélec} % Le nom de ton école préférée dans le pied de page gauche
+\fancyfoot[R]{ICE P2024} % Ta promo dans le pied de page droit
+\renewcommand{\footrulewidth}{0.5pt} % Largeur du trait de séparation dans le pied de page
+
+\hypersetup{hidelinks=true}
+
+\begin{document}
+\input{title.tex}
+\thispagestyle{empty}
+
+This project report aims to present the development framework, methodology and results obtained during the Deep Learning course project. This project focussed on hyperparameter optimization methods for deep learning models.
+
+\section{Project introduction}
+In the context of deep learning, hyperparameters  are model parameters that aren't learnt by the model yet impact the learning capacity of the model. Hyperparameters include, but are not limited to :
+\begin{itemize}
+\item model architecture : number of hidden layers, size of the hidden layers, layer type (dense, convolutional, recurrent, ...), activation function of the layer
+\item preprocessing : normalization, data augmentation, ...
+\item regularization : Lasso, Tykhonov, dropout layers, ...
+\item loss function choice : euclidean distance, cross-entropy loss, ...
+\end{itemize}
+
+The choice of good hyperparameters is crucial to have a well-functioning model where having too simple a model may induce underfitting whilst building too complex a model might lead to overfitting. Yet, choosing the appropriate hyperparameters implies training an important number of models with different hyperparameters configuration, which induces high computing costs. Finding efficient methods to obtain the optimal hyperparameter configuration for a given DL task is therefore a topic of choice for the deep learning literature.
+
+The most used HyperParameter Optimization (HPO) methods include : 
+\begin{itemize}
+\item Babysitting : try different hyperparameter configurations, assess the accuracy of the different models, manually adjust the configurations and repeat till convergence. This method can be computationnaly intensive and labor intensive
+\item Grid search : try all the possible hyperparameter configurations and select the best one. This method requires very important computational and time resources, as well as a discrete hyperparameter space to evaluate
+\item Random search : try a proportion of randomly chosen hyperparameters in the possible hyperparameter space and select the best performing configuration among the tested configuration
+\item Gradient-based optimization : uses a gradient-descent approach to find the next hyperparameter configuration to evaluate. This requires a loss function that is differentiable in the hyperparameter variables
+\item Particle Swarm Optimization (PSO) : uses the particle swarm optimization algorithm to find the optimum fo a given function
+\item Genetic Algorithms which uses the genetic heuristic to find the optimal hyperparameters
+\item Bayesian methods using a modelled prior on the model loss function to converge to the best hyperparameter configuration
+\end{itemize}
+
+This project aims at implementing a HyperParameter Optimization framework to compare different hyperparameter optimizers. For this project, we will focus on Grid Search, Random Search and Particle Swarm Optimization (said to be the best hyperparameter optimizing method in the current literature)
+
+\section{Development framework}
+
+This project will be entirely developed on Python through the Pytorch deep learning library. Morevore, the CIFAR-10 dataset will be used throughout this study to train a LeNet5-type model architecture or image recognition.
+
+For this project, we decide to build a HyperParameterOptimizer object responsible for navigating the input hyperparameter space and testing the different hyperparameter configurations. The overall software architecture is given in the following figure :
+
+%\begin{center}
+%\begin{figure}
+%% https://q.uiver.app/#q=WzAsMTAsWzQsMiwiRExcXCBtb2RlbCJdLFsyLDJdLFsxLDIsIkh5cGVyXFwgUGFyYW1ldGVyXFxcXCBPcHRpbWl6ZXIiXSxbMSwwLCJEYXRhLFxcIFNlZWQsXFxcXCBNZXRob2QsXFxcXCBNZXRob2RcXCBwYXJhbWV0ZXJzIl0sWzEsM10sWzAsM10sWzEsNCwiQmVzdFxcIEh5cGVyXFxcXCBQYXJhbWV0ZXJcXFxcIGNvbmZpZ3VyYXRpb24iXSxbMCwxXSxbNSwxXSxbNSwzXSxbMiwwLCJIeXBlcnBhcmFtZXRlclxcXFwgY29uZmlnIiwwLHsiY3VydmUiOi0zfV0sWzAsMiwiTW9kZWxcXCBhY2N1cmFjeSIsMCx7Im9mZnNldCI6LTIsImN1cnZlIjotM31dLFszLDJdLFsyLDZdLFswLDAsInRyYWluXFwgbW9kZWwiXV0=
+%\begin{tikzcd}
+%	& \begin{array}{c} Data,\ Seed,\\ Method,\\ Method\ parameters \end{array} \\
+%	{} &&&&& {} \\
+%	& \begin{array}{c} Hyper\ Parameter\\ Optimizer \end{array} & {} && {DL\ model} \\
+%	{} & {} &&&& {} \\
+%	& \begin{array}{c} Best\ Hyper\\ Parameter\\ configuration \end{array}
+%	\arrow[from=1-2, to=3-2]
+%	\arrow["\begin{array}{c} Hyperparameter\\ config \end{array}", curve={height=-18pt}, from=3-2, to=3-5]
+%	\arrow[from=3-2, to=5-2]
+%	\arrow["{Model\ accuracy}", shift left=2, curve={height=-18pt}, from=3-5, to=3-2]
+%	\arrow["{train\ model}", from=3-5, to=3-5, loop, in=55, out=125, distance=10mm]
+%\end{tikzcd}
+%\end{figure}
+%\end{center}
+
+\begin{centering}
+\begin{figure}
+\begin{tikzpicture}
+\draw (-2.62,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
+\node[matrix, draw, column sep = 4cm, inner sep = 0.75cm] (hpo) at (1,4) 
+{
+\node[rectangle, draw] (object) at (0,0) {\begin{tabular}{c}Hyper Parameter\\ Optimizer\end{tabular}}; & \node[rectangle, draw] (model) at (1,0) {DL Model};\\
+};
+\draw (-2.62,1) node(output) [draw] {\begin{tabular}{c}Best Hyperparameter\\ configuration\end{tabular}};
+\draw [anchor=east](7.5,2) node(comment) [fill=white] {Hyper parameter optimization framework};
+\draw [->] (input.south) -- (object.north);
+\draw [->] (object.south) -- (output.north);
+\draw [->] ([yshift=5pt]object.east) to[bend left] node[above] {\small{\begin{tabular}{c}Hyperparameter\\ configuration\end{tabular}}} ([yshift=5pt]model.west);
+\draw [->] ([yshift=-5pt]model.west) to[bend left] node[below] {\small{Model accuracy}} ([yshift=-5pt]object.east);
+\draw [->] (model.north) |- node[above] {train\_model} (7.5,5.25) |- (model.east); 
+
+\end{tikzpicture}
+\end{figure}
+\end{centering}
+
+\section{Results}
+
+\end{document}
