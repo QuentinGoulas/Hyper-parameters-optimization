@@ -34,6 +34,7 @@ class LeNet5(nn.Module):
         super(LeNet5, self).__init__()
 
         hyperparam = update_hyperparam(init_hyperparam,hyperparam)
+        self.hyperparam = hyperparam
         
         # First convolutional layer (C1)
         self.conv1 = nn.Conv2d(in_channels, hyperparam['C1_chan'], kernel_size=hyperparam['C1_kernel'])
@@ -61,7 +62,7 @@ class LeNet5(nn.Module):
         x = self.relu3(self.conv3(x))
         
         # Flatten the feature maps
-        x = x.view(-1, conv3_out_channels)
+        x = x.view(-1, self.hyperparam['C5_chan'])
         
         # Fully connected layers
         x = self.relu4(self.fc1(x))
