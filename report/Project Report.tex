@@ -22,7 +22,8 @@
 \usepackage{setspace}
 \usepackage{fancyhdr}
 \usepackage{tikz-cd}
-\usetikzlibrary{shadows,shapes,positioning}
+\usetikzlibrary{shadows,shapes,positioning,bending}
+\usepackage[ruled]{algorithm2e}
 
 \usepackage{hyperref}
 
@@ -70,6 +71,8 @@
 
 This project report aims to present the development framework, methodology and results obtained during the Deep Learning course project. This project focussed on hyperparameter optimization methods for deep learning models.
 
+This report comprises four sections : an introduction to the project its premises, a presentation of the considered algorithms for this project, a description of the deployed system architecture and finall a discussion on the obtained results.
+
 \section{Project introduction}
 In the context of deep learning, hyperparameters  are model parameters that aren't learnt by the model yet impact the learning capacity of the model. Hyperparameters include, but are not limited to :
 \begin{itemize}
@@ -81,7 +84,7 @@ In the context of deep learning, hyperparameters  are model parameters that aren
 
 The choice of good hyperparameters is crucial to have a well-functioning model where having too simple a model may induce underfitting whilst building too complex a model might lead to overfitting. Yet, choosing the appropriate hyperparameters implies training an important number of models with different hyperparameters configuration, which induces high computing costs. Finding efficient methods to obtain the optimal hyperparameter configuration for a given DL task is therefore a topic of choice for the deep learning literature.
 
-The most used HyperParameter Optimization (HPO) methods include : 
+The most used Hyper Parameter Optimization (HPO) methods include : 
 \begin{itemize}
 \item Babysitting : try different hyperparameter configurations, assess the accuracy of the different models, manually adjust the configurations and repeat till convergence. This method can be computationnaly intensive and labor intensive
 \item Grid search : try all the possible hyperparameter configurations and select the best one. This method requires very important computational and time resources, as well as a discrete hyperparameter space to evaluate
@@ -94,32 +97,25 @@ The most used HyperParameter Optimization (HPO) methods include :
 
 This project aims at implementing a HyperParameter Optimization framework to compare different hyperparameter optimizers. For this project, we will focus on Grid Search, Random Search and Particle Swarm Optimization (said to be the best hyperparameter optimizing method in the current literature)
 
+\section{Algorithm descriptions}
+We describe here the algorithms that have been implemented throughout this project : Grid search, Random search, Particle swarm optimization.
+
+\subsection{Grid search}
+This method consists in ``brute forcing''
+\begin{algorithm}
+\caption{Grid search algorithm}
+\end{algorithm}
+\subsection{Random search}
+\subsection{Particle Swarm Optimization}
+
 \section{Development framework}
 
-This project will be entirely developed on Python through the Pytorch deep learning library. Morevore, the CIFAR-10 dataset will be used throughout this study to train a LeNet5-type model architecture or image recognition.
+This project will be entirely developed on Python through the Pytorch deep learning library. Moreover, the CIFAR-10 dataset will be used throughout this study to train a LeNet5-type model architecture for image recognition. Our hyperparameters of interest are the output sizes of the the first two convolutional layers (C1, C3) and the output size of the first dense layer (F6)
 
-For this project, we decide to build a HyperParameterOptimizer object responsible for navigating the input hyperparameter space and testing the different hyperparameter configurations. The overall software architecture is given in the following figure :
+For this project, we decide to build a HyperParameterOptimizer (HPO) object responsible for navigating the input hyperparameter space and organizing the different hyperparameter configuration tests. The HPO object then calls a dedicated library to generate a model with the appropriate hyperparameters and launches the trainings. The system architecture is given in Figure \ref{fig:framework}
 
-%\begin{center}
-%\begin{figure}
-%% https://q.uiver.app/#q=WzAsMTAsWzQsMiwiRExcXCBtb2RlbCJdLFsyLDJdLFsxLDIsIkh5cGVyXFwgUGFyYW1ldGVyXFxcXCBPcHRpbWl6ZXIiXSxbMSwwLCJEYXRhLFxcIFNlZWQsXFxcXCBNZXRob2QsXFxcXCBNZXRob2RcXCBwYXJhbWV0ZXJzIl0sWzEsM10sWzAsM10sWzEsNCwiQmVzdFxcIEh5cGVyXFxcXCBQYXJhbWV0ZXJcXFxcIGNvbmZpZ3VyYXRpb24iXSxbMCwxXSxbNSwxXSxbNSwzXSxbMiwwLCJIeXBlcnBhcmFtZXRlclxcXFwgY29uZmlnIiwwLHsiY3VydmUiOi0zfV0sWzAsMiwiTW9kZWxcXCBhY2N1cmFjeSIsMCx7Im9mZnNldCI6LTIsImN1cnZlIjotM31dLFszLDJdLFsyLDZdLFswLDAsInRyYWluXFwgbW9kZWwiXV0=
-%\begin{tikzcd}
-%	& \begin{array}{c} Data,\ Seed,\\ Method,\\ Method\ parameters \end{array} \\
-%	{} &&&&& {} \\
-%	& \begin{array}{c} Hyper\ Parameter\\ Optimizer \end{array} & {} && {DL\ model} \\
-%	{} & {} &&&& {} \\
-%	& \begin{array}{c} Best\ Hyper\\ Parameter\\ configuration \end{array}
-%	\arrow[from=1-2, to=3-2]
-%	\arrow["\begin{array}{c} Hyperparameter\\ config \end{array}", curve={height=-18pt}, from=3-2, to=3-5]
-%	\arrow[from=3-2, to=5-2]
-%	\arrow["{Model\ accuracy}", shift left=2, curve={height=-18pt}, from=3-5, to=3-2]
-%	\arrow["{train\ model}", from=3-5, to=3-5, loop, in=55, out=125, distance=10mm]
-%\end{tikzcd}
-%\end{figure}
-%\end{center}
-
-\begin{centering}
-\begin{figure}
+\begin{figure}[h]
+\centering
 \begin{tikzpicture}
 \draw (-2.62,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
 \node[matrix, draw, column sep = 4cm, inner sep = 0.75cm] (hpo) at (1,4) 
@@ -128,15 +124,18 @@ For this project, we decide to build a HyperParameterOptimizer object responsibl
 };
 \draw (-2.62,1) node(output) [draw] {\begin{tabular}{c}Best Hyperparameter\\ configuration\end{tabular}};
 \draw [anchor=east](7.5,2) node(comment) [fill=white] {Hyper parameter optimization framework};
-\draw [->] (input.south) -- (object.north);
-\draw [->] (object.south) -- (output.north);
-\draw [->] ([yshift=5pt]object.east) to[bend left] node[above] {\small{\begin{tabular}{c}Hyperparameter\\ configuration\end{tabular}}} ([yshift=5pt]model.west);
-\draw [->] ([yshift=-5pt]model.west) to[bend left] node[below] {\small{Model accuracy}} ([yshift=-5pt]object.east);
-\draw [->] (model.north) |- node[above] {train\_model} (7.5,5.25) |- (model.east); 
+\draw [-Latex] (input.south) -- node[below left] {\small{Inputs}} (object.north);
+\draw [-Latex] (object.south) -- node[above left]{\small{Outputs}} (output.north);
+\draw [-Latex] ([yshift=5pt]object.east) to[bend left] node[above] {\small{\begin{tabular}{c}Hyperparameter\\ configuration\end{tabular}}} ([yshift=5pt]model.west);
+\draw [-Latex] ([yshift=-5pt]model.west) to[bend left] node[below] {\small{Model accuracy}} ([yshift=-5pt]object.east);
+\draw [-Latex, rounded corners=4pt] (model.north) |- node[above] {train\_model} (7.5,5.25) |- (model.east); 
 
 \end{tikzpicture}
+\caption{Hyper parameter optimzation workflow}
+\label{fig:framework}
 \end{figure}
-\end{centering}
+
+To improve scalability, hyperparameter configurations are parsed as dictionaries, with name-value pairs of hyperparameter name and corresponding values. This enables to manipulate the same objects across hyperparameter spaces (which are hyperparameter configurations with multiple accessible values) and hyperparameter arrays (used to represent multiple hyperparameter configurations simultaneously).
 
 \section{Results}
 

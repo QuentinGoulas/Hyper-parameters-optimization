@@ -1,0 +1,331 @@
+Method : PSO
+Hyperparameters : F6 [1:320], C1_chan : [1:32], C3_chan : [1:32]
+Global step size : 1, Local step size : 1
+Inertia : 0.5
+Swarm size : 4
+Epochs : 30
+
+HyperParameterOptimizer initialized
+Using cuda device
+Data loaders have been initialized
+PSO initialization  - Particle 1/4 - Testing hyperparameter config : {'F6': 85, 'C1_chan': 24, 'C3_chan': 3}
+Epoch 1/30, Loss: 1.8343, Time: 28.01s, Memory: 0.06GB
+Epoch 6/30, Loss: 1.4126, Time: 24.23s, Memory: 0.06GB
+Epoch 11/30, Loss: 1.2792, Time: 23.81s, Memory: 0.06GB
+Epoch 16/30, Loss: 1.1913, Time: 26.33s, Memory: 0.06GB
+Epoch 21/30, Loss: 1.1300, Time: 23.59s, Memory: 0.06GB
+Epoch 26/30, Loss: 1.0824, Time: 23.64s, Memory: 0.06GB
+Accuracy: 55.59%
+PSO initialization  - Particle 2/4 - Testing hyperparameter config : {'F6': 136, 'C1_chan': 4, 'C3_chan': 3}
+Epoch 1/30, Loss: 1.8852, Time: 25.89s, Memory: 0.06GB
+Epoch 6/30, Loss: 1.4568, Time: 23.39s, Memory: 0.06GB
+Epoch 11/30, Loss: 1.3362, Time: 23.14s, Memory: 0.06GB
+Epoch 16/30, Loss: 1.2416, Time: 22.87s, Memory: 0.06GB
+Epoch 21/30, Loss: 1.1703, Time: 23.10s, Memory: 0.06GB
+Epoch 26/30, Loss: 1.1169, Time: 22.27s, Memory: 0.06GB
+Accuracy: 54.23%
+PSO initialization  - Particle 3/4 - Testing hyperparameter config : {'F6': 11, 'C1_chan': 19, 'C3_chan': 10}
+Epoch 1/30, Loss: 1.9457, Time: 24.43s, Memory: 0.06GB
+Epoch 6/30, Loss: 1.3947, Time: 23.89s, Memory: 0.06GB
+Epoch 11/30, Loss: 1.2187, Time: 23.65s, Memory: 0.06GB
+Epoch 16/30, Loss: 1.1005, Time: 24.06s, Memory: 0.06GB
+Epoch 21/30, Loss: 1.0210, Time: 24.16s, Memory: 0.06GB
+Epoch 26/30, Loss: 0.9612, Time: 23.87s, Memory: 0.06GB
+Accuracy: 61.87%
+PSO initialization  - Particle 4/4 - Testing hyperparameter config : {'F6': 199, 'C1_chan': 22, 'C3_chan': 30}
+Epoch 1/30, Loss: 1.7102, Time: 29.24s, Memory: 0.08GB
+Epoch 6/30, Loss: 0.9499, Time: 28.53s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.7070, Time: 27.85s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.5387, Time: 27.76s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.4124, Time: 27.35s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.3112, Time: 27.92s, Memory: 0.08GB
+Accuracy: 65.21%
+PSO step 1 - Particle 1/4 - Testing hyperparameter config : {'F6': 85, 'C1_chan': 24, 'C3_chan': 3}
+Epoch 1/30, Loss: 1.8245, Time: 28.57s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.4096, Time: 31.61s, Memory: 0.08GB
+Epoch 11/30, Loss: 1.2785, Time: 28.69s, Memory: 0.08GB
+Epoch 16/30, Loss: 1.1945, Time: 28.48s, Memory: 0.08GB
+Epoch 21/30, Loss: 1.1408, Time: 29.13s, Memory: 0.08GB
+Epoch 26/30, Loss: 1.0982, Time: 29.01s, Memory: 0.08GB
+Accuracy: 55.76%
+PSO step 1 - Particle 2/4 - Testing hyperparameter config : {'F6': 136, 'C1_chan': 4, 'C3_chan': 3}
+Epoch 1/30, Loss: 1.9356, Time: 29.28s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.5086, Time: 24.35s, Memory: 0.08GB
+Epoch 11/30, Loss: 1.3893, Time: 25.28s, Memory: 0.08GB
+Epoch 16/30, Loss: 1.3019, Time: 23.50s, Memory: 0.08GB
+Epoch 21/30, Loss: 1.2377, Time: 22.52s, Memory: 0.08GB
+Epoch 26/30, Loss: 1.1877, Time: 24.05s, Memory: 0.08GB
+Accuracy: 49.00%
+PSO step 1 - Particle 3/4 - Testing hyperparameter config : {'F6': 11, 'C1_chan': 19, 'C3_chan': 10}
+Epoch 1/30, Loss: 1.8931, Time: 22.75s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.2821, Time: 22.70s, Memory: 0.08GB
+Epoch 11/30, Loss: 1.0838, Time: 22.55s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.9789, Time: 23.45s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.9062, Time: 24.12s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.8515, Time: 24.87s, Memory: 0.08GB
+Accuracy: 64.82%
+PSO step 1 - Particle 4/4 - Testing hyperparameter config : {'F6': 199, 'C1_chan': 22, 'C3_chan': 30}
+Epoch 1/30, Loss: 1.6920, Time: 34.06s, Memory: 0.08GB
+Epoch 6/30, Loss: 0.9477, Time: 24.54s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.7025, Time: 24.24s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.5355, Time: 24.28s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.3967, Time: 24.34s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.2890, Time: 24.19s, Memory: 0.08GB
+Accuracy: 64.87%
+PSO step 2 - Particle 1/4 - Testing hyperparameter config : {'F6': 134, 'C1_chan': 23, 'C3_chan': 14}
+Epoch 1/30, Loss: 1.7447, Time: 24.63s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0605, Time: 24.15s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8274, Time: 23.74s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.6997, Time: 23.73s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.5977, Time: 23.80s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5197, Time: 23.85s, Memory: 0.08GB
+Accuracy: 65.50%
+PSO step 2 - Particle 2/4 - Testing hyperparameter config : {'F6': 163, 'C1_chan': 12, 'C3_chan': 14}
+Epoch 1/30, Loss: 1.8045, Time: 24.24s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.1174, Time: 24.06s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.9159, Time: 24.15s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7816, Time: 24.00s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6759, Time: 24.16s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5978, Time: 23.97s, Memory: 0.08GB
+Accuracy: 61.93%
+PSO step 2 - Particle 3/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 20, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7755, Time: 24.97s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0657, Time: 23.98s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8525, Time: 24.07s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7152, Time: 24.10s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6253, Time: 24.94s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5411, Time: 24.71s, Memory: 0.08GB
+Accuracy: 65.63%
+PSO step 2 - Particle 4/4 - Testing hyperparameter config : {'F6': 199, 'C1_chan': 22, 'C3_chan': 30}
+Epoch 1/30, Loss: 1.7518, Time: 24.08s, Memory: 0.08GB
+Epoch 6/30, Loss: 0.9500, Time: 24.00s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.7174, Time: 24.10s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.5657, Time: 24.32s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.4388, Time: 24.41s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.3380, Time: 24.17s, Memory: 0.08GB
+Accuracy: 65.28%
+PSO step 3 - Particle 1/4 - Testing hyperparameter config : {'F6': 85, 'C1_chan': 20, 'C3_chan': 20}
+Epoch 1/30, Loss: 1.7400, Time: 24.53s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0493, Time: 23.93s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8308, Time: 24.56s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.6966, Time: 24.28s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.5949, Time: 23.90s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5141, Time: 24.95s, Memory: 0.08GB
+Accuracy: 64.94%
+PSO step 3 - Particle 2/4 - Testing hyperparameter config : {'F6': 80, 'C1_chan': 21, 'C3_chan': 20}
+Epoch 1/30, Loss: 1.7527, Time: 24.19s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0936, Time: 23.60s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8607, Time: 24.00s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7259, Time: 24.02s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6239, Time: 23.84s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5409, Time: 23.70s, Memory: 0.08GB
+Accuracy: 64.99%
+PSO step 3 - Particle 3/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 20, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7491, Time: 24.38s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0722, Time: 23.98s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8355, Time: 24.81s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.6942, Time: 24.10s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.5930, Time: 24.15s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5090, Time: 23.92s, Memory: 0.08GB
+Accuracy: 65.33%
+PSO step 3 - Particle 4/4 - Testing hyperparameter config : {'F6': 75, 'C1_chan': 20, 'C3_chan': 17}
+Epoch 1/30, Loss: 1.7449, Time: 24.59s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.1140, Time: 23.94s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8872, Time: 23.90s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7640, Time: 24.01s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6677, Time: 24.19s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5857, Time: 24.27s, Memory: 0.08GB
+Accuracy: 64.87%
+PSO step 4 - Particle 1/4 - Testing hyperparameter config : {'F6': 96, 'C1_chan': 20, 'C3_chan': 18}
+Epoch 1/30, Loss: 1.7523, Time: 24.60s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0791, Time: 24.03s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8530, Time: 24.30s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7108, Time: 24.22s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6052, Time: 23.99s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5205, Time: 24.16s, Memory: 0.08GB
+Accuracy: 63.73%
+PSO step 4 - Particle 2/4 - Testing hyperparameter config : {'F6': 101, 'C1_chan': 19, 'C3_chan': 18}
+Epoch 1/30, Loss: 1.7731, Time: 24.66s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0670, Time: 24.41s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8105, Time: 24.09s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.6702, Time: 26.22s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.5581, Time: 24.34s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.4687, Time: 23.83s, Memory: 0.08GB
+Accuracy: 65.00%
+PSO step 4 - Particle 3/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 20, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7435, Time: 24.36s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0585, Time: 24.07s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8490, Time: 24.06s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7223, Time: 24.35s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6308, Time: 24.19s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5509, Time: 24.18s, Memory: 0.08GB
+Accuracy: 65.51%
+PSO step 4 - Particle 4/4 - Testing hyperparameter config : {'F6': 105, 'C1_chan': 20, 'C3_chan': 21}
+Epoch 1/30, Loss: 1.7413, Time: 24.53s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0685, Time: 24.39s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8414, Time: 24.21s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7082, Time: 24.09s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6094, Time: 24.04s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5271, Time: 24.22s, Memory: 0.08GB
+Accuracy: 64.82%
+PSO step 5 - Particle 1/4 - Testing hyperparameter config : {'F6': 95, 'C1_chan': 20, 'C3_chan': 18}
+Epoch 1/30, Loss: 1.7704, Time: 24.11s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0721, Time: 24.17s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8249, Time: 24.56s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.6824, Time: 24.36s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.5818, Time: 24.26s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5017, Time: 24.25s, Memory: 0.08GB
+Accuracy: 64.96%
+PSO step 5 - Particle 2/4 - Testing hyperparameter config : {'F6': 98, 'C1_chan': 19, 'C3_chan': 18}
+Epoch 1/30, Loss: 1.7400, Time: 24.33s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0615, Time: 24.37s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8195, Time: 24.41s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.6785, Time: 24.22s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.5714, Time: 24.18s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.4821, Time: 24.20s, Memory: 0.08GB
+Accuracy: 64.70%
+PSO step 5 - Particle 3/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 20, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7670, Time: 23.55s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0214, Time: 23.12s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8124, Time: 24.12s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.6860, Time: 23.97s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.5792, Time: 23.46s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5019, Time: 23.87s, Memory: 0.08GB
+Accuracy: 64.91%
+PSO step 5 - Particle 4/4 - Testing hyperparameter config : {'F6': 101, 'C1_chan': 20, 'C3_chan': 20}
+Epoch 1/30, Loss: 1.7947, Time: 23.57s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.1742, Time: 23.57s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.9009, Time: 24.26s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7630, Time: 23.68s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6630, Time: 23.75s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5777, Time: 24.10s, Memory: 0.08GB
+Accuracy: 64.95%
+PSO step 6 - Particle 1/4 - Testing hyperparameter config : {'F6': 95, 'C1_chan': 20, 'C3_chan': 18}
+Epoch 1/30, Loss: 1.7731, Time: 24.11s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.1000, Time: 23.96s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8777, Time: 24.40s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7560, Time: 23.70s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6674, Time: 24.22s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5972, Time: 23.67s, Memory: 0.08GB
+Accuracy: 64.71%
+PSO step 6 - Particle 2/4 - Testing hyperparameter config : {'F6': 97, 'C1_chan': 19, 'C3_chan': 18}
+Epoch 1/30, Loss: 1.7931, Time: 23.66s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0874, Time: 23.89s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8731, Time: 24.00s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7574, Time: 23.95s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6695, Time: 24.05s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5962, Time: 24.15s, Memory: 0.08GB
+Accuracy: 65.23%
+PSO step 6 - Particle 3/4 - Testing hyperparameter config : {'F6': 93, 'C1_chan': 20, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7682, Time: 24.21s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.1087, Time: 23.51s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8722, Time: 24.40s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7242, Time: 24.11s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6140, Time: 24.28s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5287, Time: 23.51s, Memory: 0.08GB
+Accuracy: 63.75%
+PSO step 6 - Particle 4/4 - Testing hyperparameter config : {'F6': 98, 'C1_chan': 20, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7636, Time: 24.25s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.1065, Time: 23.91s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8475, Time: 24.19s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7138, Time: 23.18s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6158, Time: 23.59s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5343, Time: 23.74s, Memory: 0.08GB
+Accuracy: 64.93%
+PSO step 7 - Particle 1/4 - Testing hyperparameter config : {'F6': 93, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7661, Time: 24.05s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0894, Time: 24.13s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8832, Time: 23.82s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7586, Time: 24.08s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6668, Time: 24.19s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5875, Time: 23.91s, Memory: 0.08GB
+Accuracy: 65.55%
+PSO step 7 - Particle 2/4 - Testing hyperparameter config : {'F6': 92, 'C1_chan': 20, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7492, Time: 23.66s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0861, Time: 23.81s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8682, Time: 23.39s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7327, Time: 24.05s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6292, Time: 24.11s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5468, Time: 23.80s, Memory: 0.08GB
+Accuracy: 64.86%
+PSO step 7 - Particle 3/4 - Testing hyperparameter config : {'F6': 95, 'C1_chan': 19, 'C3_chan': 18}
+Epoch 1/30, Loss: 1.7244, Time: 23.88s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0416, Time: 23.70s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8297, Time: 25.63s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7078, Time: 24.10s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6159, Time: 23.38s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5393, Time: 23.57s, Memory: 0.08GB
+Accuracy: 65.16%
+PSO step 7 - Particle 4/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 19, 'C3_chan': 18}
+Epoch 1/30, Loss: 1.7571, Time: 23.58s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0868, Time: 23.69s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8692, Time: 23.86s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7446, Time: 23.58s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6526, Time: 23.59s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5782, Time: 23.72s, Memory: 0.08GB
+Accuracy: 65.14%
+PSO step 8 - Particle 1/4 - Testing hyperparameter config : {'F6': 92, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7379, Time: 24.06s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0743, Time: 23.95s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8393, Time: 23.96s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7017, Time: 24.42s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6007, Time: 23.87s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5196, Time: 25.20s, Memory: 0.08GB
+Accuracy: 64.81%
+PSO step 8 - Particle 2/4 - Testing hyperparameter config : {'F6': 93, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7335, Time: 23.89s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0801, Time: 23.93s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8520, Time: 24.19s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7093, Time: 24.16s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6051, Time: 23.90s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5231, Time: 24.01s, Memory: 0.08GB
+Accuracy: 63.28%
+PSO step 8 - Particle 3/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7464, Time: 23.90s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.1057, Time: 24.28s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8708, Time: 23.64s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7325, Time: 24.05s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6324, Time: 26.25s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5490, Time: 24.04s, Memory: 0.08GB
+Accuracy: 65.81%
+PSO step 8 - Particle 4/4 - Testing hyperparameter config : {'F6': 93, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7314, Time: 23.88s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0605, Time: 24.01s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8407, Time: 23.83s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7146, Time: 23.88s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6139, Time: 23.77s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5274, Time: 24.01s, Memory: 0.08GB
+Accuracy: 64.69%
+PSO step 9 - Particle 1/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.8017, Time: 24.01s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0744, Time: 24.02s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8851, Time: 24.13s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7615, Time: 24.01s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6692, Time: 24.29s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5888, Time: 23.79s, Memory: 0.08GB
+Accuracy: 63.93%
+PSO step 9 - Particle 2/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7703, Time: 24.11s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0465, Time: 23.58s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8460, Time: 23.71s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7349, Time: 24.22s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6461, Time: 24.99s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5753, Time: 24.16s, Memory: 0.08GB
+Accuracy: 65.58%
+PSO step 9 - Particle 3/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7865, Time: 24.10s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0415, Time: 24.38s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8498, Time: 23.96s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.7333, Time: 23.92s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.6465, Time: 23.66s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.5730, Time: 23.95s, Memory: 0.08GB
+Accuracy: 65.34%
+PSO step 9 - Particle 4/4 - Testing hyperparameter config : {'F6': 91, 'C1_chan': 19, 'C3_chan': 19}
+Epoch 1/30, Loss: 1.7691, Time: 24.03s, Memory: 0.08GB
+Epoch 6/30, Loss: 1.0679, Time: 24.27s, Memory: 0.08GB
+Epoch 11/30, Loss: 0.8270, Time: 23.87s, Memory: 0.08GB
+Epoch 16/30, Loss: 0.6898, Time: 24.39s, Memory: 0.08GB
+Epoch 21/30, Loss: 0.5815, Time: 24.15s, Memory: 0.08GB
+Epoch 26/30, Loss: 0.4908, Time: 24.23s, Memory: 0.08GB
+Accuracy: 63.65%
+{'best_hp': "{'F6': 91, 'C1_chan': 19, 'C3_chan': 19}", 'number of iterations': 9, 'accuracy': 0.6581}
