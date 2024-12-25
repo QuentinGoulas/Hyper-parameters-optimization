@@ -12,11 +12,11 @@ def initialize_swarm(S,hpspace):
 
     return Swarm(x),Swarm(v)
 
-def update_swarm(x,v,p,P,phi1,phi2):
+def update_swarm(x,v,p,P,phi1,phi2,w):
     u1 = np.random.uniform(0,phi1)
     u2 = np.random.uniform(0,phi2)
 
-    v = v + (p-x)*u1 + (P-x)*u2
+    v = v*w + (p-x)*u1 + (P-x)*u2
     x = x + v
 
     return x

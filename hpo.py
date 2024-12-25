@@ -121,11 +121,15 @@ class HyperParameterOptimizer:
             assert 'local_step_size' in list(kwargs.keys()), "no local step size given at input keyword 'local_step_size'"
             assert 'global_step_size' in list(kwargs.keys()), "no swarm size given at input keyword 'global_step_size'"
             assert 'precision' in list(kwargs.keys()), "no stopping criterion given at input keyword 'precision'"
+            assert 'inertia' in list(kwargs.keys()), "no inertia coefficient given at input keyword 'inertia'"
             
             hpspace = pso.Swarm(np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())]))
             S = kwargs['swarm_size']
             phi1 = kwargs['local_step_size']
             phi2 = kwargs['global_step_size']
+            w = kwargs['inertia']
+
+            assert w<1 and w>0, "inertia coefficient must be taken between 0 and 1"
 
             if S>len(hpspace):
                 # If the swarm size is bigger than hpspace, we run the equivalent grid search method
@@ -165,7 +169,7 @@ class HyperParameterOptimizer:
 
                     # update the swarm for the next iteration
                     x_old = x.copy()
-                    x = pso.update_swarm(x,v,pi,P,phi1,phi2)
+                    x = pso.update_swarm(x,v,pi,P,phi1,phi2,w)
                     x = x.round(hpspace) # make sure the new config is in the hyperparameter space
                 
                 best_hp = P
