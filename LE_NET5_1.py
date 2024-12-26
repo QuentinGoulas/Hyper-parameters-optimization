@@ -8,6 +8,8 @@ import time
 import torchvision
 import torchvision.transforms as transforms
 
+from torchsummary import summary
+
 from model import LeNet5
 
 # Do we need this transformation, what does it do ??? Maybe we can consider normalization hypper-parameter
@@ -20,10 +22,10 @@ transform = transforms.Compose([
 def load_data():
     # This download the train and test data in CIFAR-10. They are not in the repositorie while they are stored in the folder data in the root
     trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=False, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True, num_workers=1, pin_memory=True, prefetch_factor=2)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True, num_workers=1, pin_memory=True, prefetch_factor=3)
 
     testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=False, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False, num_workers=1, pin_memory=True, prefetch_factor=2)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False, num_workers=1, pin_memory=True, prefetch_factor=3)
     return trainloader, testloader
 
 # Define the classes in CIFAR-10
@@ -56,7 +58,7 @@ def train_model(model, trainloader, criterion, optimizer, device, epochs=10, ver
         epoch_time = time.time() - start
         total_time += epoch_time
 
-        if verbose=='on' or (verbose=='partial' and epoch%5==0):
+        if verbose=='on' or (verbose=='partial' and ((epoch+1)%5==0 or epoch==0)):
             print(f"Epoch {epoch+1}/{epochs}, "
                 f"Loss: {running_loss/len(trainloader):.4f}, "
                 f"Time: {epoch_time:.2f}s, "
@@ -97,5 +99,6 @@ if __name__ == '__main__':
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     
-    train_model(model, trainloader, criterion, optimizer, device, epochs=10)
+    summary(model,(1,32,32),64)
+    train_model(model, trainloader, criterion, optimizer, device, epochs=1)
     test_model(model, testloader, device)

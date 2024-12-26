@@ -69,6 +69,7 @@ class HyperParameterOptimizer:
         Set new hyperparameter config with self.update_hyperparam and train the HPO module
         with this config with self.train_module
         '''
+        hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
 
         if method == 'grid_search':
             '''
@@ -76,7 +77,6 @@ class HyperParameterOptimizer:
 
             Tests all combinations of the hyperparameter space to find the best combination
             '''
-            hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
             accuracy = np.zeros(hpspace.shape)
             
             for i in range(len(hpspace)):
@@ -97,7 +97,6 @@ class HyperParameterOptimizer:
             assert 'p' in list(kwargs.keys()), "no sampling proportion given at input keyword 'p'"
 
             p = kwargs['p'] # proportion of samples to try in the hyperparameter optimization
-            hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
             numel = int(np.fix(p*len(hpspace)))
             ind = np.random.choice(range(len(hpspace)),numel) # choose the hyperparameter configs to try out
             accuracy = np.zeros(ind.shape)
@@ -123,7 +122,7 @@ class HyperParameterOptimizer:
             assert 'precision' in list(kwargs.keys()), "no stopping criterion given at input keyword 'precision'"
             assert 'inertia' in list(kwargs.keys()), "no inertia coefficient given at input keyword 'inertia'"
             
-            hpspace = pso.Swarm(np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())]))
+            hpspace = pso.Swarm(hpspace)
             S = kwargs['swarm_size']
             phi1 = kwargs['local_step_size']
             phi2 = kwargs['global_step_size']
