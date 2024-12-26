@@ -173,6 +173,16 @@ class HyperParameterOptimizer:
                 
                 best_hp = P
                 acc = accP
+
+        elif method == 'bohb':
+            '''
+            Implements the Bayesian Optimization HyperBand algorithm
+            The implementation is drawn from the HPBandSter library from:
+            Stefan Falkner, Aaron Klein, Frank Hutter. BOHB: Robust and Efficient Hyperparameter Optimization at Scale
+            in Proceedings of the 35th International Conference on Machine Learning, PMLR 80:1437-1446, 2018
+            https://automl.github.io/HpBandSter/build/html/quickstart.html
+            '''
+            pass
         '''
         End of the different optim methods
         '''
