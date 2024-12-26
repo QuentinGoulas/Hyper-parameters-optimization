@@ -197,9 +197,11 @@ class HyperParameterOptimizer:
 
 ######################### Test script #########################
 if __name__ == '__main__':
-    HPOptim = HyperParameterOptimizer({'F6':[80+5*i for i in range(16)],'C3_chan':[4+i for i in range(8)]},seed = LeNet5())
+    F6space = [i+1 for i in range(320)]
+    ConvChanSpace = [i+1 for i in range(32)]
+    HPOptim = HyperParameterOptimizer({'F6':F6space,'C1_chan':ConvChanSpace,'C3_chan':ConvChanSpace, 'C5_chan':ConvChanSpace},seed = LeNet5())
     HPOptim.load_data()
-    res = HPOptim.optimize('pso',epochs=10,swarm_size=4,local_step_size=10,global_step_size=10,precision=1e-5)
+    res = HPOptim.optimize('pso',epochs=40,swarm_size=4,local_step_size=1,global_step_size=1,precision=1e-2,inertia = 0.5)
     # res = HPOptim.optimize('random_search',p=0.5)
     # res = HPOptim.optimize('grid_search')
     print(res)
