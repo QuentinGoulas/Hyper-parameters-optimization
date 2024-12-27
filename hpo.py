@@ -121,22 +121,24 @@ class HyperParameterOptimizer:
             assert 'global_step_size' in list(kwargs.keys()), "no swarm size given at input keyword 'global_step_size'"
             assert 'precision' in list(kwargs.keys()), "no stopping criterion given at input keyword 'precision'"
             assert 'inertia' in list(kwargs.keys()), "no inertia coefficient given at input keyword 'inertia'"
+            assert 'n_iterations' in list(kwargs.keys()), "no max number of iterations given at input keyword 'n_iterations'"
             
-            hpspace = pso.Swarm(hpspace)
+            hpspace_size = np.prod(np.array([len(val) for val in self.hpspace.values()]))
             S = kwargs['swarm_size']
             phi1 = kwargs['local_step_size']
             phi2 = kwargs['global_step_size']
             w = kwargs['inertia']
+            n_iterations = kwargs['n_iterations']
 
             assert w<1 and w>0, "inertia coefficient must be taken between 0 and 1"
 
-            if S>len(hpspace):
+            if S>hpspace_size:
                 # If the swarm size is bigger than hpspace, we run the equivalent grid search method
                 Warning('Swarm size bigger than hpspace, which is equivalent to grid search')
                 self.optimize('grid_search')
                 
             else :
-                x,v = pso.initialize_swarm(S,hpspace)
+                x,v = pso.initialize_swarm(S,self.hpspace)
                 x_old = x.copy()
                 acc_i = np.zeros(len(x)) # to keep track of the accuracy at time i
                 cnt = 0
@@ -151,17 +153,22 @@ class HyperParameterOptimizer:
                 pi = x.copy()
                 accP = np.max(acc_i) # keep track of the accuracy of the global optimum
                 accpi = acc_i.copy()
+
+                x = pso.update_swarm(x,v,pi,P,phi1,phi2,w)
+                x = x.round(self.hpspace) # make sure the new config is in the hyperparameter space
                 
                 # Repeat the previous step till convergence and iterate at least once
-                while (x-x_old).global_norm() > np.sqrt(S)*kwargs['precision'] or cnt==0:
+                while ((x-x_old).global_norm() > np.sqrt(S)*kwargs['precision'] and cnt<n_iterations) or cnt==0 :
                     cnt +=1
 
                     for j in range(S):
                         print(f"PSO step {cnt} - Particle {j+1}/{S} - Testing hyperparameter config : {x[j]}")
                         self.update_hyperparam(x[j])
                         acc_i[j] = self.train_module(epochs)
-                    pi[acc_i>accpi] = pso.Swarm(x[acc_i>accpi])
-                    accpi[acc_i>accpi] = acc_i[acc_i>accpi]
+
+                    if np.sum(acc_i>accpi)>0:
+                        pi.x[acc_i>accpi] = x.x[acc_i>accpi]
+                        accpi[acc_i>accpi] = acc_i[acc_i>accpi]
                     
                     # Update the best global hyperparameter config
                     if np.max(acc_i) > accP:
@@ -171,7 +178,7 @@ class HyperParameterOptimizer:
                     # update the swarm for the next iteration
                     x_old = x.copy()
                     x = pso.update_swarm(x,v,pi,P,phi1,phi2,w)
-                    x = x.round(hpspace) # make sure the new config is in the hyperparameter space
+                    x = x.round(self.hpspace) # make sure the new config is in the hyperparameter space
                 
                 best_hp = P
                 acc = accP
@@ -189,9 +196,12 @@ class HyperParameterOptimizer:
 
 ######################### Test script #########################
 if __name__ == '__main__':
-    HPOptim = HyperParameterOptimizer({'F6':[80+5*i for i in range(16)],'C3_chan':[4+i for i in range(8)]},seed = LeNet5())
+    F6Space = np.array([125+i for i in range(200)])
+    C1Space = np.array([i for i in range(32)])
+    C5Space = np.array([i+40 for i in range(90)])
+    HPOptim = HyperParameterOptimizer({'F6':F6Space,'C1_chan':C1Space,'C3_chan':C1Space,'C5_chan':C5Space},seed = LeNet5())
     HPOptim.load_data()
-    res = HPOptim.optimize('pso',epochs=10,swarm_size=4,local_step_size=10,global_step_size=10,precision=1e-5)
+    res = HPOptim.optimize('pso',epochs=40,swarm_size=5,local_step_size=2,global_step_size=2,precision=1e-5,inertia=0.5,n_iterations=50)
     # res = HPOptim.optimize('random_search',p=0.5)
     # res = HPOptim.optimize('grid_search')
     print(res)
