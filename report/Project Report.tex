@@ -122,15 +122,15 @@ The most used Hyper Parameter Optimization (HPO) methods include :
 
 This project aims at implementing a HyperParameter Optimization framework to
 compare different hyperparameter optimizers. For this project, we will focus on
-Grid Search, Random Search and Particle Swarm Optimization (said to be the best
+Grid Search, Random Search, Bayesian Optimizer Hyper Band and Particle Swarm Optimization (said to be the best
 hyperparameter optimizing method in the current literature)
 
 \section{Algorithm descriptions}
 We describe here the algorithms that have been implemented throughout this
-project : Grid search, Random search, Particle swarm optimization.
+project : Grid search, Random search, Particle swarm optimization. We also provide the pseudo-codes for the methods.
 
 \subsection{Grid search}
-This method consists in ``brute forcing''
+This method consists in ``brute forcing'' the best hyperparameter configuration, i.e by trying all possible hyperparameter configurations on the hyperparameter space and returning the best configuration. This method is extremely computationnaly heavy, with the number of possible configurations increasing exponentially as the number of tested hyperparameters increases.
 \begin{algorithm}
     \SetAlgoLined
     \KwIn{Hyperparameter space $H$, training set $D$, validation set $V$}
@@ -146,12 +146,15 @@ This method consists in ``brute forcing''
     \Return{$h^* , a^*$}
     \caption{Grid search algorithm}
 \end{algorithm}
+
 \subsection{Random search}
+This method consists in randomly selecting a proportion of all the possible hyperparameter configurations and returning the best configuration after trying all configurations in the sample. This method reduces slightly the computational time compared to grid search. However, this method does not solve the curse of dimensionality problem. As a matter of fact, the only method to solve this problem is to use a sampling proportion of the order $p^d$ with the $d$ the number of hyperparameters. This technique keeps computation time constant but dramatically reduces the exhaustivity of the method and success probability of the algorithm.
 \begin{algorithm}
     \SetAlgoLined
     \KwIn{Hyperparameter space $H$, training set $D$, validation set $V$, sampling proportion p}
     \KwOut{Best hyperparameter configuration $h^*$ and accuracy $a^*$}
     \For{each hyperparameter configuration $h$ in $H$}{
+    	$r\sim \mathcal{U}([0,1])$\;
         \If{random number $r < p$}{
             Train model $M$ with hyperparameters $h$ on $D$\;
             Evaluate model $M$ on $V$ and compute accuracy $a$\;
@@ -164,7 +167,9 @@ This method consists in ``brute forcing''
     \Return{$h^* , a^*$}
     \caption{Random search algorithm}
 \end{algorithm}
+
 \subsection{Particle Swarm Optimization}
+The particle swarm optimization algorithm is a metaheuristic optimization algorithm which assumes next to no information on the functions to optimize. Modelled on the evolution of bird flocks, it consists in evaluation the model accuracy on a small set of hyperparameter configurations, then choosing a new set of configurations on the basis of the best configuration seen overall and by the best configuration seen by the particles individually.
 
 \begin{algorithm}[H]
     \SetAlgoLined
@@ -193,13 +198,16 @@ This method consists in ``brute forcing''
     \BlankLine
     \Return{$h^*, a^*, t$}
 \end{algorithm}
-\section{Development framework}\;
 
+\subsection{Bayesian Optimization HyperBand algorithm}
+This method uses a probabilistic model of the accuracy function given the different tested configurations and iteratively returns the next configuration to try out by choosing the maximizer of expected improvement.  The probabilistic model used here is the Tree Parzen Estimator which uses a kernel density estimator to model the accuracy function of the model. To further improve the performance of the algorithm, the Hyper Band technique is used to dynamically allocate the amount of resources for each training. For this project, we rely on the \href{https://automl.github.io/HpBandSter/build/html/quickstart.html}{HpBandSter library [clickable link]} which provides a full optimizer framework ---similar to ours--- to apply BOHB which we integrated to our framework. Furthermore, this library enables asynchronous processing to try out multiple configurations simultaneously, therefore drastically increasing convergence speed.
+
+\section{Development framework}\;
 This project will be entirely developed on Python through the Pytorch deep
 learning library. Moreover, the CIFAR-10 dataset will be used throughout this
 study to train a LeNet5-type model architecture for image recognition. Our
-hyperparameters of interest are the output sizes of the the first two
-convolutional layers (C1, C3) and the output size of the first dense layer (F6)
+hyperparameters of interest are the output sizes of the
+convolutional layers (C1, C3, C5) and the output size of the first dense layer (F6)
 
 For this project, we decide to build a HyperParameterOptimizer (HPO) object
 responsible for navigating the input hyperparameter space and organizing the
@@ -212,7 +220,7 @@ launches the trainings. The system architecture is given in Figure
     \centering
     \begin{tikzpicture}
         \draw (-2.62,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
-        \node[matrix, draw, column sep = 4cm, inner sep = 0.75cm] (hpo) at (1,4)
+        \node[matrix, draw, column sep = 4cm, inner sep = 0.75cm, rounded corners =4pt] (hpo) at (1,4)
         {
             \node[rectangle, draw] (object) at (0,0) {\begin{tabular}{c}Hyper Parameter\\ Optimizer\end{tabular}}; & \node[rectangle, draw] (model) at (1,0) {DL Model};\\
         };
