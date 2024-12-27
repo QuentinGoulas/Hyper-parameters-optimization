@@ -148,8 +148,9 @@ class HyperParameterOptimizer:
                     acc_i[j] = self.train_module(epochs)
 
                 P = pso.Swarm(x[np.argmax(acc_i)]) # Find the best performing config and initialize both local and global maxima
-                pi = P.copy()
+                pi = x.copy()
                 accP = np.max(acc_i) # keep track of the accuracy of the global optimum
+                accpi = acc_i.copy()
                 
                 # Repeat the previous step till convergence and iterate at least once
                 while (x-x_old).global_norm() > np.sqrt(S)*kwargs['precision'] or cnt==0:
@@ -159,11 +160,12 @@ class HyperParameterOptimizer:
                         print(f"PSO step {cnt} - Particle {j+1}/{S} - Testing hyperparameter config : {x[j]}")
                         self.update_hyperparam(x[j])
                         acc_i[j] = self.train_module(epochs)
-                    pi = pso.Swarm(x[np.argmax(acc_i)])
+                    pi[acc_i>accpi] = pso.Swarm(x[acc_i>accpi])
+                    accpi[acc_i>accpi] = acc_i[acc_i>accpi]
                     
                     # Update the best global hyperparameter config
                     if np.max(acc_i) > accP:
-                        P = pi.copy()
+                        P = pso.Swarm(x[np.argmax(acc_i)])
                         accP = np.max(acc_i)
 
                     # update the swarm for the next iteration
