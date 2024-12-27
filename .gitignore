@@ -1,3 +1,7 @@
 # ignore data directory
 data/
 __pycache__/
+report/Project Report.aux
+report/Project Report.log
+report/Project Report.out
+report/Project Report.synctex.gz
