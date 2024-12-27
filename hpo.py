@@ -5,6 +5,7 @@ import LE_NET5_1 as ln5
 from model import LeNet5
 import copy
 from torchsummary import summary
+import subprocess
 
 import pso
 
@@ -69,7 +70,9 @@ class HyperParameterOptimizer:
         Set new hyperparameter config with self.update_hyperparam and train the HPO module
         with this config with self.train_module
         '''
-        hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
+
+        if method != 'bohb': # no need to compute the hpspace for BOHB method (managed separately)
+            hpspace = np.array([dict(zip(self.hpspace.keys(), values)) for values in iter.product(*self.hpspace.values())])
 
         if method == 'grid_search':
             '''
@@ -181,27 +184,58 @@ class HyperParameterOptimizer:
             Stefan Falkner, Aaron Klein, Frank Hutter. BOHB: Robust and Efficient Hyperparameter Optimization at Scale
             in Proceedings of the 35th International Conference on Machine Learning, PMLR 80:1437-1446, 2018
             https://automl.github.io/HpBandSter/build/html/quickstart.html
+
+            Due to limited time available, we weren't able to provide a cleaner integration than the following : 
+            the BOHB library is launched in separate subprocesses to manage parallel trainings and decrease training time
+            As the optimizer finishes the computation, it will stay 'stuck' in the terminal, use Ctrl+C to kill the subprocesses
+            and extract the results printed in the terminal.
+            A 'UnboundLocalError: local variable 'best_hp' referenced before assignment' error will spawn when launching
+            the BOHB optimization, please ignore this error
+
+            Hyperparameter space is defined in PyTorchWorker.get_configspace()
+            Batch size is defined in PyTorchWorker.__init__()
+            Device is defined in PyTorchWorker.compute()
             '''
-            pass
+            assert 'max_epochs' in list(kwargs.keys()), "No maximum number of training epochs given at keyword 'max_epochs'"
+            assert 'min_epochs' in list(kwargs.keys()), "No minimum number of training epochs given at keyword 'min_epochs'"
+            assert 'n_iterations' in list(kwargs.keys()), "No number of iterations given at keyword 'n_iterations'"
+            assert 'n_workers' in list(kwargs.keys()), "No number of workers given at keyword 'n_workers'"
+
+            # launch the master process
+            subprocess.Popen(['python','bohb_master.py','--max_budget',str(kwargs['max_epochs']),
+                                                          '--min_budget',str(kwargs['min_epochs']),
+                                                          '--n_iterations',str(kwargs['n_iterations']),
+                                                          '--n_workers',str(kwargs['n_workers'])])
+
+            # launch the slave processes
+            for i in range(kwargs['n_workers']):
+                subprocess.Popen(['python','bohb_master.py','--max_budget',str(kwargs['max_epochs']),
+                                                          '--min_budget',str(kwargs['min_epochs']),
+                                                          '--n_iterations',str(kwargs['n_iterations']),
+                                                          '--n_workers',str(kwargs['n_workers']),
+                                                          '--worker'])
+
         '''
         End of the different optim methods
         '''
+        if method != 'bohb':
+            self.result = {
+                    'best_hp':str(best_hp),
+                    'number of iterations' : cnt,
+                    'accuracy' : acc
+                }
 
-        self.result = {
-                'best_hp':str(best_hp),
-                'number of iterations' : cnt,
-                'accuracy' : acc
-            }
-
-        return self.result
+            return self.result
 
 ######################### Test script #########################
 if __name__ == '__main__':
     F6space = [i+1 for i in range(320)]
     ConvChanSpace = [i+1 for i in range(32)]
-    HPOptim = HyperParameterOptimizer({'F6':F6space,'C1_chan':ConvChanSpace,'C3_chan':ConvChanSpace, 'C5_chan':ConvChanSpace},seed = LeNet5())
+    C5ChanSpace = [i+1 for i in range(240)]
+    HPOptim = HyperParameterOptimizer({'F6':F6space,'C1_chan':ConvChanSpace,'C3_chan':ConvChanSpace, 'C5_chan':C5ChanSpace},seed = LeNet5())
     HPOptim.load_data()
-    res = HPOptim.optimize('pso',epochs=40,swarm_size=4,local_step_size=1,global_step_size=1,precision=1e-2,inertia = 0.5)
+    res = HPOptim.optimize('bohb',min_epochs = 1,max_epochs = 4, n_iterations = 1, n_workers = 2)
+    # res = HPOptim.optimize('pso',epochs=40,swarm_size=6,local_step_size=1,global_step_size=1,precision=1e-2,inertia = 0.5)
     # res = HPOptim.optimize('random_search',p=0.5)
     # res = HPOptim.optimize('grid_search')
     print(res)
