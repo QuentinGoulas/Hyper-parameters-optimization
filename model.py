@@ -69,6 +69,9 @@ class LeNet5(nn.Module):
         x = self.fc2(x)
         
         return x
+    
+    def number_of_parameters(self):
+        return(sum(p.numel() for p in self.parameters() if p.requires_grad))
 
 def update_hyperparam(hyperparam, mods):
     '''

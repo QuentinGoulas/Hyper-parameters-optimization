@@ -1,13 +1,15 @@
 import numpy as np
 import copy
+import itertools as iter
 
 def initialize_swarm(S,hpspace):
     # Initialize the positions of the swarm
-    x_ind = np.random.choice(range(len(hpspace)),S,replace=False)
-    x = hpspace[x_ind]
+    total_space = np.array([dict(zip(hpspace.keys(), values)) for values in iter.product(*hpspace.values())])
+    x_ind = np.random.choice(range(len(total_space)),S,replace=False)
+    x = total_space[x_ind]
 
     # Initialize at first with 0 speed
-    v = np.array([{key:0 for key in hpspace[0].keys()}]*S)
+    v = np.array([{key:0 for key in total_space[0].keys()}]*S)
 
     return Swarm(x),Swarm(v)
 
@@ -110,12 +112,16 @@ class Swarm:
         '''
         Find the closest swarm configuration in a given space by euclidean norm
         '''
-        ind = np.zeros_like(self.x,dtype=np.int_)
+        out = []
         for i in range(len(self)):
-            dist = (Swarm(self[i])-space).particular_norm()
-            ind[i] = np.argmin(dist)
+            pot_subspace = {key: [np.max(space[key],where=space[key]<=self[i][key],initial=np.min(space[key])),np.min(space[key],where=space[key]>=self[i][key],initial=np.max(space[key]))] for key in space.keys()}
+            dep_pot_subspace = np.array([dict(zip(pot_subspace.keys(), values)) for values in iter.product(*pot_subspace.values())])
+            dep_pot_subspace = Swarm(dep_pot_subspace)
+            dist = (Swarm(self[i])-dep_pot_subspace).particular_norm()
+            ind = np.argmin(dist)
+            out.append(dep_pot_subspace[ind])
         
-        return Swarm(space[ind])
+        return Swarm(np.array(out))
     
 # A test script to validate the swarm object and the PSO functions
 if __name__ == '__main__':
@@ -126,6 +132,7 @@ if __name__ == '__main__':
 
     sw1 = Swarm(particle1)
     sw2 = Swarm(particle2)
+    space = {'F6':np.array([75,82]),'C3_chan':np.array([6,9])}
 
     # assert len(sw1)==2, f'wrong length, obtained {len(sw1)}'
     # print(sw1.keys())
@@ -137,7 +144,7 @@ if __name__ == '__main__':
     assert type(sw2.copy()) is Swarm
     # print(sw1.particular_norm())
     # print(sw1.global_norm())
-    # print(sw1.round(sw2))
+    print(sw1.round(space))
 
-    x,v = initialize_swarm(2,np.concatenate((particle1,particle2)))
-    x = update_swarm(x,v,Swarm(sw1[0]),Swarm(sw2[1]),20,20)
+    # x,v = initialize_swarm(2,np.concatenate((particle1,particle2)))
+    # x = update_swarm(x,v,Swarm(sw1[0]),Swarm(sw2[1]),2,2,0.5)
