@@ -26,6 +26,7 @@
 \usepackage[ruled]{algorithm2e}
 
 \usepackage{hyperref}
+\usepackage{biblatex}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\dpart}[2]{\frac{\partial #1}{\partial #2}}
@@ -64,10 +65,14 @@
 \renewcommand{\footrulewidth}{0.5pt} % Largeur du trait de séparation dans le pied de page
 
 \hypersetup{hidelinks=true}
+\addbibresource{biblio.bib}
 
 \begin{document}
 \input{title.tex}
-\thispagestyle{empty}
+
+%\thispagestyle{empty}
+\tableofcontents
+\newpage
 
 This project report aims to present the development framework, methodology and
 results obtained during the Deep Learning course project. This project focussed
@@ -98,7 +103,7 @@ hyperparameters configuration, which induces high computing costs. Finding
 efficient methods to obtain the optimal hyperparameter configuration for a
 given DL task is therefore a topic of choice for the deep learning literature.
 
-The most used Hyper Parameter Optimization (HPO) methods include :
+The most used Hyper Parameter Optimization (HPO) methods include \cite{yangHyperparameterOptimizationMachine2020} :
 \begin{itemize}
     \item Babysitting : try different hyperparameter configurations, assess the accuracy
           of the different models, manually adjust the configurations and repeat till
@@ -199,10 +204,12 @@ The particle swarm optimization algorithm is a metaheuristic optimization algori
     \Return{$h^*, a^*, t$}
 \end{algorithm}
 
-\subsection{Bayesian Optimization HyperBand algorithm}
-This method uses a probabilistic model of the accuracy function given the different tested configurations and iteratively returns the next configuration to try out by choosing the maximizer of expected improvement.  The probabilistic model used here is the Tree Parzen Estimator which uses a kernel density estimator to model the accuracy function of the model. To further improve the performance of the algorithm, the Hyper Band technique is used to dynamically allocate the amount of resources for each training. For this project, we rely on the \href{https://automl.github.io/HpBandSter/build/html/quickstart.html}{HpBandSter library [clickable link]} which provides a full optimizer framework ---similar to ours--- to apply BOHB which we integrated to our framework. Furthermore, this library enables asynchronous processing to try out multiple configurations simultaneously, therefore drastically increasing convergence speed.
+The convergence of the Particle Swarm Optimization algorithm cannot be proven in the general case (although some refinements can provide convergence to a local optimum \cite{engelbrechtConvergenceProofParticle2010}). Yet, empirical data shows the efficiency of this algorithm in a majority of cases.
 
-\section{Development framework}\;
+\subsection{Bayesian Optimization HyperBand algorithm \cite{falknerBOHBRobustEfficient2018}}
+This method uses a probabilistic model of the accuracy function given the different tested configurations and iteratively returns the next configuration to try out by choosing the maximizer of expected improvement.  The probabilistic model used here is the Tree Parzen Estimator which uses a kernel density estimator to model the accuracy function of the model. To further improve the performance of the algorithm, the Hyper Band technique is used to dynamically allocate the amount of resources for each training. For this project, we rely on the \href{https://automl.github.io/HpBandSter/build/html/quickstart.html}{HpBandSter library [clickable link]} which provides a full BOHB optimizer framework ---similar to ours--- that we integrated to our framework. Furthermore, this library enables asynchronous processing to try out multiple configurations simultaneously, therefore drastically increasing computing efficiency.
+
+\section{Development framework}
 This project will be entirely developed on Python through the Pytorch deep
 learning library. Moreover, the CIFAR-10 dataset will be used throughout this
 study to train a LeNet5-type model architecture for image recognition. Our
@@ -214,26 +221,28 @@ responsible for navigating the input hyperparameter space and organizing the
 different hyperparameter configuration tests. The HPO object then calls a
 dedicated library to generate a model with the appropriate hyperparameters and
 launches the trainings. The system architecture is given in Figure
-\ref{fig:framework}
+\ref{fig:framework}.
+
+The accuracy function of the classifier is chosen as the proportion of accurate classifications from the model on a validation dataset.
 
 \begin{figure}[h]
     \centering
     \begin{tikzpicture}
-        \draw (-2.62,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
-        \node[matrix, draw, column sep = 4cm, inner sep = 0.75cm, rounded corners =4pt] (hpo) at (1,4)
+        \draw (-3.13,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
+        \node[matrix, draw, column sep =0cm, inner sep = 0.75cm, rounded corners =4pt] (hpo) at (1,4)
         {
-            \node[rectangle, draw] (object) at (0,0) {\begin{tabular}{c}Hyper Parameter\\ Optimizer\end{tabular}}; & \node[rectangle, draw] (model) at (1,0) {DL Model};\\
+            \node[rectangle, draw] (object) at (0,0) {\begin{tabular}{c}Hyper Parameter\\ Optimizer\end{tabular}}; & \node at (0.5,0) {\small{Iterate till convergence}}; & \node[rectangle, draw] (model) at (1,0) {DL Model};\\
         };
-        \draw (-2.62,1) node(output) [draw] {\begin{tabular}{c}Best Hyperparameter\\ configuration\end{tabular}};
+        \draw (-3.13,1) node(output) [draw] {\begin{tabular}{c}Best Hyperparameter\\ configuration\end{tabular}};
         \draw [anchor=east](7.5,2) node(comment) [fill=white] {Hyper parameter optimization framework};
         \draw [-Latex] (input.south) -- node[below left] {\small{Inputs}} (object.north);
         \draw [-Latex] (object.south) -- node[above left]{\small{Outputs}} (output.north);
         \draw [-Latex] ([yshift=5pt]object.east) to[bend left] node[above] {\small{\begin{tabular}{c}Hyperparameter\\ configuration\end{tabular}}} ([yshift=5pt]model.west);
         \draw [-Latex] ([yshift=-5pt]model.west) to[bend left] node[below] {\small{Model accuracy}} ([yshift=-5pt]object.east);
-        \draw [-Latex, rounded corners=4pt] (model.north) |- node[above] {train\_model} (7.5,5.25) |- (model.east);
+        \draw [-Latex, rounded corners=4pt] (model.north) |- node[above] {train\_model} (7.9,5.25) |- (model.east);
 
     \end{tikzpicture}
-    \caption{Hyper parameter optimzation workflow}
+    \caption{Hyper parameter optimization workflow}
     \label{fig:framework}
 \end{figure}
 
@@ -244,6 +253,13 @@ spaces (which are hyperparameter configurations with multiple accessible
 values) and hyperparameter arrays (used to represent multiple hyperparameter
 configurations simultaneously).
 
+Model trainings for this project have been entirely done on local GPUs (GeForce MX230 and GeForce \textbf{GPU DE KINTINE}) with a batch of size 64. Training the classifier on CIFAR-10 as provided by \verb+torchvision+ led to an epoch duration from 20 to 40s depending on model complexity.
+
+Although the implemented algorithms enable increased efficiency compared to a babysitting or grid search approach, each optimization run took considerable amounts of time, allowing minimal repetitions to validate the results, leaving significant space to interpretation of the results and little quantitative results. We still present the results in the following section
+
 \section{Results}
+
+\addcontentsline{toc}{section}{References}
+\printbibliography
 
 \end{document}

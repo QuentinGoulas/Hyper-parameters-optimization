@@ -1,0 +1,10 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Project introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Algorithm descriptions}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Grid search}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Random search}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Particle Swarm Optimization}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Bayesian Optimization HyperBand algorithm \blx@tocontentsinit {0}\cite {falknerBOHBRobustEfficient2018}}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Development framework}{4}{section.3}%
+\contentsline {section}{\numberline {4}Results}{5}{section.4}%
+\contentsline {section}{References}{5}{section.4}%
