@@ -4,6 +4,7 @@
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{lmodern}
@@ -228,18 +229,18 @@ The accuracy function of the classifier is chosen as the proportion of accurate 
 \begin{figure}[h]
     \centering
     \begin{tikzpicture}
-        \draw (-3.13,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
+        \draw (-3.33,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
         \node[matrix, draw, column sep =0cm, inner sep = 0.75cm, rounded corners =4pt] (hpo) at (1,4)
         {
-            \node[rectangle, draw] (object) at (0,0) {\begin{tabular}{c}Hyper Parameter\\ Optimizer\end{tabular}}; & \node at (0.5,0) {\small{Iterate till convergence}}; & \node[rectangle, draw] (model) at (1,0) {DL Model};\\
+            \node[rectangle, draw] (object) at (0,0) {\begin{tabular}{c}Hyper Parameter\\ Optimizer\end{tabular}}; & \node at (0.5,0) {\small{$\circlearrowright$ Iterate till convergence}}; & \node[rectangle, draw] (model) at (1,0) {DL Model};\\
         };
-        \draw (-3.13,1) node(output) [draw] {\begin{tabular}{c}Best Hyperparameter\\ configuration\end{tabular}};
+        \draw (-3.33,1) node(output) [draw] {\begin{tabular}{c}Best Hyperparameter\\ configuration\end{tabular}};
         \draw [anchor=east](7.5,2) node(comment) [fill=white] {Hyper parameter optimization framework};
         \draw [-Latex] (input.south) -- node[below left] {\small{Inputs}} (object.north);
         \draw [-Latex] (object.south) -- node[above left]{\small{Outputs}} (output.north);
         \draw [-Latex] ([yshift=5pt]object.east) to[bend left] node[above] {\small{\begin{tabular}{c}Hyperparameter\\ configuration\end{tabular}}} ([yshift=5pt]model.west);
         \draw [-Latex] ([yshift=-5pt]model.west) to[bend left] node[below] {\small{Model accuracy}} ([yshift=-5pt]object.east);
-        \draw [-Latex, rounded corners=4pt] (model.north) |- node[above] {train\_model} (7.9,5.25) |- (model.east);
+        \draw [-Latex, rounded corners=4pt] (model.north) |- node[above] {train\_model} (8.1,5.25) |- (model.east);
 
     \end{tikzpicture}
     \caption{Hyper parameter optimization workflow}
@@ -253,11 +254,51 @@ spaces (which are hyperparameter configurations with multiple accessible
 values) and hyperparameter arrays (used to represent multiple hyperparameter
 configurations simultaneously).
 
-Model trainings for this project have been entirely done on local GPUs (GeForce MX230 and GeForce \textbf{GPU DE KINTINE}) with a batch of size 64. Training the classifier on CIFAR-10 as provided by \verb+torchvision+ led to an epoch duration from 20 to 40s depending on model complexity.
+\section{Experimental setup}
+To try out the different hyperparameter optimizers, we search for the optimal configurations of a LeNet-5 type network \cite{lecunGradientbasedLearningApplied1998}. More precisely, we look for the optimal number of filters for the three convolutional layers C1, C3 and C5 as well as the size of the network's dense layer F6. A schematic of the LeNet-5 architecture is provided in Figure \ref{fig:lenet}.
 
-Although the implemented algorithms enable increased efficiency compared to a babysitting or grid search approach, each optimization run took considerable amounts of time, allowing minimal repetitions to validate the results, leaving significant space to interpretation of the results and little quantitative results. We still present the results in the following section
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{ln5.png}
+\caption{LeNet-5 architecure with the hyperparameter configuration used in the original paper}
+\label{fig:lenet}
+\end{figure}
+
+We use the LeNet-5 architecture to recognize different images from the CIFAR-10 dataset \cite{krizhevskyLearningMultiplyeLayers2009}, divided into 10 categories : \{ airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck\}. The CIFAR-10 comprises $60\ 000$ coloured images of $32\times32$ pixels with $6\ 000$ images per category and split into a $50\ 000$ image training set and a $10\ 000$ image test set.
+
+Model trainings for this project have been entirely done on local GPUs (GeForce MX230 and GeForce RTX3070 Laptop) with a batch of size 64. Training the classifier on CIFAR-10 as provided by \verb+torchvision+ led to an epoch duration from 20 to 40s depending on model complexity.
+
+We use the following parameters for each algorithm :
+\begin{figure}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline Algorithm & Parameters \\
+\hline Grid search & $\emptyset$ \\
+Random search & p = 0.5 \\
+Particle Swarm Optimization & $S=5,\phi_l = 2,\ \phi_g = 2,\ w=0.5$\\ \hline
+\end{tabular}
+\label{tab:parameters}
+\caption{Algorithm parameters}
+\end{figure}
+
+Unless indicated otherwise, the number of epochs for every trainings is set at 40.
+
+Although the implemented algorithms enable increased efficiency compared to a babysitting or grid search approach, each optimization run took considerable amounts of time, allowing minimal repetitions to validate the results, leaving significant space to interpretation of the results and little quantitative results. We still present the results in the following section.
 
 \section{Results}
+
+Running the algorithms returns us the following results :
+\begin{figure}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline Algorithm & \begin{tabular}{c}Hyperparameter config\\ \hline \begin{tabular}{c|c|c|c}F6&C1&C3&C5\end{tabular}\end{tabular} & Number of training epochs \\
+\hline Particle Swarm Optimization & $\cdots$ & $\cdots$\\ \hline
+\end{tabular}
+\label{tab:results}
+\caption{Optimal hyperparameter configurations}
+\end{figure}
+
+Due to the extreme resource consumption of grid search, we weren't able to do a run for this algorithm.
 
 \addcontentsline{toc}{section}{References}
 \printbibliography

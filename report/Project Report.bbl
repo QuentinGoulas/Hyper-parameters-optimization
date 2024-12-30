@@ -88,6 +88,79 @@
       \field{title}{{{BOHB}} : {{Robust}} and {{Efficient Hyperparameter Optimization}} at {{Scale}}}
       \field{year}{2018}
     \endentry
+    \entry{krizhevskyLearningMultiplyeLayers2009}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=c5e3a676e2ac1164b3afcd539c131fc9}{%
+           family={Krizhevsky},
+           familyi={K\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5e3a676e2ac1164b3afcd539c131fc9}
+      \strng{fullhash}{c5e3a676e2ac1164b3afcd539c131fc9}
+      \strng{fullhashraw}{c5e3a676e2ac1164b3afcd539c131fc9}
+      \strng{bibnamehash}{c5e3a676e2ac1164b3afcd539c131fc9}
+      \strng{authorbibnamehash}{c5e3a676e2ac1164b3afcd539c131fc9}
+      \strng{authornamehash}{c5e3a676e2ac1164b3afcd539c131fc9}
+      \strng{authorfullhash}{c5e3a676e2ac1164b3afcd539c131fc9}
+      \strng{authorfullhashraw}{c5e3a676e2ac1164b3afcd539c131fc9}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Learning {{Multiplye Layers}} of {{Features}} from {{Tiny Images}}}
+      \field{type}{Technical Report}
+      \field{year}{2009}
+      \field{pages}{60}
+      \range{pages}{1}
+    \endentry
+    \entry{lecunGradientbasedLearningApplied1998}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ac762f2592005edf6bad58f566967c6c}{%
+           family={Bottou},
+           familyi={B\bibinitperiod},
+           given={Léon},
+           giveni={L\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=844e183692f08a63f99285330fcf90cc}{%
+           family={Haffner},
+           familyi={H\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e4c6012409dc8dd9b2aa198a2059804}
+      \strng{fullhash}{c397b2e6efe8e5c6ca906410fc9e0ff9}
+      \strng{fullhashraw}{c397b2e6efe8e5c6ca906410fc9e0ff9}
+      \strng{bibnamehash}{9e4c6012409dc8dd9b2aa198a2059804}
+      \strng{authorbibnamehash}{9e4c6012409dc8dd9b2aa198a2059804}
+      \strng{authornamehash}{9e4c6012409dc8dd9b2aa198a2059804}
+      \strng{authorfullhash}{c397b2e6efe8e5c6ca906410fc9e0ff9}
+      \strng{authorfullhashraw}{c397b2e6efe8e5c6ca906410fc9e0ff9}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the {{IEEE}}}
+      \field{month}{11}
+      \field{title}{Gradient-Based Learning Applied to Document Recognition}
+      \field{volume}{86}
+      \field{year}{1998}
+      \field{pages}{2278\bibrangedash 2324}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.1109/5.726791
+      \endverb
+    \endentry
     \entry{yangHyperparameterOptimizationMachine2020}{article}{}{}
       \name{author}{2}{}{%
         {{hash=7f8a6256a19361714c6f6a011671f17d}{%
