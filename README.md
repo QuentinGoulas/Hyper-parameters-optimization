@@ -24,3 +24,8 @@ The tunable hyperparameters are :
 For now, only the LeNet5 architecture provided in LE_NET5_1.py is available as a seed for the optimizer.
 
 A standard use case is available in hpo.py at the bottom of the script
+
+The repository is organized as such :
+- all relevant python scripts are in the main directory
+- optimization console log histories are stored in the optim_logs folder
+- the project report source code is provided in the report subfolder
