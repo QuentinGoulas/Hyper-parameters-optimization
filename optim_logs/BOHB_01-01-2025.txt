@@ -1,0 +1,994 @@
+Method : BOHB
+Hyperparameters : F6 [125:325], C1_chan : [1:32], C3_chan : [1:32], C5_chan : [1:130]
+Min_epochs = 10, Max_epochs = 40
+N_iterations = 20
+
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 25/40.0, Loss: 0.5921, Time: 54.43s, Memory: 0.10GB
+Epoch 40/40.0, Loss: 0.6621, Time: 50.63s, Memory: 0.10GB
+Accuracy: 66.88%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: done with job (15, 0, 0), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: registered result for job (15, 0, 0) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (15, 0, 0) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (15, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416 finished
+DEBUG:hpbandster:job_id: (15, 0, 0)
+kwargs: {'config': {'C1_chan': 23, 'C3_chan': 24, 'C5_chan': 49, 'F6': 13}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.33120000000000005, 'info': {'validation accuracy': 0.6688, 'number of parameters': 44661}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (15, 0, 0) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (15, 0, 0) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/18 split
+Best loss for this budget:0.331200
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (15, 0, 0) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 15
+DEBUG:hpbandster:HBMASTER: trying submitting job (15, 0, 1) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (15, 0, 1) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (15, 0, 1)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (15, 0, 1) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (15, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: job (15, 0, 1) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: start processing job (15, 0, 1)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: kwargs: {'config': {'C1_chan': 9, 'C3_chan': 1, 'C5_chan': 12, 'F6': 109}, 'budget': 40.0, 'working_directory': '.'}
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/40.0, Loss: 2.1096, Time: 36.91s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/40.0, Loss: 1.8729, Time: 31.10s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 30/40.0, Loss: 0.5353, Time: 45.10s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/40.0, Loss: 1.7637, Time: 29.39s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 35/40.0, Loss: 0.4772, Time: 42.70s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 15/40.0, Loss: 1.7297, Time: 30.02s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 20/40.0, Loss: 1.7082, Time: 29.86s, Memory: 0.10GB
+Epoch 40/40.0, Loss: 0.4421, Time: 46.34s, Memory: 0.10GB
+Accuracy: 65.93%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: done with job (14, 0, 0), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: registered result for job (14, 0, 0) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (14, 0, 0) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (14, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756 finished
+DEBUG:hpbandster:job_id: (14, 0, 0)
+kwargs: {'config': {'C1_chan': 30, 'C3_chan': 24, 'C5_chan': 83, 'F6': 52}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.3407, 'info': {'validation accuracy': 0.6593, 'number of parameters': 73585}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (14, 0, 0) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (14, 0, 0) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/19 split
+Best loss for this budget:0.331200
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (14, 0, 0) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 16
+DEBUG:hpbandster:HBMASTER: trying submitting job (16, 0, 0) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (16, 0, 0) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (16, 0, 0)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (16, 0, 0) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (16, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 0) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: start processing job (16, 0, 0)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: kwargs: {'config': {'C1_chan': 29, 'C3_chan': 2, 'C5_chan': 1, 'F6': 188}, 'budget': 13.333333333333332, 'working_directory': '.'}
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/13.333333333333332, Loss: 2.3068, Time: 36.86s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 25/40.0, Loss: 1.6923, Time: 31.72s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/13.333333333333332, Loss: 2.3057, Time: 37.54s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 30/40.0, Loss: 1.6788, Time: 32.45s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/13.333333333333332, Loss: 2.3042, Time: 36.17s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 35/40.0, Loss: 1.6713, Time: 31.25s, Memory: 0.10GB
+Accuracy: 10.00%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: done with job (16, 0, 0), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: registered result for job (16, 0, 0) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 0) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756 finished
+DEBUG:hpbandster:job_id: (16, 0, 0)
+kwargs: {'config': {'C1_chan': 29, 'C3_chan': 2, 'C5_chan': 1, 'F6': 188}, 'budget': 13.333333333333332, 'working_directory': '.'}
+result: {'loss': 0.9, 'info': {'validation accuracy': 0.1, 'number of parameters': 4523}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (16, 0, 0) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (16, 0, 0) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (16, 0, 0) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 16
+DEBUG:hpbandster:HBMASTER: trying submitting job (16, 0, 1) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (16, 0, 1) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (16, 0, 1)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (16, 0, 1) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (16, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 1) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: start processing job (16, 0, 1)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: kwargs: {'config': {'C1_chan': 2, 'C3_chan': 11, 'C5_chan': 53, 'F6': 182}, 'budget': 13.333333333333332, 'working_directory': '.'}
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/13.333333333333332, Loss: 1.8995, Time: 32.67s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 40/40.0, Loss: 1.6637, Time: 32.33s, Memory: 0.10GB
+Accuracy: 38.71%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: done with job (15, 0, 1), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: registered result for job (15, 0, 1) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (15, 0, 1) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (15, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416 finished
+DEBUG:hpbandster:job_id: (15, 0, 1)
+kwargs: {'config': {'C1_chan': 9, 'C3_chan': 1, 'C5_chan': 12, 'F6': 109}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.6129, 'info': {'validation accuracy': 0.3871, 'number of parameters': 3289}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (15, 0, 1) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (15, 0, 1) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/20 split
+Best loss for this budget:0.331200
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (15, 0, 1) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 16
+DEBUG:hpbandster:HBMASTER: trying submitting job (16, 0, 2) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (16, 0, 2) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (16, 0, 2)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (16, 0, 2) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (16, 0, 2) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 2) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: start processing job (16, 0, 2)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: kwargs: {'config': {'C1_chan': 9, 'C3_chan': 19, 'C5_chan': 1, 'F6': 182}, 'budget': 13.333333333333332, 'working_directory': '.'}
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/13.333333333333332, Loss: 2.3077, Time: 32.83s, Memory: 0.10GB
+Epoch 5/13.333333333333332, Loss: 1.4390, Time: 32.26s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/13.333333333333332, Loss: 2.3063, Time: 32.22s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/13.333333333333332, Loss: 1.2744, Time: 32.03s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Accuracy: 52.32%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: done with job (16, 0, 1), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: registered result for job (16, 0, 1) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 1) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756 finished
+DEBUG:hpbandster:job_id: (16, 0, 1)
+kwargs: {'config': {'C1_chan': 2, 'C3_chan': 11, 'C5_chan': 53, 'F6': 182}, 'budget': 13.333333333333332, 'working_directory': '.'}
+result: {'loss': 0.4768, 'info': {'validation accuracy': 0.5232, 'number of parameters': 26899}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (16, 0, 1) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (16, 0, 1) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (16, 0, 1) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:best_vector: [0.9207535908147807, 0.9206071751663544, 0.6999415438954699, 0.07888442505720625], 0.0003647637270702805, 12938.67785182433, 4.719560356593133
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 17
+DEBUG:hpbandster:HBMASTER: trying submitting job (17, 0, 0) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (17, 0, 0) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (17, 0, 0)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (17, 0, 0) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (17, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: job (17, 0, 0) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: start processing job (17, 0, 0)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: kwargs: {'config': {'C1_chan': 24, 'C3_chan': 24, 'C5_chan': 46, 'F6': 26}, 'budget': 40.0, 'working_directory': '.'}
+Epoch 10/13.333333333333332, Loss: 2.3048, Time: 32.02s, Memory: 0.10GB
+Epoch 1/40.0, Loss: 1.8042, Time: 50.60s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Accuracy: 10.00%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: done with job (16, 0, 2), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: registered result for job (16, 0, 2) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 2) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 2) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416 finished
+DEBUG:hpbandster:job_id: (16, 0, 2)
+kwargs: {'config': {'C1_chan': 9, 'C3_chan': 19, 'C5_chan': 1, 'F6': 182}, 'budget': 13.333333333333332, 'working_directory': '.'}
+result: {'loss': 0.9, 'info': {'validation accuracy': 0.1, 'number of parameters': 7198}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (16, 0, 2) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (16, 0, 2) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (16, 0, 2) finished
+DEBUG:hpbandster:ITERATION: Advancing config (16, 0, 1) to next budget 40.000000
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 16
+DEBUG:hpbandster:HBMASTER: trying submitting job (16, 0, 1) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (16, 0, 1) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (16, 0, 1)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (16, 0, 1) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (16, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 1) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: start processing job (16, 0, 1)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: kwargs: {'config': {'C1_chan': 2, 'C3_chan': 11, 'C5_chan': 53, 'F6': 182}, 'budget': 40.0, 'working_directory': '.'}
+Epoch 1/40.0, Loss: 1.9509, Time: 32.11s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/40.0, Loss: 1.2709, Time: 35.42s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/40.0, Loss: 1.5168, Time: 32.49s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/40.0, Loss: 1.0318, Time: 35.33s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/40.0, Loss: 1.3313, Time: 31.46s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 15/40.0, Loss: 0.9266, Time: 35.18s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 15/40.0, Loss: 1.2368, Time: 32.33s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 20/40.0, Loss: 0.8602, Time: 36.35s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 20/40.0, Loss: 1.1749, Time: 30.76s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 25/40.0, Loss: 0.8097, Time: 35.20s, Memory: 0.10GB
+Epoch 25/40.0, Loss: 1.1247, Time: 31.99s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 30/40.0, Loss: 1.0874, Time: 31.07s, Memory: 0.10GB
+Epoch 30/40.0, Loss: 0.7704, Time: 35.03s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 35/40.0, Loss: 1.0522, Time: 31.95s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 35/40.0, Loss: 0.7331, Time: 35.64s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 40/40.0, Loss: 1.0269, Time: 31.91s, Memory: 0.10GB
+Accuracy: 54.39%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: done with job (16, 0, 1), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: registered result for job (16, 0, 1) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 1) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (16, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416 finished
+DEBUG:hpbandster:job_id: (16, 0, 1)
+kwargs: {'config': {'C1_chan': 2, 'C3_chan': 11, 'C5_chan': 53, 'F6': 182}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.45609999999999995, 'info': {'validation accuracy': 0.5439, 'number of parameters': 26899}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (16, 0, 1) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (16, 0, 1) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/21 split
+Best loss for this budget:0.331200
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (16, 0, 1) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 17
+DEBUG:hpbandster:HBMASTER: trying submitting job (17, 0, 1) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (17, 0, 1) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (17, 0, 1)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (17, 0, 1) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (17, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: job (17, 0, 1) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: start processing job (17, 0, 1)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: kwargs: {'config': {'C1_chan': 1, 'C3_chan': 24, 'C5_chan': 110, 'F6': 124}, 'budget': 40.0, 
+'working_directory': '.'}
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/40.0, Loss: 1.8862, Time: 31.68s, Memory: 0.10GB
+Epoch 40/40.0, Loss: 0.7004, Time: 39.78s, Memory: 0.10GB
+Accuracy: 66.01%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: done with job (17, 0, 0), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: registered result for job (17, 0, 0) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (17, 0, 0) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (17, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756 finished
+DEBUG:hpbandster:job_id: (17, 0, 0)
+kwargs: {'config': {'C1_chan': 24, 'C3_chan': 24, 'C5_chan': 46, 'F6': 26}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.3399, 'info': {'validation accuracy': 0.6601, 'number of parameters': 44186}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (17, 0, 0) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (17, 0, 0) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/22 split
+Best loss for this budget:0.331200
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (17, 0, 0) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:best_vector: [0.9181059609868961, 0.9103066408862109, 0.6476336645966958, 0.06425815245158495], 0.0006550777686478667, 5774.929910235887, 3.78302819969515
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 18
+DEBUG:hpbandster:HBMASTER: trying submitting job (18, 0, 0) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (18, 0, 0) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (18, 0, 0)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (18, 0, 0) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (18, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 0) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: start processing job (18, 0, 0)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: kwargs: {'config': {'C1_chan': 24, 'C3_chan': 23, 'C5_chan': 35, 'F6': 21}, 'budget': 13.333333333333332, 'working_directory': '.'}
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/13.333333333333332, Loss: 1.8359, Time: 38.64s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/40.0, Loss: 1.3695, Time: 30.24s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/13.333333333333332, Loss: 1.2990, Time: 38.40s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/40.0, Loss: 1.1332, Time: 29.93s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/13.333333333333332, Loss: 1.0916, Time: 39.10s, Memory: 0.10GB
+Epoch 15/40.0, Loss: 0.9816, Time: 30.20s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Accuracy: 62.08%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: done with job (18, 0, 0), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: registered result for job (18, 0, 0) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 0) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756 finished
+DEBUG:hpbandster:job_id: (18, 0, 0)
+kwargs: {'config': {'C1_chan': 24, 'C3_chan': 23, 'C5_chan': 35, 'F6': 21}, 'budget': 13.333333333333332, 'working_directory': '.'}
+result: {'loss': 0.3792, 'info': {'validation accuracy': 0.6208, 'number of parameters': 35583}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (18, 0, 0) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (18, 0, 0) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (18, 0, 0) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 18
+DEBUG:hpbandster:HBMASTER: trying submitting job (18, 0, 1) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (18, 0, 1) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (18, 0, 1)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (18, 0, 1) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (18, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 1) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: start processing job (18, 0, 1)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: kwargs: {'config': {'C1_chan': 14, 'C3_chan': 3, 'C5_chan': 164, 'F6': 234}, 'budget': 13.333333333333332, 'working_directory': '.'}
+Epoch 1/13.333333333333332, Loss: 1.8003, Time: 33.08s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 20/40.0, Loss: 0.8651, Time: 32.18s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/13.333333333333332, Loss: 1.4161, Time: 32.41s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 25/40.0, Loss: 0.7672, Time: 31.66s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/13.333333333333332, Loss: 1.2095, Time: 31.92s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 30/40.0, Loss: 0.6763, Time: 32.24s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Accuracy: 53.92%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: done with job (18, 0, 1), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: registered result for job (18, 0, 1) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 1) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756 finished
+DEBUG:hpbandster:job_id: (18, 0, 1)
+kwargs: {'config': {'C1_chan': 14, 'C3_chan': 3, 'C5_chan': 164, 'F6': 234}, 'budget': 13.333333333333332, 'working_directory': '.'}
+result: {'loss': 0.4608, 'info': {'validation accuracy': 0.5392, 'number of parameters': 54841}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (18, 0, 1) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (18, 0, 1) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (18, 0, 1) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 18
+DEBUG:hpbandster:HBMASTER: trying submitting job (18, 0, 2) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (18, 0, 2) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (18, 0, 2)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (18, 0, 2) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (18, 0, 2) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 2) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: start processing job (18, 0, 2)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: kwargs: {'config': {'C1_chan': 13, 'C3_chan': 4, 'C5_chan': 172, 'F6': 299}, 'budget': 13.333333333333332, 'working_directory': '.'}
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/13.333333333333332, Loss: 1.8713, Time: 34.83s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 35/40.0, Loss: 0.5992, Time: 32.18s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/13.333333333333332, Loss: 1.4397, Time: 32.37s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 40/40.0, Loss: 0.5316, Time: 32.42s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Accuracy: 53.29%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: done with job (17, 0, 1), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: registered result for job (17, 0, 1) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (17, 0, 1) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (17, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416 finished
+DEBUG:hpbandster:job_id: (17, 0, 1)
+kwargs: {'config': {'C1_chan': 1, 'C3_chan': 24, 'C5_chan': 110, 'F6': 124}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.46709999999999996, 'info': {'validation accuracy': 0.5329, 'number of parameters': 81774}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (17, 0, 1) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (17, 0, 1) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/22 split
+Best loss for this budget:0.331200
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (17, 0, 1) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 19
+DEBUG:hpbandster:HBMASTER: trying submitting job (19, 0, 0) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (19, 0, 0) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (19, 0, 0)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (19, 0, 0) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (19, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: job (19, 0, 0) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: start processing job (19, 0, 0)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: kwargs: {'config': {'C1_chan': 7, 'C3_chan': 10, 'C5_chan': 30, 'F6': 162}, 'budget': 40.0, 'working_directory': '.'}
+Epoch 1/40.0, Loss: 1.8639, Time: 32.68s, Memory: 0.10GB
+Epoch 10/13.333333333333332, Loss: 1.2579, Time: 34.38s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Accuracy: 52.80%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: done with job (18, 0, 2), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: registered result for job (18, 0, 2) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 2) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 2) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756 finished
+DEBUG:hpbandster:job_id: (18, 0, 2)
+kwargs: {'config': {'C1_chan': 13, 'C3_chan': 4, 'C5_chan': 172, 'F6': 299}, 'budget': 13.333333333333332, 'working_directory': '.'}
+result: {'loss': 0.472, 'info': {'validation accuracy': 0.528, 'number of parameters': 73741}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (18, 0, 2) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (18, 0, 2) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (18, 0, 2) finished
+DEBUG:hpbandster:ITERATION: Advancing config (18, 0, 0) to next budget 40.000000
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 18
+DEBUG:hpbandster:HBMASTER: trying submitting job (18, 0, 0) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (18, 0, 0) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (18, 0, 0)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (18, 0, 0) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (18, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 0) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: start processing job (18, 0, 0)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: kwargs: {'config': {'C1_chan': 24, 'C3_chan': 23, 'C5_chan': 35, 'F6': 21}, 'budget': 40.0, 'working_directory': '.'}
+Epoch 5/40.0, Loss: 1.4032, Time: 31.63s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/40.0, Loss: 1.8425, Time: 43.39s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/40.0, Loss: 1.2212, Time: 31.61s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 5/40.0, Loss: 1.3026, Time: 46.28s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 15/40.0, Loss: 1.0983, Time: 31.97s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 10/40.0, Loss: 1.0634, Time: 44.02s, Memory: 0.10GB
+Epoch 20/40.0, Loss: 1.0258, Time: 31.42s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 25/40.0, Loss: 0.9757, Time: 31.92s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 15/40.0, Loss: 0.9530, Time: 43.74s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 30/40.0, Loss: 0.9383, Time: 31.08s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 20/40.0, Loss: 0.8872, Time: 46.48s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 35/40.0, Loss: 0.9185, Time: 32.13s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 40/40.0, Loss: 0.8936, Time: 30.96s, Memory: 0.10GB
+Epoch 25/40.0, Loss: 0.8430, Time: 43.31s, Memory: 0.10GB
+Accuracy: 63.30%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: done with job (19, 0, 0), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: registered result for job (19, 0, 0) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (19, 0, 0) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (19, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416 finished
+DEBUG:hpbandster:job_id: (19, 0, 0)
+kwargs: {'config': {'C1_chan': 7, 'C3_chan': 10, 'C5_chan': 30, 'F6': 162}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.367, 'info': {'validation accuracy': 0.633, 'number of parameters': 16124}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (19, 0, 0) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (19, 0, 0) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/23 split
+Best loss for this budget:0.331200
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (19, 0, 0) finished
+DEBUG:hpbandster:start sampling a new configuration.
+DEBUG:hpbandster:best_vector: [0.9470433562420179, 0.9200302519719533, 0.7376803672846647, 0.08298094638666773], 0.00023939478354430827, 24511.259175239844, 5.867867584654983
+DEBUG:hpbandster:done sampling a new configuration.
+DEBUG:hpbandster:HBMASTER: schedule new run for iteration 19
+DEBUG:hpbandster:HBMASTER: trying submitting job (19, 0, 1) to dispatcher
+DEBUG:hpbandster:HBMASTER: submitting job (19, 0, 1) to dispatcher
+DEBUG:hpbandster:DISPATCHER: trying to submit job (19, 0, 1)
+DEBUG:hpbandster:DISPATCHER: trying to notify the job_runner thread.
+DEBUG:hpbandster:HBMASTER: job (19, 0, 1) submitted to dispatcher
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:HBMASTER: running jobs: 2, queue sizes: (1, 2) -> wait
+DEBUG:hpbandster:DISPATCHER: starting job (19, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: job (19, 0, 1) dispatched on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 0 -> waiting!
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: start processing job (19, 0, 1)
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: args: ()
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: kwargs: {'config': {'C1_chan': 27, 'C3_chan': 24, 'C5_chan': 57, 'F6': 27}, 'budget': 40.0, 'working_directory': '.'}
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 1/40.0, Loss: 1.7685, Time: 64.17s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 30/40.0, Loss: 0.8079, Time: 49.72s, Memory: 0.10GB
+Epoch 5/40.0, Loss: 1.2070, Time: 52.78s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 35/40.0, Loss: 0.7754, Time: 49.99s, Memory: 0.10GB
+Epoch 10/40.0, Loss: 0.9862, Time: 53.50s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 40/40.0, Loss: 0.7504, Time: 55.64s, Memory: 0.10GB
+Accuracy: 67.03%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: done with job (18, 0, 0), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: registered result for job (18, 0, 0) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 0) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (18, 0, 0) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756 finished
+DEBUG:hpbandster:job_id: (18, 0, 0)
+kwargs: {'config': {'C1_chan': 24, 'C3_chan': 23, 'C5_chan': 35, 'F6': 21}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.3297, 'info': {'validation accuracy': 0.6703, 'number of parameters': 35583}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (18, 0, 0) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (18, 0, 0) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 1 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/24 split
+Best loss for this budget:0.329700
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (18, 0, 0) finished
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 15/40.0, Loss: 0.8678, Time: 32.17s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 20/40.0, Loss: 0.7954, Time: 26.97s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 25/40.0, Loss: 0.7376, Time: 27.16s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 30/40.0, Loss: 0.6970, Time: 27.01s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 35/40.0, Loss: 0.6565, Time: 27.10s, Memory: 0.10GB
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+DEBUG:hpbandster:DISPATCHER: Starting worker discovery
+DEBUG:hpbandster:DISPATCHER: Found 2 potential workers, 2 currently in the pool.
+DEBUG:hpbandster:DISPATCHER: Finished worker discovery
+Epoch 40/40.0, Loss: 0.6221, Time: 27.16s, Memory: 0.10GB
+Accuracy: 66.40%
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: done with job (19, 0, 1), trying to register it.
+INFO:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: registered result for job (19, 0, 1) with dispatcher
+DEBUG:hpbandster:DISPATCHER: job (19, 0, 1) finished
+DEBUG:hpbandster:DISPATCHER: register_result: lock acquired
+DEBUG:hpbandster:DISPATCHER: job (19, 0, 1) on hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416 finished
+DEBUG:hpbandster:job_id: (19, 0, 1)
+kwargs: {'config': {'C1_chan': 27, 'C3_chan': 24, 'C5_chan': 57, 'F6': 27}, 'budget': 40.0, 'working_directory': '.'}
+result: {'loss': 0.33599999999999997, 'info': {'validation accuracy': 0.664, 'number of parameters': 53029}}
+exception: None
+
+DEBUG:hpbandster:job_callback for (19, 0, 1) started
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:job_callback for (19, 0, 1) got condition
+DEBUG:hpbandster:DISPATCHER: jobs to submit = 0, number of idle workers = 2 -> waiting!
+DEBUG:hpbandster:done building a new model for budget 40.000000 based on 5/25 split
+Best loss for this budget:0.329700
+
+
+
+
+
+DEBUG:hpbandster:HBMASTER: Trying to run another job!
+DEBUG:hpbandster:job_callback for (19, 0, 1) finished
+BOHB optimization finished
+DEBUG:hpbandster:HBMASTER: shutdown initiated, shutdown_workers = True
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.17756:WORKER: shutting down now!
+DEBUG:hpbandster.run_example.worker.DESKTOP-I1CUPJH.26416:WORKER: shutting down now!
+INFO:hpbandster:DISPATCHER: Dispatcher shutting down
+DEBUG:hpbandster:DISPATCHER: Trying to submit another job.
+DEBUG:hpbandster:DISPATCHER: job_runner shutting down
+DEBUG:hpbandster:DISPATCHER: discover_workers shutting down
+DEBUG:hpbandster:DISPATCHER: 'discover_worker' thread exited
+DEBUG:hpbandster:DISPATCHER: 'job_runner' thread exited
+INFO:hpbandster:DISPATCHER: shut down complete
+Optimizer object shutdown
+Analyzing results ...
+Printing results :
+Best found configuration: {'C1_chan': 24, 'C3_chan': 23, 'C5_chan': 35, 'F6': 21}
+A total of 50 unique configurations where sampled.
+A total of 60 runs where executed.
+Total budget corresponds to 40.0 full function evaluations.
+Total budget corresponds to 40.0 full function evaluations.
+The run took  33661.6 seconds to complete.

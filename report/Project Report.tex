@@ -85,6 +85,8 @@ premises, a presentation of the considered algorithms for this project, a
 description of the deployed system architecture and finall a discussion on the
 obtained results.
 
+The source code for this project can be found at this \href{https://github.com/QuentinGoulas/Hyper-parameters-optimization.git}{repository [link]}
+
 \section{Project introduction}
 In the context of deep learning, hyperparameters are model parameters that
 aren't learnt by the model yet impact the learning capacity of the model.
@@ -322,16 +324,18 @@ Running the algorithms returns us the following results :
 \cline{2-5}
 & F6 & C1 & C3 & C5 \\
 \hline
-Particle Swarm Optimization & $ 324 $ & $26$ & $19$ & $40$ & $20\times 5\times 40$ & $66.8\%$\\ \hline
-Grid Search & - & - & - & - & - & - \\ \hline
+PSO & $ 324 $ & $26$ & $19$ & $40$ & $20\times 5\times 40$ & $66.8\%$\\ \hline
+BOHB & $21$ & $24$ & $23$ & $35$ & $40\times40$ & $67.0\%$ \\ \hline
+Grid Search & - & - & - & - & $200\times32\times32\times90\times40$ & - \\ \hline
+Random Search & - & - & - & - & $p\times200\times32\times32\times90\times40$ & - \\ \hline
 \end{tabular}
 \label{tab:results}
 \caption{Optimal hyperparameter configurations}
 \end{figure}
 
-Due to the extreme resource consumption of grid search, we weren't able to do a run for this algorithm.
+Due to the extreme resource consumption of grid search and random search, we weren't able to do full runs for these algorithms.
 
-From these results, we observe that both PSO and BOHB provide good solutions for hyperparameter optimization, with reduced costs compared to Grid Search or Random Search. However, we believe this experiment on its own isn't sufficient to confidently compare BOHB and PSO in terms of performance and reliability.
+From these results, we observe that both PSO and BOHB provide good solutions for hyperparameter optimization, with reduced costs compared to Grid Search or Random Search. Although BOHB seems to have an edge on PSO in terms of convergence speed as well as reliabilty, we believe this experiment on its own isn't sufficient to confidently compare BOHB and PSO in terms of performance and reliability.
 
 \addcontentsline{toc}{section}{References}
 \printbibliography
