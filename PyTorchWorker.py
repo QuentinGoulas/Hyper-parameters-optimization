@@ -158,11 +158,11 @@ class PyTorchWorker(Worker):
                 #     cond = CS.EqualsCondition(sgd_momentum, optimizer, 'SGD')
                 #     cs.add(cond)
 
-                num_dense =  CSH.UniformIntegerHyperparameter('F6', lower=1, upper=320, default_value=84)
+                num_dense =  CSH.UniformIntegerHyperparameter('F6', lower=125, upper=325, default_value=125)
 
                 num_filters_1 = CSH.UniformIntegerHyperparameter('C1_chan', lower=1, upper=32, default_value=6, log=True)
                 num_filters_2 = CSH.UniformIntegerHyperparameter('C3_chan', lower=1, upper=32, default_value=16, log=True)
-                num_filters_3 = CSH.UniformIntegerHyperparameter('C5_chan', lower=1, upper=240, default_value=120, log=True)
+                num_filters_3 = CSH.UniformIntegerHyperparameter('C5_chan', lower=40, upper=130, default_value=120, log=True)
 
 
                 cs.add([num_dense, num_filters_1, num_filters_2, num_filters_3])

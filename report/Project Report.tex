@@ -277,7 +277,7 @@ We use the following parameters for each algorithm :
 \begin{tabular}{|c|c|}
 \hline Algorithm & Parameters \\
 \hline Grid search & $\emptyset$ \\
-Random search & p = 0.5 \\
+Random search & $p = 5.4\cdot 10^{-6}$ \\
 Particle Swarm Optimization & $S=5,\phi_l = 2,\ \phi_g = 2,\ w=0.5$\\
 BOHB & $min_{epochs} = 10,\ max_{epochs} = 40,\ N_{iterations} = 20$\\
 \hline
@@ -286,7 +286,7 @@ BOHB & $min_{epochs} = 10,\ max_{epochs} = 40,\ N_{iterations} = 20$\\
 \caption{Algorithm parameters}
 \end{figure}
 
-Unless indicated otherwise, the number of epochs for every trainings is set at 40.
+Unless indicated otherwise, the number of epochs for every trainings is set at 40. The probability parameter $p$ of Random Search is chosen so as to consume a similar number of epochs as PSO and BOHB, which is around 4000 epochs per optimisation run.
 
 For every method, we consider the following hyperparameter space to search :
 
@@ -311,7 +311,7 @@ Number of C5 filters & [40:130] \\
 
 We select this hyperparameter space by using the initial hyperparameter configuration used in LeNet-5 and explore neighbouring configurations to it.
 
-Although the implemented algorithms enable increased efficiency compared to a babysitting or grid search approach, each optimization run took considerable amounts of time, allowing minimal repetitions to validate the results, leaving significant space to interpretation of the results and little quantitative results. We still present the results in the following section.
+Although the implemented algorithms enable increased efficiency compared to a babysitting or grid search approach, each optimization run took important amounts of time, allowing minimal repetitions to validate the results, leaving significant space to interpretation of the results and little quantitative results. We still present the results in the following section.
 
 \section{Results}
 
@@ -325,17 +325,17 @@ Running the algorithms returns us the following results :
 & F6 & C1 & C3 & C5 \\
 \hline
 PSO & $ 324 $ & $26$ & $19$ & $40$ & $20\times 5\times 40$ & $66.8\%$\\ \hline
-BOHB & $21$ & $24$ & $23$ & $35$ & $40\times40$ & $67.0\%$ \\ \hline
+BOHB & $318$ & $30$ & $15$ & $44$ & $40\times40$ & $66.5\%$ \\ \hline
 Grid Search & - & - & - & - & $200\times32\times32\times90\times40$ & - \\ \hline
-Random Search & - & - & - & - & $p\times200\times32\times32\times90\times40$ & - \\ \hline
+Random Search & 224 & 27 & 30 & 40 & $p\times200\times32\times32\times90\times40$ & 67.83\% \\ \hline
 \end{tabular}
 \label{tab:results}
 \caption{Optimal hyperparameter configurations}
 \end{figure}
 
-Due to the extreme resource consumption of grid search and random search, we weren't able to do full runs for these algorithms.
+Due to the extreme resource consumption of grid search ($\sim 740\ 000\ 000$ epochs and $\sim 6\ 000\ 000$ compute hours), we weren't able to do a full run for this algorithm.
 
-From these results, we observe that both PSO and BOHB provide good solutions for hyperparameter optimization, with reduced costs compared to Grid Search or Random Search. Although BOHB seems to have an edge on PSO in terms of convergence speed as well as reliabilty, we believe this experiment on its own isn't sufficient to confidently compare BOHB and PSO in terms of performance and reliability.
+From these results, we observe that both PSO and BOHB provide good solutions for hyperparameter optimization, with significantly reduced costs compared to Grid Search or Random Search. From this experiment, there is no clear way of knowing which of BOHB or PSO is best to solve this specific hyperparameter problem (whether ``best'' is defined by convergence speed or reliability).
 
 \addcontentsline{toc}{section}{References}
 \printbibliography
