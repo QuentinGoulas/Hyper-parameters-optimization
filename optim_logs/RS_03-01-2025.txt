@@ -1,0 +1,1012 @@
+Method : Random Search
+Hyperparameters : F6 [125:325], C1_chan : [1:32], C3_chan : [1:32], C5_chan : [40:130]
+p = 5.4e-6
+Epochs = 40
+
+Epoch 1/40, Loss: 1.8219, Time: 24.68s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3653, Time: 24.14s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.1582, Time: 24.11s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0469, Time: 24.13s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.9701, Time: 24.57s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9121, Time: 24.51s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8651, Time: 24.34s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8225, Time: 24.27s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.7887, Time: 24.26s, Memory: 0.08GB
+Accuracy: 60.37%
+Testing hyperparameter config : {'F6': 224, 'C1_chan': 27, 'C3_chan': 30, 'C5_chan': 40}
+
+Epoch 1/40, Loss: 1.7481, Time: 26.06s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0994, Time: 25.12s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8908, Time: 24.76s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7891, Time: 24.83s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7216, Time: 25.12s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6686, Time: 24.98s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6230, Time: 25.11s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5814, Time: 25.02s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5489, Time: 25.55s, Memory: 0.08GB
+Accuracy: 67.83%
+Testing hyperparameter config : {'F6': 292, 'C1_chan': 23, 'C3_chan': 9, 'C5_chan': 117}
+
+Epoch 1/40, Loss: 1.7337, Time: 25.54s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1466, Time: 24.67s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9114, Time: 25.00s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7765, Time: 24.49s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6737, Time: 24.74s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5777, Time: 24.46s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5008, Time: 24.70s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4281, Time: 24.67s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3734, Time: 24.78s, Memory: 0.08GB
+Accuracy: 63.26%
+Testing hyperparameter config : {'F6': 322, 'C1_chan': 24, 'C3_chan': 4, 'C5_chan': 66}
+
+Epoch 1/40, Loss: 1.8831, Time: 25.23s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.4438, Time: 24.57s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.2784, Time: 24.38s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.1690, Time: 24.73s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.0878, Time: 24.65s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.0318, Time: 24.53s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.9785, Time: 24.51s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.9321, Time: 24.54s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.8998, Time: 24.29s, Memory: 0.08GB
+Accuracy: 56.73%
+Testing hyperparameter config : {'F6': 222, 'C1_chan': 22, 'C3_chan': 10, 'C5_chan': 107}
+
+Epoch 1/40, Loss: 1.8084, Time: 25.20s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2267, Time: 24.67s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9709, Time: 24.38s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8296, Time: 24.72s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7252, Time: 24.61s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6483, Time: 24.72s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5907, Time: 24.66s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5349, Time: 24.74s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.4865, Time: 24.89s, Memory: 0.08GB
+Accuracy: 64.61%
+Testing hyperparameter config : {'F6': 224, 'C1_chan': 21, 'C3_chan': 11, 'C5_chan': 65}
+
+Epoch 1/40, Loss: 1.7612, Time: 25.44s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2636, Time: 24.67s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0409, Time: 24.67s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9196, Time: 24.77s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8413, Time: 24.59s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7842, Time: 24.65s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.7375, Time: 24.62s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.6944, Time: 24.17s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.6627, Time: 24.99s, Memory: 0.08GB
+Accuracy: 63.92%
+Testing hyperparameter config : {'F6': 253, 'C1_chan': 6, 'C3_chan': 11, 'C5_chan': 52}
+
+Epoch 1/40, Loss: 1.8924, Time: 24.72s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.4112, Time: 24.09s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.2122, Time: 24.13s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0958, Time: 24.11s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.0126, Time: 24.35s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9481, Time: 23.92s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8944, Time: 24.14s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8522, Time: 24.30s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.8163, Time: 24.01s, Memory: 0.08GB
+Accuracy: 59.51%
+Testing hyperparameter config : {'F6': 211, 'C1_chan': 9, 'C3_chan': 21, 'C5_chan': 126}
+
+Epoch 1/40, Loss: 1.7739, Time: 25.54s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1711, Time: 24.43s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8815, Time: 24.64s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6972, Time: 24.76s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5428, Time: 24.41s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4245, Time: 24.54s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3178, Time: 24.87s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.2521, Time: 24.71s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.1965, Time: 24.58s, Memory: 0.08GB
+Accuracy: 60.12%
+Testing hyperparameter config : {'F6': 286, 'C1_chan': 13, 'C3_chan': 29, 'C5_chan': 108}
+
+Epoch 1/40, Loss: 1.7458, Time: 25.04s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0544, Time: 27.98s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.7704, Time: 24.78s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.5852, Time: 24.84s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.4301, Time: 24.72s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.3110, Time: 25.16s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.2209, Time: 24.63s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.1702, Time: 24.79s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.1404, Time: 25.32s, Memory: 0.08GB
+Accuracy: 63.83%
+Testing hyperparameter config : {'F6': 322, 'C1_chan': 13, 'C3_chan': 27, 'C5_chan': 43}
+
+Epoch 1/40, Loss: 1.7502, Time: 25.16s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1836, Time: 24.88s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9337, Time: 24.96s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8076, Time: 24.51s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7242, Time: 25.27s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6667, Time: 24.55s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6112, Time: 24.74s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5687, Time: 24.58s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5277, Time: 24.43s, Memory: 0.08GB
+Accuracy: 65.62%
+Testing hyperparameter config : {'F6': 230, 'C1_chan': 3, 'C3_chan': 17, 'C5_chan': 103}
+
+Epoch 1/40, Loss: 1.8514, Time: 24.74s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3149, Time: 24.51s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0861, Time: 24.27s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9319, Time: 24.45s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8103, Time: 24.43s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7049, Time: 24.73s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6116, Time: 24.16s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5306, Time: 24.30s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.4573, Time: 23.64s, Memory: 0.08GB
+Accuracy: 53.97%
+Testing hyperparameter config : {'F6': 263, 'C1_chan': 3, 'C3_chan': 3, 'C5_chan': 102}
+
+Epoch 1/40, Loss: 1.9666, Time: 24.31s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.5775, Time: 24.09s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.3993, Time: 24.22s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.2787, Time: 24.23s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.1842, Time: 26.04s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.1085, Time: 24.18s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.0475, Time: 24.16s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.9994, Time: 23.98s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.9538, Time: 24.02s, Memory: 0.08GB
+Accuracy: 49.64%
+Testing hyperparameter config : {'F6': 213, 'C1_chan': 21, 'C3_chan': 9, 'C5_chan': 108}
+
+Epoch 1/40, Loss: 1.7762, Time: 25.23s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2845, Time: 24.92s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0317, Time: 24.89s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8940, Time: 24.55s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8000, Time: 24.87s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7269, Time: 24.93s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6627, Time: 24.65s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.6132, Time: 24.73s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5650, Time: 24.74s, Memory: 0.08GB
+Accuracy: 63.50%
+Testing hyperparameter config : {'F6': 185, 'C1_chan': 2, 'C3_chan': 5, 'C5_chan': 95}
+
+Epoch 1/40, Loss: 1.9153, Time: 24.32s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.5449, Time: 24.13s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.3862, Time: 23.72s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.2882, Time: 24.05s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.2102, Time: 24.24s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.1488, Time: 23.87s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.0988, Time: 24.06s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.0529, Time: 23.75s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.0151, Time: 23.90s, Memory: 0.08GB
+Accuracy: 52.25%
+Testing hyperparameter config : {'F6': 304, 'C1_chan': 29, 'C3_chan': 5, 'C5_chan': 110}
+
+Epoch 1/40, Loss: 1.7851, Time: 25.25s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2866, Time: 24.67s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0688, Time: 24.68s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9391, Time: 24.70s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8390, Time: 24.59s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7571, Time: 24.70s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6851, Time: 24.72s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.6231, Time: 24.52s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5762, Time: 25.17s, Memory: 0.08GB
+Accuracy: 59.23%
+Testing hyperparameter config : {'F6': 268, 'C1_chan': 32, 'C3_chan': 12, 'C5_chan': 64}
+
+Epoch 1/40, Loss: 1.7506, Time: 25.16s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1658, Time: 25.01s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9728, Time: 24.67s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8563, Time: 24.18s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7784, Time: 24.94s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7184, Time: 25.01s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6689, Time: 24.43s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.6268, Time: 24.90s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5902, Time: 24.66s, Memory: 0.08GB
+Accuracy: 65.50%
+Testing hyperparameter config : {'F6': 226, 'C1_chan': 12, 'C3_chan': 7, 'C5_chan': 116}
+
+Epoch 1/40, Loss: 1.7804, Time: 25.03s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3023, Time: 24.31s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0460, Time: 24.48s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8959, Time: 23.85s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7898, Time: 24.20s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7090, Time: 24.03s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6372, Time: 24.54s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5768, Time: 24.41s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5318, Time: 24.44s, Memory: 0.08GB
+Accuracy: 62.21%
+Testing hyperparameter config : {'F6': 301, 'C1_chan': 1, 'C3_chan': 31, 'C5_chan': 115}
+
+Epoch 1/40, Loss: 1.8659, Time: 24.44s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3293, Time: 23.94s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0911, Time: 24.28s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9250, Time: 24.04s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7767, Time: 24.19s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6420, Time: 24.15s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5335, Time: 24.11s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4364, Time: 24.01s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3631, Time: 23.99s, Memory: 0.08GB
+Accuracy: 52.21%
+Testing hyperparameter config : {'F6': 297, 'C1_chan': 19, 'C3_chan': 14, 'C5_chan': 66}
+
+Epoch 1/40, Loss: 1.7637, Time: 25.24s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1710, Time: 24.64s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9665, Time: 24.51s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8479, Time: 24.94s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7524, Time: 24.72s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6826, Time: 24.66s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6192, Time: 24.69s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5606, Time: 25.22s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5218, Time: 24.63s, Memory: 0.08GB
+Accuracy: 64.25%
+Testing hyperparameter config : {'F6': 305, 'C1_chan': 18, 'C3_chan': 13, 'C5_chan': 93}
+
+Epoch 1/40, Loss: 1.7360, Time: 25.38s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1424, Time: 24.73s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8819, Time: 24.74s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7442, Time: 24.94s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6356, Time: 24.97s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5425, Time: 25.17s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4600, Time: 24.75s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3992, Time: 24.92s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3433, Time: 24.63s, Memory: 0.08GB
+Accuracy: 63.74%
+Testing hyperparameter config : {'F6': 275, 'C1_chan': 13, 'C3_chan': 32, 'C5_chan': 118}
+
+Epoch 1/40, Loss: 1.7323, Time: 25.47s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0318, Time: 25.15s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.7306, Time: 25.00s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.5280, Time: 24.87s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.3664, Time: 24.69s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.2542, Time: 24.78s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.1737, Time: 24.94s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.1396, Time: 24.83s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.1155, Time: 24.69s, Memory: 0.08GB
+Accuracy: 63.25%
+Testing hyperparameter config : {'F6': 284, 'C1_chan': 13, 'C3_chan': 1, 'C5_chan': 107}
+
+Epoch 1/40, Loss: 1.9576, Time: 24.60s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.7099, Time: 24.00s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.6243, Time: 23.92s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.5631, Time: 23.85s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.5095, Time: 23.74s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.4664, Time: 23.76s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.4225, Time: 24.05s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.3862, Time: 24.64s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.3491, Time: 23.88s, Memory: 0.08GB
+Accuracy: 42.08%
+Testing hyperparameter config : {'F6': 307, 'C1_chan': 32, 'C3_chan': 2, 'C5_chan': 118}
+
+Epoch 1/40, Loss: 1.9115, Time: 24.86s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.4879, Time: 24.70s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.3194, Time: 24.66s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.2034, Time: 25.09s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.1138, Time: 24.68s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.0329, Time: 24.70s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.9555, Time: 24.66s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.9000, Time: 24.97s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.8473, Time: 24.66s, Memory: 0.08GB
+Accuracy: 50.59%
+Testing hyperparameter config : {'F6': 272, 'C1_chan': 2, 'C3_chan': 28, 'C5_chan': 46}
+
+Epoch 1/40, Loss: 1.8203, Time: 24.33s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3362, Time: 23.94s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.1526, Time: 23.94s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0505, Time: 23.82s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.9793, Time: 24.00s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9246, Time: 23.66s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8766, Time: 23.81s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8373, Time: 24.08s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.8015, Time: 23.45s, Memory: 0.08GB
+Accuracy: 57.18%
+Testing hyperparameter config : {'F6': 264, 'C1_chan': 30, 'C3_chan': 24, 'C5_chan': 82}
+
+Epoch 1/40, Loss: 1.6947, Time: 26.94s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0277, Time: 26.08s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.7868, Time: 26.50s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6441, Time: 26.64s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5424, Time: 26.41s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4511, Time: 26.24s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3709, Time: 26.56s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3107, Time: 26.31s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2529, Time: 28.27s, Memory: 0.08GB
+Accuracy: 65.75%
+Testing hyperparameter config : {'F6': 169, 'C1_chan': 2, 'C3_chan': 21, 'C5_chan': 64}
+
+Epoch 1/40, Loss: 1.8946, Time: 26.94s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.4069, Time: 24.03s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.1995, Time: 23.95s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0648, Time: 23.54s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.9666, Time: 24.00s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.8868, Time: 23.89s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8215, Time: 23.76s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.7684, Time: 23.91s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.7201, Time: 23.65s, Memory: 0.08GB
+Accuracy: 54.21%
+Testing hyperparameter config : {'F6': 204, 'C1_chan': 23, 'C3_chan': 20, 'C5_chan': 107}
+
+Epoch 1/40, Loss: 1.7167, Time: 26.08s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0648, Time: 24.89s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8319, Time: 25.15s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6769, Time: 25.37s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5597, Time: 25.35s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4594, Time: 25.24s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3807, Time: 25.20s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3048, Time: 24.96s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2564, Time: 25.18s, Memory: 0.08GB
+Accuracy: 63.54%
+Testing hyperparameter config : {'F6': 138, 'C1_chan': 27, 'C3_chan': 17, 'C5_chan': 86}
+
+Epoch 1/40, Loss: 1.7287, Time: 25.34s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1277, Time: 24.76s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8931, Time: 24.77s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7583, Time: 24.64s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6578, Time: 24.71s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5791, Time: 24.90s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5147, Time: 25.33s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4544, Time: 25.50s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.4012, Time: 25.13s, Memory: 0.08GB
+Accuracy: 64.10%
+Testing hyperparameter config : {'F6': 164, 'C1_chan': 13, 'C3_chan': 27, 'C5_chan': 58}
+
+Epoch 1/40, Loss: 1.7083, Time: 25.06s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1006, Time: 24.55s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8670, Time: 24.57s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7376, Time: 24.64s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6363, Time: 24.65s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5619, Time: 25.01s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4912, Time: 24.69s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4379, Time: 24.88s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3864, Time: 24.56s, Memory: 0.08GB
+Accuracy: 64.01%
+Testing hyperparameter config : {'F6': 261, 'C1_chan': 12, 'C3_chan': 13, 'C5_chan': 106}
+
+Epoch 1/40, Loss: 1.7758, Time: 25.03s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2196, Time: 24.57s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9611, Time: 24.32s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7886, Time: 24.68s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6605, Time: 24.40s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5532, Time: 24.35s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4680, Time: 24.53s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3933, Time: 24.67s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3352, Time: 24.45s, Memory: 0.08GB
+Accuracy: 62.28%
+Testing hyperparameter config : {'F6': 244, 'C1_chan': 5, 'C3_chan': 19, 'C5_chan': 42}
+
+Epoch 1/40, Loss: 1.7845, Time: 26.65s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3556, Time: 24.24s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.1494, Time: 24.02s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0183, Time: 24.12s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.9371, Time: 24.45s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.8738, Time: 24.18s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8195, Time: 24.29s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.7789, Time: 24.21s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.7445, Time: 23.85s, Memory: 0.08GB
+Accuracy: 61.41%
+Testing hyperparameter config : {'F6': 131, 'C1_chan': 19, 'C3_chan': 31, 'C5_chan': 66}
+
+Epoch 1/40, Loss: 1.7618, Time: 25.69s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0789, Time: 25.01s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8158, Time: 25.16s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6800, Time: 25.09s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5801, Time: 24.79s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4948, Time: 25.03s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4276, Time: 24.82s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3652, Time: 25.07s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3163, Time: 24.79s, Memory: 0.08GB
+Accuracy: 65.13%
+Testing hyperparameter config : {'F6': 248, 'C1_chan': 2, 'C3_chan': 21, 'C5_chan': 74}
+
+Epoch 1/40, Loss: 1.8599, Time: 24.10s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3968, Time: 23.57s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.2043, Time: 24.09s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0899, Time: 24.15s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.0026, Time: 24.36s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9275, Time: 24.08s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8636, Time: 24.00s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8106, Time: 24.06s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.7632, Time: 24.18s, Memory: 0.08GB
+Accuracy: 56.11%
+Testing hyperparameter config : {'F6': 233, 'C1_chan': 21, 'C3_chan': 10, 'C5_chan': 63}
+
+Epoch 1/40, Loss: 1.7872, Time: 25.08s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2645, Time: 24.50s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0578, Time: 25.03s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9231, Time: 24.56s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8417, Time: 24.75s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7786, Time: 24.97s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.7287, Time: 24.76s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.6866, Time: 24.66s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.6459, Time: 24.54s, Memory: 0.08GB
+Accuracy: 64.23%
+Testing hyperparameter config : {'F6': 301, 'C1_chan': 6, 'C3_chan': 11, 'C5_chan': 41}
+
+Epoch 1/40, Loss: 1.8500, Time: 24.32s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3632, Time: 24.01s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.1789, Time: 24.31s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0718, Time: 23.94s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.9908, Time: 24.05s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9282, Time: 23.26s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8741, Time: 23.83s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8257, Time: 23.56s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.7896, Time: 24.22s, Memory: 0.08GB
+Accuracy: 59.71%
+Testing hyperparameter config : {'F6': 127, 'C1_chan': 29, 'C3_chan': 17, 'C5_chan': 58}
+
+Epoch 1/40, Loss: 1.7552, Time: 25.66s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1181, Time: 24.88s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9162, Time: 24.74s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8122, Time: 25.06s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7316, Time: 25.13s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6709, Time: 24.95s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6210, Time: 25.11s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5794, Time: 24.72s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5427, Time: 25.05s, Memory: 0.08GB
+Accuracy: 67.10%
+Testing hyperparameter config : {'F6': 190, 'C1_chan': 13, 'C3_chan': 4, 'C5_chan': 108}
+
+Epoch 1/40, Loss: 1.8718, Time: 24.67s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3565, Time: 24.21s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.1696, Time: 24.37s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0599, Time: 24.08s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.9669, Time: 24.39s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9024, Time: 24.17s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8414, Time: 24.26s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8021, Time: 24.60s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.7540, Time: 24.11s, Memory: 0.08GB
+Accuracy: 58.34%
+Testing hyperparameter config : {'F6': 211, 'C1_chan': 23, 'C3_chan': 30, 'C5_chan': 60}
+
+Epoch 1/40, Loss: 1.7222, Time: 25.70s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0700, Time: 24.94s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8519, Time: 24.84s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7229, Time: 25.51s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6328, Time: 25.21s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5549, Time: 24.57s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4933, Time: 25.46s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4355, Time: 25.29s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3894, Time: 25.26s, Memory: 0.08GB
+Accuracy: 65.39%
+Testing hyperparameter config : {'F6': 191, 'C1_chan': 17, 'C3_chan': 28, 'C5_chan': 85}
+
+Epoch 1/40, Loss: 1.7408, Time: 25.35s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0796, Time: 24.51s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8323, Time: 24.54s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6789, Time: 24.89s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5643, Time: 25.26s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4695, Time: 24.81s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3892, Time: 24.87s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3235, Time: 25.12s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2727, Time: 24.40s, Memory: 0.08GB
+Accuracy: 63.48%
+Testing hyperparameter config : {'F6': 317, 'C1_chan': 4, 'C3_chan': 29, 'C5_chan': 128}
+
+Epoch 1/40, Loss: 1.7955, Time: 24.76s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1423, Time: 24.34s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8648, Time: 24.12s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6794, Time: 24.21s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5268, Time: 29.68s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.3983, Time: 28.79s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.2947, Time: 24.28s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.2197, Time: 24.25s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.1671, Time: 24.24s, Memory: 0.08GB
+Accuracy: 59.86%
+Testing hyperparameter config : {'F6': 198, 'C1_chan': 19, 'C3_chan': 31, 'C5_chan': 63}
+
+Epoch 1/40, Loss: 1.7536, Time: 24.81s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1151, Time: 24.72s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8732, Time: 24.78s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7316, Time: 25.04s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6323, Time: 24.61s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5433, Time: 24.56s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4717, Time: 24.86s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4104, Time: 24.34s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3506, Time: 24.30s, Memory: 0.08GB
+Accuracy: 64.47%
+Testing hyperparameter config : {'F6': 292, 'C1_chan': 4, 'C3_chan': 17, 'C5_chan': 59}
+
+Epoch 1/40, Loss: 1.8442, Time: 24.20s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3934, Time: 23.69s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.2131, Time: 23.64s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0938, Time: 24.14s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.0124, Time: 23.79s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9482, Time: 24.04s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8961, Time: 23.85s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8525, Time: 23.80s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.8156, Time: 23.29s, Memory: 0.08GB
+Accuracy: 60.00%
+Testing hyperparameter config : {'F6': 172, 'C1_chan': 13, 'C3_chan': 8, 'C5_chan': 43}
+
+Epoch 1/40, Loss: 1.9030, Time: 24.08s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.4479, Time: 24.25s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.2916, Time: 24.25s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.2009, Time: 24.15s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.1447, Time: 23.92s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.1030, Time: 24.03s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.0709, Time: 23.97s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.0414, Time: 24.11s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.0163, Time: 25.07s, Memory: 0.08GB
+Accuracy: 58.75%
+Testing hyperparameter config : {'F6': 192, 'C1_chan': 17, 'C3_chan': 21, 'C5_chan': 75}
+
+Epoch 1/40, Loss: 1.7908, Time: 25.06s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1562, Time: 25.06s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9174, Time: 24.57s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7910, Time: 24.57s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7066, Time: 24.44s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6303, Time: 24.17s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5752, Time: 25.34s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5231, Time: 24.09s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.4824, Time: 24.70s, Memory: 0.08GB
+Accuracy: 64.46%
+Testing hyperparameter config : {'F6': 319, 'C1_chan': 14, 'C3_chan': 30, 'C5_chan': 118}
+
+Epoch 1/40, Loss: 1.7175, Time: 25.78s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0018, Time: 24.25s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.7151, Time: 24.45s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.5207, Time: 24.59s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.3656, Time: 24.87s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.2477, Time: 25.09s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.1742, Time: 24.25s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.1332, Time: 25.34s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.1106, Time: 24.48s, Memory: 0.08GB
+Accuracy: 63.94%
+Testing hyperparameter config : {'F6': 194, 'C1_chan': 30, 'C3_chan': 13, 'C5_chan': 111}
+
+Epoch 1/40, Loss: 1.7921, Time: 25.52s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1360, Time: 24.92s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9213, Time: 24.75s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8021, Time: 24.92s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7176, Time: 24.65s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6462, Time: 24.53s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5842, Time: 24.78s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5370, Time: 24.94s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.4999, Time: 24.66s, Memory: 0.08GB
+Accuracy: 64.58%
+Testing hyperparameter config : {'F6': 274, 'C1_chan': 4, 'C3_chan': 24, 'C5_chan': 123}
+
+Epoch 1/40, Loss: 1.7881, Time: 24.74s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2021, Time: 24.27s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9375, Time: 24.40s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7721, Time: 24.44s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6315, Time: 24.37s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5056, Time: 24.58s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4060, Time: 24.36s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3137, Time: 24.14s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2485, Time: 24.18s, Memory: 0.08GB
+Accuracy: 57.05%
+Testing hyperparameter config : {'F6': 269, 'C1_chan': 25, 'C3_chan': 14, 'C5_chan': 121}
+
+Epoch 1/40, Loss: 1.7457, Time: 25.33s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1046, Time: 24.94s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8587, Time: 24.64s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7044, Time: 24.91s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5827, Time: 24.26s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4852, Time: 25.14s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3996, Time: 24.84s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3307, Time: 25.83s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2751, Time: 26.44s, Memory: 0.08GB
+Accuracy: 62.80%
+Testing hyperparameter config : {'F6': 248, 'C1_chan': 5, 'C3_chan': 23, 'C5_chan': 105}
+
+Epoch 1/40, Loss: 1.8272, Time: 27.68s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2430, Time: 31.54s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0039, Time: 24.50s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8455, Time: 24.32s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7118, Time: 24.40s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6070, Time: 24.37s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5149, Time: 24.38s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4341, Time: 23.80s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3643, Time: 23.95s, Memory: 0.08GB
+Accuracy: 55.92%
+Testing hyperparameter config : {'F6': 255, 'C1_chan': 11, 'C3_chan': 3, 'C5_chan': 108}
+
+Epoch 1/40, Loss: 1.8419, Time: 24.56s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.4005, Time: 23.98s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.2372, Time: 24.29s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.1316, Time: 24.08s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.0481, Time: 23.78s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9773, Time: 23.88s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.9179, Time: 24.09s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8713, Time: 24.15s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.8267, Time: 24.29s, Memory: 0.08GB
+Accuracy: 56.07%
+Testing hyperparameter config : {'F6': 322, 'C1_chan': 23, 'C3_chan': 13, 'C5_chan': 109}
+
+Epoch 1/40, Loss: 1.7360, Time: 25.58s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0779, Time: 24.81s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8374, Time: 24.68s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6889, Time: 24.86s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5497, Time: 24.79s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4412, Time: 24.71s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3583, Time: 24.85s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.2916, Time: 24.64s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2522, Time: 24.99s, Memory: 0.08GB
+Accuracy: 64.14%
+Testing hyperparameter config : {'F6': 258, 'C1_chan': 6, 'C3_chan': 18, 'C5_chan': 106}
+
+Epoch 1/40, Loss: 1.8019, Time: 25.09s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2259, Time: 24.16s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9784, Time: 24.43s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8226, Time: 24.21s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6999, Time: 24.45s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5874, Time: 24.34s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4996, Time: 24.39s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4126, Time: 24.05s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3479, Time: 24.20s, Memory: 0.08GB
+Accuracy: 58.31%
+Testing hyperparameter config : {'F6': 253, 'C1_chan': 5, 'C3_chan': 31, 'C5_chan': 48}
+
+Epoch 1/40, Loss: 1.7968, Time: 24.67s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2490, Time: 24.30s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0304, Time: 24.08s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9147, Time: 24.04s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8200, Time: 24.27s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7558, Time: 24.12s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.7022, Time: 24.39s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.6521, Time: 24.26s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.6105, Time: 27.14s, Memory: 0.08GB
+Accuracy: 61.09%
+Testing hyperparameter config : {'F6': 278, 'C1_chan': 26, 'C3_chan': 26, 'C5_chan': 96}
+
+Epoch 1/40, Loss: 1.7086, Time: 26.27s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0106, Time: 25.02s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.7604, Time: 25.42s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6029, Time: 25.08s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.4755, Time: 25.26s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.3691, Time: 25.07s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.2935, Time: 25.23s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.2351, Time: 25.21s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.1943, Time: 25.15s, Memory: 0.08GB
+Accuracy: 64.67%
+Testing hyperparameter config : {'F6': 134, 'C1_chan': 27, 'C3_chan': 4, 'C5_chan': 78}
+
+Epoch 1/40, Loss: 1.8802, Time: 24.77s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.4038, Time: 24.47s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.2280, Time: 24.32s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.1208, Time: 24.26s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.0513, Time: 24.35s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9973, Time: 24.63s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.9509, Time: 24.58s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.9195, Time: 24.48s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.8850, Time: 24.43s, Memory: 0.08GB
+Accuracy: 59.24%
+Testing hyperparameter config : {'F6': 240, 'C1_chan': 4, 'C3_chan': 7, 'C5_chan': 123}
+
+Epoch 1/40, Loss: 1.8770, Time: 24.24s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3969, Time: 24.15s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.2075, Time: 24.12s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0705, Time: 23.89s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.9627, Time: 24.00s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.8661, Time: 23.67s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.7848, Time: 24.17s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.7174, Time: 23.95s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.6590, Time: 23.95s, Memory: 0.08GB
+Accuracy: 52.90%
+Testing hyperparameter config : {'F6': 249, 'C1_chan': 14, 'C3_chan': 19, 'C5_chan': 59}
+
+Epoch 1/40, Loss: 1.7634, Time: 25.17s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2363, Time: 24.55s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0092, Time: 24.58s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8762, Time: 24.74s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7910, Time: 24.82s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7258, Time: 28.56s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6750, Time: 27.91s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.6311, Time: 27.55s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5929, Time: 27.46s, Memory: 0.08GB
+Accuracy: 64.94%
+Testing hyperparameter config : {'F6': 252, 'C1_chan': 28, 'C3_chan': 6, 'C5_chan': 76}
+
+Epoch 1/40, Loss: 1.8234, Time: 28.28s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3440, Time: 27.81s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.1694, Time: 29.12s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.0588, Time: 27.50s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.9719, Time: 27.51s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.9093, Time: 27.25s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.8586, Time: 27.45s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.8197, Time: 27.30s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.7771, Time: 27.92s, Memory: 0.08GB
+Accuracy: 59.76%
+Testing hyperparameter config : {'F6': 171, 'C1_chan': 28, 'C3_chan': 3, 'C5_chan': 57}
+
+Epoch 1/40, Loss: 1.9795, Time: 27.74s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.6253, Time: 25.45s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.4195, Time: 24.62s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.3260, Time: 24.40s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.2547, Time: 24.26s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.2091, Time: 24.39s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.1689, Time: 24.57s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.1389, Time: 24.41s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.1136, Time: 24.20s, Memory: 0.08GB
+Accuracy: 52.57%
+Testing hyperparameter config : {'F6': 159, 'C1_chan': 17, 'C3_chan': 32, 'C5_chan': 74}
+
+Epoch 1/40, Loss: 1.7034, Time: 25.65s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0709, Time: 24.93s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8024, Time: 24.27s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6545, Time: 23.19s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5413, Time: 22.82s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4513, Time: 22.95s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3804, Time: 23.16s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3183, Time: 23.56s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2673, Time: 22.67s, Memory: 0.08GB
+Accuracy: 65.02%
+Testing hyperparameter config : {'F6': 170, 'C1_chan': 7, 'C3_chan': 15, 'C5_chan': 88}
+
+Epoch 1/40, Loss: 1.8210, Time: 23.88s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3238, Time: 22.62s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0947, Time: 23.19s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9736, Time: 22.47s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8826, Time: 23.44s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.8143, Time: 22.77s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.7548, Time: 23.28s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.7094, Time: 22.68s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.6640, Time: 23.70s, Memory: 0.08GB
+Accuracy: 59.84%
+Testing hyperparameter config : {'F6': 194, 'C1_chan': 7, 'C3_chan': 3, 'C5_chan': 46}
+
+Epoch 1/40, Loss: 1.8696, Time: 23.25s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.5001, Time: 23.91s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.3827, Time: 23.09s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.3051, Time: 23.40s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.2451, Time: 23.30s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.1988, Time: 23.57s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.1620, Time: 23.53s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.1305, Time: 23.49s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.1062, Time: 23.67s, Memory: 0.08GB
+Accuracy: 55.61%
+Testing hyperparameter config : {'F6': 310, 'C1_chan': 18, 'C3_chan': 6, 'C5_chan': 54}
+
+Epoch 1/40, Loss: 1.8216, Time: 24.41s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3014, Time: 24.23s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0755, Time: 24.20s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9631, Time: 24.13s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8827, Time: 24.60s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.8155, Time: 24.47s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.7671, Time: 24.25s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.7245, Time: 24.41s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.6855, Time: 24.16s, Memory: 0.08GB
+Accuracy: 63.40%
+Testing hyperparameter config : {'F6': 256, 'C1_chan': 28, 'C3_chan': 8, 'C5_chan': 76}
+
+Epoch 1/40, Loss: 1.7534, Time: 24.86s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2190, Time: 24.33s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9879, Time: 24.65s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8661, Time: 24.07s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7728, Time: 24.43s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6961, Time: 24.41s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6393, Time: 24.38s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5926, Time: 24.04s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5525, Time: 24.37s, Memory: 0.08GB
+Accuracy: 62.78%
+Testing hyperparameter config : {'F6': 222, 'C1_chan': 17, 'C3_chan': 23, 'C5_chan': 109}
+
+Epoch 1/40, Loss: 1.7523, Time: 25.13s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1044, Time: 24.69s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8445, Time: 24.27s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6887, Time: 24.34s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5699, Time: 24.58s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4768, Time: 24.50s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3927, Time: 24.48s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3210, Time: 24.64s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2668, Time: 24.26s, Memory: 0.08GB
+Accuracy: 64.00%
+Testing hyperparameter config : {'F6': 266, 'C1_chan': 32, 'C3_chan': 6, 'C5_chan': 127}
+
+Epoch 1/40, Loss: 1.7324, Time: 25.25s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2518, Time: 24.70s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0355, Time: 24.60s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8849, Time: 24.27s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7640, Time: 24.98s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6644, Time: 24.73s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5887, Time: 24.65s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5193, Time: 24.89s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.4583, Time: 24.92s, Memory: 0.08GB
+Accuracy: 59.52%
+Testing hyperparameter config : {'F6': 140, 'C1_chan': 9, 'C3_chan': 2, 'C5_chan': 92}
+
+Epoch 1/40, Loss: 1.9845, Time: 24.15s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.6034, Time: 24.09s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.5008, Time: 24.27s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.4208, Time: 24.10s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.3636, Time: 24.25s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.3159, Time: 25.06s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.2811, Time: 24.21s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.2504, Time: 24.09s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.2225, Time: 24.28s, Memory: 0.08GB
+Accuracy: 47.80%
+Testing hyperparameter config : {'F6': 242, 'C1_chan': 14, 'C3_chan': 29, 'C5_chan': 82}
+
+Epoch 1/40, Loss: 1.7466, Time: 25.03s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1003, Time: 24.78s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8646, Time: 24.78s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7194, Time: 24.67s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6129, Time: 25.17s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5180, Time: 24.56s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4399, Time: 24.70s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3807, Time: 24.46s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3184, Time: 25.16s, Memory: 0.08GB
+Accuracy: 63.35%
+Testing hyperparameter config : {'F6': 245, 'C1_chan': 21, 'C3_chan': 28, 'C5_chan': 84}
+
+Epoch 1/40, Loss: 1.7370, Time: 25.09s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0292, Time: 25.10s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.7888, Time: 25.12s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6313, Time: 24.95s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5114, Time: 25.21s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4151, Time: 25.28s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3295, Time: 24.96s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.2687, Time: 24.85s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2184, Time: 25.04s, Memory: 0.08GB
+Accuracy: 64.02%
+Testing hyperparameter config : {'F6': 161, 'C1_chan': 16, 'C3_chan': 2, 'C5_chan': 58}
+
+Epoch 1/40, Loss: 1.8935, Time: 24.71s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.5131, Time: 24.88s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.4045, Time: 24.32s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.3409, Time: 24.07s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.2893, Time: 24.28s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.2531, Time: 24.39s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.2219, Time: 24.54s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.1993, Time: 24.24s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.1797, Time: 24.47s, Memory: 0.08GB
+Accuracy: 52.09%
+Testing hyperparameter config : {'F6': 127, 'C1_chan': 19, 'C3_chan': 28, 'C5_chan': 101}
+
+Epoch 1/40, Loss: 1.7195, Time: 25.20s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0806, Time: 25.40s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8116, Time: 24.39s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6601, Time: 24.95s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5389, Time: 24.84s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4415, Time: 24.42s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3653, Time: 24.86s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.2957, Time: 23.39s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2519, Time: 21.59s, Memory: 0.08GB
+Accuracy: 63.92%
+Testing hyperparameter config : {'F6': 133, 'C1_chan': 24, 'C3_chan': 19, 'C5_chan': 102}
+
+Epoch 1/40, Loss: 1.7557, Time: 23.23s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1478, Time: 22.90s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9091, Time: 22.87s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7770, Time: 22.87s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6834, Time: 22.69s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6073, Time: 22.63s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5466, Time: 22.90s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4886, Time: 22.78s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.4434, Time: 22.54s, Memory: 0.08GB
+Accuracy: 64.43%
+Testing hyperparameter config : {'F6': 154, 'C1_chan': 23, 'C3_chan': 12, 'C5_chan': 83}
+
+Epoch 1/40, Loss: 1.7719, Time: 22.72s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2420, Time: 22.51s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9825, Time: 21.89s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8456, Time: 22.03s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7556, Time: 21.83s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6871, Time: 21.44s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6293, Time: 22.44s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5741, Time: 22.37s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5322, Time: 21.74s, Memory: 0.08GB
+Accuracy: 65.05%
+Testing hyperparameter config : {'F6': 150, 'C1_chan': 22, 'C3_chan': 1, 'C5_chan': 71}
+
+Epoch 1/40, Loss: 2.0012, Time: 22.27s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.7087, Time: 22.53s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.6390, Time: 22.66s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.5938, Time: 22.81s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.5574, Time: 22.73s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.5303, Time: 24.38s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.5073, Time: 24.60s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.4879, Time: 24.40s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.4710, Time: 24.35s, Memory: 0.08GB
+Accuracy: 40.53%
+Testing hyperparameter config : {'F6': 216, 'C1_chan': 31, 'C3_chan': 20, 'C5_chan': 119}
+
+Epoch 1/40, Loss: 1.7265, Time: 27.21s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0485, Time: 26.58s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.7868, Time: 26.60s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6269, Time: 26.55s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5003, Time: 26.69s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.3961, Time: 26.55s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3126, Time: 26.63s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.2565, Time: 26.45s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2037, Time: 26.71s, Memory: 0.08GB
+Accuracy: 63.30%
+Testing hyperparameter config : {'F6': 152, 'C1_chan': 14, 'C3_chan': 21, 'C5_chan': 99}
+
+Epoch 1/40, Loss: 1.7556, Time: 23.61s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0973, Time: 22.95s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8299, Time: 22.90s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.6780, Time: 23.35s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.5629, Time: 23.02s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.4677, Time: 23.22s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.3894, Time: 23.20s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3246, Time: 22.95s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.2693, Time: 23.39s, Memory: 0.08GB
+Accuracy: 62.90%
+Testing hyperparameter config : {'F6': 137, 'C1_chan': 8, 'C3_chan': 15, 'C5_chan': 121}
+
+Epoch 1/40, Loss: 1.7711, Time: 23.86s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2508, Time: 22.84s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0218, Time: 23.41s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8767, Time: 23.38s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7603, Time: 23.02s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6738, Time: 23.10s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.5883, Time: 25.51s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5213, Time: 27.81s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.4594, Time: 22.86s, Memory: 0.08GB
+Accuracy: 60.19%
+Testing hyperparameter config : {'F6': 129, 'C1_chan': 5, 'C3_chan': 11, 'C5_chan': 123}
+
+Epoch 1/40, Loss: 1.7700, Time: 23.54s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.3195, Time: 23.71s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.1107, Time: 23.08s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9596, Time: 23.45s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8528, Time: 23.56s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.7655, Time: 23.76s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6920, Time: 23.50s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.6284, Time: 22.72s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5767, Time: 23.16s, Memory: 0.08GB
+Accuracy: 58.51%
+Testing hyperparameter config : {'F6': 294, 'C1_chan': 28, 'C3_chan': 28, 'C5_chan': 55}
+
+Epoch 1/40, Loss: 1.7270, Time: 24.37s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.0457, Time: 23.61s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8238, Time: 23.66s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7117, Time: 23.71s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6266, Time: 23.94s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5502, Time: 23.85s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4899, Time: 23.81s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.4335, Time: 23.77s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3847, Time: 23.87s, Memory: 0.08GB
+Accuracy: 66.05%
+Testing hyperparameter config : {'F6': 318, 'C1_chan': 15, 'C3_chan': 8, 'C5_chan': 55}
+
+Epoch 1/40, Loss: 1.8180, Time: 24.08s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.2617, Time: 23.30s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.0614, Time: 23.08s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.9559, Time: 23.42s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.8774, Time: 23.67s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.8228, Time: 23.40s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.7799, Time: 23.60s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.7378, Time: 23.20s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.7071, Time: 23.37s, Memory: 0.08GB
+Accuracy: 65.39%
+Testing hyperparameter config : {'F6': 191, 'C1_chan': 18, 'C3_chan': 16, 'C5_chan': 114}
+
+Epoch 1/40, Loss: 1.7641, Time: 23.58s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1391, Time: 22.93s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.8712, Time: 23.27s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.7269, Time: 27.70s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.6134, Time: 26.71s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.5188, Time: 27.55s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.4489, Time: 27.57s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.3828, Time: 27.63s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.3293, Time: 31.13s, Memory: 0.08GB
+Accuracy: 63.70%
+Testing hyperparameter config : {'F6': 226, 'C1_chan': 32, 'C3_chan': 1, 'C5_chan': 80}
+
+Epoch 1/40, Loss: 1.9430, Time: 29.46s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.6900, Time: 27.49s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.6031, Time: 27.91s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.5505, Time: 27.27s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.5059, Time: 27.24s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.4702, Time: 27.48s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.4355, Time: 27.68s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.4085, Time: 27.80s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.3840, Time: 23.16s, Memory: 0.08GB
+Accuracy: 40.49%
+Testing hyperparameter config : {'F6': 269, 'C1_chan': 13, 'C3_chan': 26, 'C5_chan': 43}
+
+Epoch 1/40, Loss: 1.7553, Time: 23.55s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.1825, Time: 22.84s, Memory: 0.08GB
+Epoch 10/40, Loss: 0.9561, Time: 23.04s, Memory: 0.08GB
+Epoch 15/40, Loss: 0.8420, Time: 23.25s, Memory: 0.08GB
+Epoch 20/40, Loss: 0.7645, Time: 22.99s, Memory: 0.08GB
+Epoch 25/40, Loss: 0.6993, Time: 23.06s, Memory: 0.08GB
+Epoch 30/40, Loss: 0.6488, Time: 22.61s, Memory: 0.08GB
+Epoch 35/40, Loss: 0.5970, Time: 23.12s, Memory: 0.08GB
+Epoch 40/40, Loss: 0.5580, Time: 22.96s, Memory: 0.08GB
+Accuracy: 64.06%
+Testing hyperparameter config : {'F6': 164, 'C1_chan': 9, 'C3_chan': 3, 'C5_chan': 85}
+
+Epoch 1/40, Loss: 1.9066, Time: 24.26s, Memory: 0.08GB
+Epoch 5/40, Loss: 1.4784, Time: 23.12s, Memory: 0.08GB
+Epoch 10/40, Loss: 1.3487, Time: 23.10s, Memory: 0.08GB
+Epoch 15/40, Loss: 1.2549, Time: 23.31s, Memory: 0.08GB
+Epoch 20/40, Loss: 1.1872, Time: 23.10s, Memory: 0.08GB
+Epoch 25/40, Loss: 1.1293, Time: 23.31s, Memory: 0.08GB
+Epoch 30/40, Loss: 1.0845, Time: 23.14s, Memory: 0.08GB
+Epoch 35/40, Loss: 1.0468, Time: 23.08s, Memory: 0.08GB
+Epoch 40/40, Loss: 1.0175, Time: 23.95s, Memory: 0.08GB
+Accuracy: 54.30%
+{'best_hp': "{'F6': 224, 'C1_chan': 27, 'C3_chan': 30, 'C5_chan': 40}", 'number of iterations': 99, 'accuracy': 0.6783}

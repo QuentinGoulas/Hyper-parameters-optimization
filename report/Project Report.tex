@@ -4,6 +4,7 @@
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{lmodern}
@@ -16,6 +17,7 @@
 \usepackage{enumitem}
 \usepackage{helvet}
 \usepackage{indentfirst}
+\usepackage{multicol,multirow}
 
 \usepackage{graphicx}
 \usepackage{subfig}
@@ -26,6 +28,7 @@
 \usepackage[ruled]{algorithm2e}
 
 \usepackage{hyperref}
+\usepackage{biblatex}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\dpart}[2]{\frac{\partial #1}{\partial #2}}
@@ -64,10 +67,14 @@
 \renewcommand{\footrulewidth}{0.5pt} % Largeur du trait de séparation dans le pied de page
 
 \hypersetup{hidelinks=true}
+\addbibresource{biblio.bib}
 
 \begin{document}
 \input{title.tex}
-\thispagestyle{empty}
+
+%\thispagestyle{empty}
+\tableofcontents
+\newpage
 
 This project report aims to present the development framework, methodology and
 results obtained during the Deep Learning course project. This project focussed
@@ -77,6 +84,8 @@ This report comprises four sections : an introduction to the project its
 premises, a presentation of the considered algorithms for this project, a
 description of the deployed system architecture and finall a discussion on the
 obtained results.
+
+The source code for this project can be found at this \href{https://github.com/QuentinGoulas/Hyper-parameters-optimization.git}{repository [link]}
 
 \section{Project introduction}
 In the context of deep learning, hyperparameters are model parameters that
@@ -98,7 +107,7 @@ hyperparameters configuration, which induces high computing costs. Finding
 efficient methods to obtain the optimal hyperparameter configuration for a
 given DL task is therefore a topic of choice for the deep learning literature.
 
-The most used Hyper Parameter Optimization (HPO) methods include :
+The most used Hyper Parameter Optimization (HPO) methods include \cite{yangHyperparameterOptimizationMachine2020} :
 \begin{itemize}
     \item Babysitting : try different hyperparameter configurations, assess the accuracy
           of the different models, manually adjust the configurations and repeat till
@@ -199,10 +208,12 @@ The particle swarm optimization algorithm is a metaheuristic optimization algori
     \Return{$h^*, a^*, t$}
 \end{algorithm}
 
-\subsection{Bayesian Optimization HyperBand algorithm}
-This method uses a probabilistic model of the accuracy function given the different tested configurations and iteratively returns the next configuration to try out by choosing the maximizer of expected improvement.  The probabilistic model used here is the Tree Parzen Estimator which uses a kernel density estimator to model the accuracy function of the model. To further improve the performance of the algorithm, the Hyper Band technique is used to dynamically allocate the amount of resources for each training. For this project, we rely on the \href{https://automl.github.io/HpBandSter/build/html/quickstart.html}{HpBandSter library [clickable link]} which provides a full optimizer framework ---similar to ours--- to apply BOHB which we integrated to our framework. Furthermore, this library enables asynchronous processing to try out multiple configurations simultaneously, therefore drastically increasing convergence speed.
+The convergence of the Particle Swarm Optimization algorithm cannot be proven in the general case (although some refinements can provide convergence to a local optimum \cite{engelbrechtConvergenceProofParticle2010}). Yet, empirical data shows the efficiency of this algorithm in a majority of cases.
 
-\section{Development framework}\;
+\subsection{Bayesian Optimization HyperBand algorithm \cite{falknerBOHBRobustEfficient2018}}
+This method uses a probabilistic model of the accuracy function given the different tested configurations and iteratively returns the next configuration to try out by choosing the maximizer of expected improvement.  The probabilistic model used here is the Tree Parzen Estimator which uses a kernel density estimator to model the accuracy function of the model. To further improve the performance of the algorithm, the Hyper Band technique is used to dynamically allocate the amount of resources for each training. For this project, we rely on the \href{https://automl.github.io/HpBandSter/build/html/quickstart.html}{HpBandSter library [clickable link]} which provides a full BOHB optimizer framework ---similar to ours--- that we integrated to our framework. Furthermore, this library enables asynchronous processing to try out multiple configurations simultaneously, therefore drastically increasing computing efficiency.
+
+\section{Development framework}
 This project will be entirely developed on Python through the Pytorch deep
 learning library. Moreover, the CIFAR-10 dataset will be used throughout this
 study to train a LeNet5-type model architecture for image recognition. Our
@@ -214,26 +225,28 @@ responsible for navigating the input hyperparameter space and organizing the
 different hyperparameter configuration tests. The HPO object then calls a
 dedicated library to generate a model with the appropriate hyperparameters and
 launches the trainings. The system architecture is given in Figure
-\ref{fig:framework}
+\ref{fig:framework}.
+
+The accuracy function of the classifier is chosen as the proportion of accurate classifications from the model on a validation dataset.
 
 \begin{figure}[h]
     \centering
     \begin{tikzpicture}
-        \draw (-2.62,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
-        \node[matrix, draw, column sep = 4cm, inner sep = 0.75cm, rounded corners =4pt] (hpo) at (1,4)
+        \draw (-3.33,7.25) node(input) [draw]{\begin{tabular}{c} Data, Seed,\\ Method,\\ Method parameters\end{tabular}};
+        \node[matrix, draw, column sep =0cm, inner sep = 0.75cm, rounded corners =4pt] (hpo) at (1,4)
         {
-            \node[rectangle, draw] (object) at (0,0) {\begin{tabular}{c}Hyper Parameter\\ Optimizer\end{tabular}}; & \node[rectangle, draw] (model) at (1,0) {DL Model};\\
+            \node[rectangle, draw] (object) at (0,0) {\begin{tabular}{c}Hyper Parameter\\ Optimizer\end{tabular}}; & \node at (0.5,0) {\small{$\circlearrowright$ Iterate till convergence}}; & \node[rectangle, draw] (model) at (1,0) {DL Model};\\
         };
-        \draw (-2.62,1) node(output) [draw] {\begin{tabular}{c}Best Hyperparameter\\ configuration\end{tabular}};
+        \draw (-3.33,1) node(output) [draw] {\begin{tabular}{c}Best Hyperparameter\\ configuration\end{tabular}};
         \draw [anchor=east](7.5,2) node(comment) [fill=white] {Hyper parameter optimization framework};
         \draw [-Latex] (input.south) -- node[below left] {\small{Inputs}} (object.north);
         \draw [-Latex] (object.south) -- node[above left]{\small{Outputs}} (output.north);
         \draw [-Latex] ([yshift=5pt]object.east) to[bend left] node[above] {\small{\begin{tabular}{c}Hyperparameter\\ configuration\end{tabular}}} ([yshift=5pt]model.west);
         \draw [-Latex] ([yshift=-5pt]model.west) to[bend left] node[below] {\small{Model accuracy}} ([yshift=-5pt]object.east);
-        \draw [-Latex, rounded corners=4pt] (model.north) |- node[above] {train\_model} (7.5,5.25) |- (model.east);
+        \draw [-Latex, rounded corners=4pt] (model.north) |- node[above] {train\_model} (8.1,5.25) |- (model.east);
 
     \end{tikzpicture}
-    \caption{Hyper parameter optimzation workflow}
+    \caption{Hyper parameter optimization workflow}
     \label{fig:framework}
 \end{figure}
 
@@ -244,6 +257,87 @@ spaces (which are hyperparameter configurations with multiple accessible
 values) and hyperparameter arrays (used to represent multiple hyperparameter
 configurations simultaneously).
 
+\section{Experimental setup}
+To try out the different hyperparameter optimizers, we search for the optimal configurations of a LeNet-5 type network \cite{lecunGradientbasedLearningApplied1998}. More precisely, we look for the optimal number of filters for the three convolutional layers C1, C3 and C5 as well as the size of the network's dense layer F6. A schematic of the LeNet-5 architecture is provided in Figure \ref{fig:lenet}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{ln5.png}
+\caption{LeNet-5 architecure with the hyperparameter configuration used in the original paper}
+\label{fig:lenet}
+\end{figure}
+
+We use the LeNet-5 architecture to recognize different images from the CIFAR-10 dataset \cite{krizhevskyLearningMultiplyeLayers2009}, divided into 10 categories : \{ airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck\}. The CIFAR-10 comprises $60\ 000$ coloured images of $32\times32$ pixels with $6\ 000$ images per category and split into a $50\ 000$ image training set and a $10\ 000$ image test set.
+
+Model trainings for this project have been entirely done on local GPUs (GeForce MX230 and GeForce RTX3070 Laptop) with a batch of size 64. Training the classifier on CIFAR-10 as provided by \verb+torchvision+ led to an epoch duration from 20 to 40s depending on model complexity.
+
+We use the following parameters for each algorithm :
+\begin{figure}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline Algorithm & Parameters \\
+\hline Grid search & $\emptyset$ \\
+Random search & $p = 5.4\cdot 10^{-6}$ \\
+Particle Swarm Optimization & $S=5,\phi_l = 2,\ \phi_g = 2,\ w=0.5$\\
+BOHB & $min_{epochs} = 10,\ max_{epochs} = 40,\ N_{iterations} = 20$\\
+\hline
+\end{tabular}
+\label{tab:parameters}
+\caption{Algorithm parameters}
+\end{figure}
+
+Unless indicated otherwise, the number of epochs for every trainings is set at 40. The probability parameter $p$ of Random Search is chosen so as to consume a similar number of epochs as PSO and BOHB, which is around 4000 epochs per optimisation run.
+
+For every method, we consider the following hyperparameter space to search :
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Hyperparameter & Range \\
+\hline
+F6 & [125,325]\\
+\hline
+Number of C1 filters & [1:32] \\
+\hline
+Number of C3 filters & [1:32] \\
+\hline
+Number of C5 filters & [40:130] \\
+\hline
+\end{tabular}
+\label{tab:hpspace}
+\caption{Hyperparameter space}
+\end{figure}
+
+We select this hyperparameter space by using the initial hyperparameter configuration used in LeNet-5 and explore neighbouring configurations to it.
+
+Although the implemented algorithms enable increased efficiency compared to a babysitting or grid search approach, each optimization run took important amounts of time, allowing minimal repetitions to validate the results, leaving significant space to interpretation of the results and little quantitative results. We still present the results in the following section.
+
 \section{Results}
+
+Running the algorithms returns us the following results :
+\begin{figure}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+\multirow{2}{*}{Algorithm} & \multicolumn{4}{c|}{Hyperparameter config} & \multirow{2}{*}{\begin{tabular}{c}Number of\\ training epochs\end{tabular}} & \multirow{2}{*}{\begin{tabular}{c}Validation\\ accuracy\end{tabular}} \\
+\cline{2-5}
+& F6 & C1 & C3 & C5 \\
+\hline
+PSO & $ 324 $ & $26$ & $19$ & $40$ & $20\times 5\times 40$ & $66.8\%$\\ \hline
+BOHB & $318$ & $30$ & $15$ & $44$ & $40\times40$ & $66.5\%$ \\ \hline
+Grid Search & - & - & - & - & $200\times32\times32\times90\times40$ & - \\ \hline
+Random Search & 224 & 27 & 30 & 40 & $p\times200\times32\times32\times90\times40$ & 67.83\% \\ \hline
+\end{tabular}
+\label{tab:results}
+\caption{Optimal hyperparameter configurations}
+\end{figure}
+
+Due to the extreme resource consumption of grid search ($\sim 740\ 000\ 000$ epochs and $\sim 6\ 000\ 000$ compute hours), we weren't able to do a full run for this algorithm.
+
+From these results, we observe that both PSO and BOHB provide good solutions for hyperparameter optimization, with significantly reduced costs compared to Grid Search or Random Search. From this experiment, there is no clear way of knowing which of BOHB or PSO is best to solve this specific hyperparameter problem (whether ``best'' is defined by convergence speed or reliability).
+
+\addcontentsline{toc}{section}{References}
+\printbibliography
 
 \end{document}
