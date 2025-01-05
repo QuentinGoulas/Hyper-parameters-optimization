@@ -7,6 +7,7 @@ import copy
 from torchsummary import summary
 
 import pso
+import gen
 
 class HyperParameterOptimizer:
     '''
@@ -173,6 +174,88 @@ class HyperParameterOptimizer:
                 
                 best_hp = P
                 acc = accP
+        elif method == 'genetic':
+            '''
+            Genetic algorithm
+
+            Runs a genetic algorithm to find the best configuration
+            '''
+
+            assert 'max_iteration' in list(kwargs.keys()), "no maximum number of iteration given at input keyword 'max_iteration'"
+            assert 'precision' in list(kwargs.keys()), "no stopping criterion given at input keyword 'precision'"
+            assert 'precision_iteration' in list(kwargs.keys()), "no number of iteration with precision attained is given at input keyword precision_iteration"
+            assert 'pop_size' in list(kwargs.keys()), "no population size given at input keyword 'pop_size'"
+            assert 'mutation_probability' in list(kwargs.keys()), "no probability of mutation given at input keyword 'mutation_probability'"
+            assert 'crossover_probability' in list(kwargs.keys()), "no crossover probability given at input keyword 'crossover_probability'"
+            assert 'less_fit_proportion' in list(kwargs.keys()), "no proportion of less fitted individual to be selected given at input keyword 'less_fit_proportion'"
+            assert 'best_fit_proportion' in list(kwargs.keys()), "no proportion of best fitted individual to be selected given at input keyword 'less_fit_proportion'"
+
+            P = kwargs['pop_size']
+            mp = kwargs['mutation_propbability']
+            cp = kwargs['crossover_probability']
+            lp = kwargs['less_fit_proportion']
+            bp = kwargs['best_fit_proportion']
+
+            assert lp + bp > 1, "sum less fit and best fit probabilities is greater than one, it must be in [0, 1]"
+            assert P % 2, "The population size must be even"
+
+            precision = kwargs['precision']
+            max_iteration = kwargs['max_iteration']
+            precision_iteration = kwargs['precision_iteration']
+
+            if P > len(hpspace):
+                # If the swarm size is bigger than hpspace, we run the equivalent grid search method
+                Warning('Swarm size bigger than hpspace, which is equivalent to grid search')
+                self.optimize('grid_search')
+
+            # Initialize population
+            population = gen.initialize_population(hpspace, P)
+            current_accuracies = np.zeros(P)
+
+            for j in range(P):
+                print(f"Genetic initialization  - Particle {j+1}/{P} - Testing hyperparameter config : {population[j].config}")
+                self.update_hyperparam(population[j].config)
+                current_accuracies[j] = self.train_module(epochs)
+
+
+            # Evolve population (selection then crossover then mutation)
+            convergence_count = 0
+            cnt = 0
+            old_max_a = 0
+            max_a = np.max(current_accuracies)
+            best_hp = population[np.argmax(current_accuracies)].config
+            best_max = np.max(current_accuracies)
+
+            while convergence_count < precision_iteration and cnt < max_iteration:
+                cnt += 1
+                if np.abs(old_max_a - max_a) < precision:
+                    convergence_count += 1
+                else: 
+                    convergence_count = 0
+                
+                old_max_a = 0 + max_a
+                parents = gen.select_population(population, current_accuracies, bp, lp)
+                population = []
+                while len(population) < P:
+                    parent1, parent2 = np.random.choice(parents, 2, replace=False)
+                    child1, child2 = gen.crossover(parent1, parent2, cp)
+                    child1 = gen.mutate(child1, mp, hpspace)
+                    child2 = gen.mutate(child2, mp, hpspace)
+                    population.append(child1)
+                    population.append(child2)
+
+                for j in range(P):
+                    print(f"PSO step {cnt} - Particle {j+1}/{S} - Testing hyperparameter config : {population[j].config}")
+                    self.update_hyperparam(population[j].config)
+                    current_accuracies[j] = self.train_module(epochs)
+                max_a = np.max(current_accuracies)
+
+                if max_a > best_max:
+                    best_hp = population[np.argmax(current_accuracies)].config
+                    best_max = np.max(current_accuracies)
+            
+            acc = best_max
+
         '''
         End of the different optim methods
         '''
