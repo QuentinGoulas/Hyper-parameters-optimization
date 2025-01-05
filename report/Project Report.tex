@@ -85,7 +85,9 @@ premises, a presentation of the considered algorithms for this project, a
 description of the deployed system architecture and finall a discussion on the
 obtained results.
 
-The source code for this project can be found at this \href{https://github.com/QuentinGoulas/Hyper-parameters-optimization.git}{repository [link]}
+The source code for this project can be found at this
+\href{https://github.com/QuentinGoulas/Hyper-parameters-optimization.git}{repository
+        [link]}
 
 \section{Project introduction}
 In the context of deep learning, hyperparameters are model parameters that
@@ -107,7 +109,8 @@ hyperparameters configuration, which induces high computing costs. Finding
 efficient methods to obtain the optimal hyperparameter configuration for a
 given DL task is therefore a topic of choice for the deep learning literature.
 
-The most used Hyper Parameter Optimization (HPO) methods include \cite{yangHyperparameterOptimizationMachine2020} :
+The most used Hyper Parameter Optimization (HPO) methods include
+\cite{yangHyperparameterOptimizationMachine2020} :
 \begin{itemize}
     \item Babysitting : try different hyperparameter configurations, assess the accuracy
           of the different models, manually adjust the configurations and repeat till
@@ -131,15 +134,21 @@ The most used Hyper Parameter Optimization (HPO) methods include \cite{yangHyper
 
 This project aims at implementing a HyperParameter Optimization framework to
 compare different hyperparameter optimizers. For this project, we will focus on
-Grid Search, Random Search, Bayesian Optimizer Hyper Band and Particle Swarm Optimization (said to be the best
-hyperparameter optimizing method in the current literature)
+Grid Search, Random Search, Bayesian Optimizer Hyper Band and Particle Swarm
+Optimization (said to be the best hyperparameter optimizing method in the
+current literature)
 
 \section{Algorithm descriptions}
 We describe here the algorithms that have been implemented throughout this
-project : Grid search, Random search, Particle swarm optimization. We also provide the pseudo-codes for the methods.
+project : Grid search, Random search, Particle swarm optimization. We also
+provide the pseudo-codes for the methods.
 
 \subsection{Grid search}
-This method consists in ``brute forcing'' the best hyperparameter configuration, i.e by trying all possible hyperparameter configurations on the hyperparameter space and returning the best configuration. This method is extremely computationnaly heavy, with the number of possible configurations increasing exponentially as the number of tested hyperparameters increases.
+This method consists in ``brute forcing'' the best hyperparameter
+configuration, i.e by trying all possible hyperparameter configurations on the
+hyperparameter space and returning the best configuration. This method is
+extremely computationnaly heavy, with the number of possible configurations
+increasing exponentially as the number of tested hyperparameters increases.
 \begin{algorithm}
     \SetAlgoLined
     \KwIn{Hyperparameter space $H$, training set $D$, validation set $V$}
@@ -157,13 +166,21 @@ This method consists in ``brute forcing'' the best hyperparameter configuration,
 \end{algorithm}
 
 \subsection{Random search}
-This method consists in randomly selecting a proportion of all the possible hyperparameter configurations and returning the best configuration after trying all configurations in the sample. This method reduces slightly the computational time compared to grid search. However, this method does not solve the curse of dimensionality problem. As a matter of fact, the only method to solve this problem is to use a sampling proportion of the order $p^d$ with the $d$ the number of hyperparameters. This technique keeps computation time constant but dramatically reduces the exhaustivity of the method and success probability of the algorithm.
+This method consists in randomly selecting a proportion of all the possible
+hyperparameter configurations and returning the best configuration after trying
+all configurations in the sample. This method reduces slightly the
+computational time compared to grid search. However, this method does not solve
+the curse of dimensionality problem. As a matter of fact, the only method to
+solve this problem is to use a sampling proportion of the order $p^d$ with the
+$d$ the number of hyperparameters. This technique keeps computation time
+constant but dramatically reduces the exhaustivity of the method and success
+probability of the algorithm.
 \begin{algorithm}
     \SetAlgoLined
     \KwIn{Hyperparameter space $H$, training set $D$, validation set $V$, sampling proportion p}
     \KwOut{Best hyperparameter configuration $h^*$ and accuracy $a^*$}
     \For{each hyperparameter configuration $h$ in $H$}{
-    	$r\sim \mathcal{U}([0,1])$\;
+        $r\sim \mathcal{U}([0,1])$\;
         \If{random number $r < p$}{
             Train model $M$ with hyperparameters $h$ on $D$\;
             Evaluate model $M$ on $V$ and compute accuracy $a$\;
@@ -178,7 +195,12 @@ This method consists in randomly selecting a proportion of all the possible hype
 \end{algorithm}
 
 \subsection{Particle Swarm Optimization}
-The particle swarm optimization algorithm is a metaheuristic optimization algorithm which assumes next to no information on the functions to optimize. Modelled on the evolution of bird flocks, it consists in evaluation the model accuracy on a small set of hyperparameter configurations, then choosing a new set of configurations on the basis of the best configuration seen overall and by the best configuration seen by the particles individually.
+The particle swarm optimization algorithm is a metaheuristic optimization
+algorithm which assumes next to no information on the functions to optimize.
+Modelled on the evolution of bird flocks, it consists in evaluation the model
+accuracy on a small set of hyperparameter configurations, then choosing a new
+set of configurations on the basis of the best configuration seen overall and
+by the best configuration seen by the particles individually.
 
 \begin{algorithm}[H]
     \SetAlgoLined
@@ -208,7 +230,77 @@ The particle swarm optimization algorithm is a metaheuristic optimization algori
     \Return{$h^*, a^*, t$}
 \end{algorithm}
 
-The convergence of the Particle Swarm Optimization algorithm cannot be proven in the general case (although some refinements can provide convergence to a local optimum \cite{engelbrechtConvergenceProofParticle2010}). Yet, empirical data shows the efficiency of this algorithm in a majority of cases.
+The convergence of the Particle Swarm Optimization algorithm cannot be proven
+in the general case (although some refinements can provide convergence to a
+local optimum \cite{engelbrechtConvergenceProofParticle2010}). Yet, empirical
+data shows the efficiency of this algorithm in a majority of cases.
+
+\subsection{Genetic Algorithms}
+The genetic algorithm is a metaheuristic optimization algorithm inspired by the
+process of natural selection. It uses the concepts of selection, crossover and
+mutation to evolve a population of individuals towards the best solution. The
+algorithm starts by generating an initial population of individuals, then
+iteratively selects the best individuals, crosses them over to create new
+individuals and mutates them to introduce diversity in the population. The
+algorithm stops when a stopping criterion is met, such as a maximum number of
+generations or a convergence criterion. In our case each individual represents
+a hyperparameter configuration and the fitness of an individual is the accuracy
+of the model trained with this configuration. It is a similar algorithm to PSO
+but with a different methodology to evolve the population. The pseudo-code of a
+genetic algorithm is given below.
+
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \caption{Genetic Algorithm (GA) algorithm}
+    \KwIn{Hyperparameter space $H$, training set $D$, validation set $V$, population size $S$, $n_b$ number of best individual selected, $n_r$ number of random individual selected, mutation rate $p_m$, crossover rate $p_c$, number of generations $G$}
+    \KwOut{Best hyperparameter configuration $h^*$ and accuracy $a^*$}
+    \BlankLine
+    Initialize the population of size $S$ with random hyperparameter configurations\;
+    \For{$g \leftarrow 1$ \KwTo $G$}{
+        Evaluate the fitness (accuracy) of each individual in the population\;
+        Select $n_b$ best individuals and $n_r$ random individuals to form the parents of the next generation\;
+        Apply crossover with probability $p_c$ to create new individuals\;
+        Apply mutation with probability $p_m$ to introduce diversity in the population\;
+    }
+    \Return{Best individual in the population (best hyperparameter configuration and accuracy)}
+\end{algorithm}
+\vspace{5pt}
+
+\textbf{Selection step}
+
+The selection step is used to select the best individuals in the population to
+form the next generation. There are several methods to perform the selection
+step, but here we choose a number $n_b$ of the best individuals in the
+population based on their accuracy and a number $n_r$ of random individuals to
+form the parents of the next generation. The random individuals are chosen in
+order to keep diversity in the population and not fall into a local optimum.
+
+\vspace{5pt}
+
+\textbf{Crossover step}
+
+The crossover step is used to create new individuals from the parents. In our
+case, we use a uniform crossover method where two parents give two children by
+exchanging their hyperparameters with a certain probability $p_c$. This assure
+a local exploration of the hyperparameter space by similar and accurate
+individuals but also a more global exploration by the random individuals.
+
+\vspace{5pt}
+
+\textbf{Mutation step}
+
+The mutation step is used to introduce diversity in the population. It consists
+in choosing with a probability $p_m$ a hyperparameter of an individual and
+changing it to a random value in the hyperparameter space. This assures that we
+theoratically explore the whole hyperparameter space if we compute enough
+generations but also that we introduce randomized diversity in the
+population.\\
+
+One must carefully choose the values of $S$, $n_b$, $n_r$, $p_m$ and $p_c$ in
+order to assure a fast convergence to a good solution. The algortihm proposed
+and implemented in this project is a simple genetic algorithm, but there are
+many variations of genetic algorithms that can be very useful in the case of
+hyperparameter optimization.
 
 \subsection{Bayesian Optimization HyperBand algorithm \cite{falknerBOHBRobustEfficient2018}}
 This method uses a probabilistic model of the accuracy function given the different tested configurations and iteratively returns the next configuration to try out by choosing the maximizer of expected improvement.  The probabilistic model used here is the Tree Parzen Estimator which uses a kernel density estimator to model the accuracy function of the model. To further improve the performance of the algorithm, the Hyper Band technique is used to dynamically allocate the amount of resources for each training. For this project, we rely on the \href{https://automl.github.io/HpBandSter/build/html/quickstart.html}{HpBandSter library [clickable link]} which provides a full BOHB optimizer framework ---similar to ours--- that we integrated to our framework. Furthermore, this library enables asynchronous processing to try out multiple configurations simultaneously, therefore drastically increasing computing efficiency.
@@ -217,8 +309,8 @@ This method uses a probabilistic model of the accuracy function given the differ
 This project will be entirely developed on Python through the Pytorch deep
 learning library. Moreover, the CIFAR-10 dataset will be used throughout this
 study to train a LeNet5-type model architecture for image recognition. Our
-hyperparameters of interest are the output sizes of the
-convolutional layers (C1, C3, C5) and the output size of the first dense layer (F6)
+hyperparameters of interest are the output sizes of the convolutional layers
+(C1, C3, C5) and the output size of the first dense layer (F6)
 
 For this project, we decide to build a HyperParameterOptimizer (HPO) object
 responsible for navigating the input hyperparameter space and organizing the
@@ -227,7 +319,8 @@ dedicated library to generate a model with the appropriate hyperparameters and
 launches the trainings. The system architecture is given in Figure
 \ref{fig:framework}.
 
-The accuracy function of the classifier is chosen as the proportion of accurate classifications from the model on a validation dataset.
+The accuracy function of the classifier is chosen as the proportion of accurate
+classifications from the model on a validation dataset.
 
 \begin{figure}[h]
     \centering
@@ -258,84 +351,112 @@ values) and hyperparameter arrays (used to represent multiple hyperparameter
 configurations simultaneously).
 
 \section{Experimental setup}
-To try out the different hyperparameter optimizers, we search for the optimal configurations of a LeNet-5 type network \cite{lecunGradientbasedLearningApplied1998}. More precisely, we look for the optimal number of filters for the three convolutional layers C1, C3 and C5 as well as the size of the network's dense layer F6. A schematic of the LeNet-5 architecture is provided in Figure \ref{fig:lenet}.
+To try out the different hyperparameter optimizers, we search for the optimal
+configurations of a LeNet-5 type network
+\cite{lecunGradientbasedLearningApplied1998}. More precisely, we look for the
+optimal number of filters for the three convolutional layers C1, C3 and C5 as
+well as the size of the network's dense layer F6. A schematic of the LeNet-5
+architecture is provided in Figure \ref{fig:lenet}.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width = \linewidth]{ln5.png}
-\caption{LeNet-5 architecure with the hyperparameter configuration used in the original paper}
-\label{fig:lenet}
+    \centering
+    \includegraphics[width = \linewidth]{ln5.png}
+    \caption{LeNet-5 architecure with the hyperparameter configuration used in the original paper}
+    \label{fig:lenet}
 \end{figure}
 
-We use the LeNet-5 architecture to recognize different images from the CIFAR-10 dataset \cite{krizhevskyLearningMultiplyeLayers2009}, divided into 10 categories : \{ airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck\}. The CIFAR-10 comprises $60\ 000$ coloured images of $32\times32$ pixels with $6\ 000$ images per category and split into a $50\ 000$ image training set and a $10\ 000$ image test set.
+We use the LeNet-5 architecture to recognize different images from the CIFAR-10
+dataset \cite{krizhevskyLearningMultiplyeLayers2009}, divided into 10
+categories : \{ airplane, automobile, bird, cat, deer, dog, frog, horse, ship,
+truck\}. The CIFAR-10 comprises $60\ 000$ coloured images of $32\times32$
+pixels with $6\ 000$ images per category and split into a $50\ 000$ image
+training set and a $10\ 000$ image test set.
 
-Model trainings for this project have been entirely done on local GPUs (GeForce MX230 and GeForce RTX3070 Laptop) with a batch of size 64. Training the classifier on CIFAR-10 as provided by \verb+torchvision+ led to an epoch duration from 20 to 40s depending on model complexity.
+Model trainings for this project have been entirely done on local GPUs (GeForce
+MX230 and GeForce RTX3070 Laptop) with a batch of size 64. Training the
+classifier on CIFAR-10 as provided by \verb+torchvision+ led to an epoch
+duration from 20 to 40s depending on model complexity.
 
 We use the following parameters for each algorithm :
 \begin{figure}[h]
-\centering
-\begin{tabular}{|c|c|}
-\hline Algorithm & Parameters \\
-\hline Grid search & $\emptyset$ \\
-Random search & $p = 5.4\cdot 10^{-6}$ \\
-Particle Swarm Optimization & $S=5,\phi_l = 2,\ \phi_g = 2,\ w=0.5$\\
-BOHB & $min_{epochs} = 10,\ max_{epochs} = 40,\ N_{iterations} = 20$\\
-\hline
-\end{tabular}
-\label{tab:parameters}
-\caption{Algorithm parameters}
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline Algorithm            & Parameters                                                    \\
+        \hline Grid search          & $\emptyset$                                                   \\
+        Random search               & $p = 5.4\cdot 10^{-6}$                                        \\
+        Particle Swarm Optimization & $S=5,\phi_l = 2,\ \phi_g = 2,\ w=0.5$                         \\
+        BOHB                        & $min_{epochs} = 10,\ max_{epochs} = 40,\ N_{iterations} = 20$ \\
+        \hline
+    \end{tabular}
+    \label{tab:parameters}
+    \caption{Algorithm parameters}
 \end{figure}
 
-Unless indicated otherwise, the number of epochs for every trainings is set at 40. The probability parameter $p$ of Random Search is chosen so as to consume a similar number of epochs as PSO and BOHB, which is around 4000 epochs per optimisation run.
+Unless indicated otherwise, the number of epochs for every trainings is set at
+40. The probability parameter $p$ of Random Search is chosen so as to consume a
+similar number of epochs as PSO and BOHB, which is around 4000 epochs per
+optimisation run.
 
 For every method, we consider the following hyperparameter space to search :
 
 \begin{figure}[h]
-\centering
-\begin{tabular}{|c|c|}
-\hline
-Hyperparameter & Range \\
-\hline
-F6 & [125,325]\\
-\hline
-Number of C1 filters & [1:32] \\
-\hline
-Number of C3 filters & [1:32] \\
-\hline
-Number of C5 filters & [40:130] \\
-\hline
-\end{tabular}
-\label{tab:hpspace}
-\caption{Hyperparameter space}
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Hyperparameter       & Range     \\
+        \hline
+        F6                   & [125,325] \\
+        \hline
+        Number of C1 filters & [1:32]    \\
+        \hline
+        Number of C3 filters & [1:32]    \\
+        \hline
+        Number of C5 filters & [40:130]  \\
+        \hline
+    \end{tabular}
+    \label{tab:hpspace}
+    \caption{Hyperparameter space}
 \end{figure}
 
-We select this hyperparameter space by using the initial hyperparameter configuration used in LeNet-5 and explore neighbouring configurations to it.
+We select this hyperparameter space by using the initial hyperparameter
+configuration used in LeNet-5 and explore neighbouring configurations to it.
 
-Although the implemented algorithms enable increased efficiency compared to a babysitting or grid search approach, each optimization run took important amounts of time, allowing minimal repetitions to validate the results, leaving significant space to interpretation of the results and little quantitative results. We still present the results in the following section.
+Although the implemented algorithms enable increased efficiency compared to a
+babysitting or grid search approach, each optimization run took important
+amounts of time, allowing minimal repetitions to validate the results, leaving
+significant space to interpretation of the results and little quantitative
+results. We still present the results in the following section.
 
 \section{Results}
 
 Running the algorithms returns us the following results :
 \begin{figure}[h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline 
-\multirow{2}{*}{Algorithm} & \multicolumn{4}{c|}{Hyperparameter config} & \multirow{2}{*}{\begin{tabular}{c}Number of\\ training epochs\end{tabular}} & \multirow{2}{*}{\begin{tabular}{c}Validation\\ accuracy\end{tabular}} \\
-\cline{2-5}
-& F6 & C1 & C3 & C5 \\
-\hline
-PSO & $ 324 $ & $26$ & $19$ & $40$ & $20\times 5\times 40$ & $66.8\%$\\ \hline
-BOHB & $318$ & $30$ & $15$ & $44$ & $40\times40$ & $66.5\%$ \\ \hline
-Grid Search & - & - & - & - & $200\times32\times32\times90\times40$ & - \\ \hline
-Random Search & 224 & 27 & 30 & 40 & $p\times200\times32\times32\times90\times40$ & 67.83\% \\ \hline
-\end{tabular}
-\label{tab:results}
-\caption{Optimal hyperparameter configurations}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \multirow{2}{*}{Algorithm} & \multicolumn{4}{c|}{Hyperparameter config} & \multirow{2}{*}{\begin{tabular}{c}Number of\\ training epochs\end{tabular}} & \multirow{2}{*}{\begin{tabular}{c}Validation\\ accuracy\end{tabular}}                                                                  \\
+        \cline{2-5}
+                                   & F6                                         & C1                                                                          & C3                                                                    & C5                                                             \\
+        \hline
+        PSO                        & $ 324 $                                    & $26$                                                                        & $19$                                                                  & $40$ & $20\times 5\times 40$                        & $66.8\%$ \\ \hline
+        Genetic                    & $ 324 $                                    & $26$                                                                        & $19$                                                                  & $40$ & $10\times 8\times 10$                        & $66.8\%$ \\ \hline
+        BOHB                       & $318$                                      & $30$                                                                        & $15$                                                                  & $44$ & $40\times40$                                 & $66.5\%$ \\ \hline
+        Grid Search                & -                                          & -                                                                           & -                                                                     & -    & $200\times32\times32\times90\times40$        & -        \\ \hline
+        Random Search              & 224                                        & 27                                                                          & 30                                                                    & 40   & $p\times200\times32\times32\times90\times40$ & 67.83\%  \\ \hline
+    \end{tabular}
+    \label{tab:results}
+    \caption{Optimal hyperparameter configurations}
 \end{figure}
 
-Due to the extreme resource consumption of grid search ($\sim 740\ 000\ 000$ epochs and $\sim 6\ 000\ 000$ compute hours), we weren't able to do a full run for this algorithm.
+Due to the extreme resource consumption of grid search ($\sim 740\ 000\ 000$
+epochs and $\sim 6\ 000\ 000$ compute hours), we weren't able to do a full run
+for this algorithm.
 
-From these results, we observe that both PSO and BOHB provide good solutions for hyperparameter optimization, with significantly reduced costs compared to Grid Search or Random Search. From this experiment, there is no clear way of knowing which of BOHB or PSO is best to solve this specific hyperparameter problem (whether ``best'' is defined by convergence speed or reliability).
+From these results, we observe that both PSO and BOHB provide good solutions
+for hyperparameter optimization, with significantly reduced costs compared to
+Grid Search or Random Search. From this experiment, there is no clear way of
+knowing which of BOHB or PSO is best to solve this specific hyperparameter
+problem (whether ``best'' is defined by convergence speed or reliability).
 
 \addcontentsline{toc}{section}{References}
 \printbibliography

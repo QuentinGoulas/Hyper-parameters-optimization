@@ -9,7 +9,8 @@ import subprocess
 
 import pso
 import gen
-
+import os
+from datetime import datetime
 class HyperParameterOptimizer:
     '''
     A hyper parameter optimizer class to optimize the hyperparameters of a simple CNN
@@ -33,6 +34,7 @@ class HyperParameterOptimizer:
             else "mps"
             if th.backends.mps.is_available()
             else "cpu")
+        self.device = "cpu"
         print(f"Using {self.device} device")
 
         self.trainloader,self.testloader = ln5.load_data()
@@ -228,6 +230,8 @@ class HyperParameterOptimizer:
             # Initialize population
             population = gen.initialize_population(hpspace, P)
             current_accuracies = np.zeros(P)
+            all_accuracies = [current_accuracies]
+            cnt = 1
 
             for j in range(P):
                 print(f"Genetic initialization  - Particle {j+1}/{P} - Testing hyperparameter config : {population[j].config}")
@@ -237,7 +241,7 @@ class HyperParameterOptimizer:
 
             # Evolve population (selection then crossover then mutation)
             convergence_count = 0
-            cnt = 0
+            
             old_max_a = 0
             max_a = np.max(current_accuracies)
             best_hp = population[np.argmax(current_accuracies)].config
@@ -264,16 +268,29 @@ class HyperParameterOptimizer:
                 print(f"new population : {[population[i].config for i in range(P)]}")
 
                 for j in range(P):
-                    print(f"PSO step {cnt} - Particle {j+1}/{P} - Testing hyperparameter config : {population[j].config}")
+                    print(f"Genetic step {cnt} - Particle {j+1}/{P} - Testing hyperparameter config : {population[j].config}")
                     self.update_hyperparam(population[j].config)
                     current_accuracies[j] = self.train_module(epochs)
                 max_a = np.max(current_accuracies)
+                all_accuracies.append([current_accuracies])
 
                 if max_a > best_max:
                     best_hp = population[np.argmax(current_accuracies)].config
                     best_max = np.max(current_accuracies)
                     print(f"New best accuracy found : {best_max}")
-            
+
+
+            # Create directory if it doesn't exist
+            if not os.path.exists('optim_logs'):
+                os.makedirs('optim_logs')
+
+            # Generate filename with date and time
+            now = datetime.now()
+            filename = now.strftime("optim_logs/accuracies_%Y%m%d_%H%M%S.npy")
+
+            # Save accuracies
+            np.save(filename, all_accuracies)
+            print(f"Accuracies saved to {filename}")
             acc = best_max
 
         elif method == 'bohb':
@@ -328,14 +345,14 @@ class HyperParameterOptimizer:
 
 ######################### Test script #########################
 if __name__ == '__main__':
-    F6Space = np.array([125+i for i in range(200)])
-    C1Space = np.array([i+1 for i in range(32)])
-    C5Space = np.array([i+40 for i in range(90)])
+    F6Space = [125+i for i in range(200)]
+    C1Space = [i+1 for i in range(32)]
+    C5Space = [i+40 for i in range(90)]
     HPOptim = HyperParameterOptimizer({'F6':F6Space,'C1_chan':C1Space,'C3_chan':C1Space,'C5_chan':C5Space},seed = LeNet5())
     HPOptim.load_data()
     # res = HPOptim.optimize('bohb',min_epochs = 10,max_epochs = 40, n_iterations = 20, n_workers = 2)
     # res = HPOptim.optimize('pso',epochs=40,swarm_size=5,local_step_size=2,global_step_size=2,precision=1e-5,inertia=0.5,n_iterations=50)
     # res = HPOptim.optimize('random_search',epochs=40,p=5.4e-6)
     # res = HPOptim.optimize('grid_search')
-    res = HPOptim.optimize('genetic',epochs = 2, max_iteration = 10, precision=1e-5, precision_iteration = 5, pop_size = 10, mutation_probability = 0.1, crossover_probability = 0.5, less_fit_proportion = 0.1, best_fit_proportion = 0.5)
+    res = HPOptim.optimize('genetic',epochs = 10, max_iteration = 10, precision=1e-5, precision_iteration = 5, pop_size = 8, mutation_probability = 0.1, crossover_probability = 0.5, less_fit_proportion = 0.1, best_fit_proportion = 0.5)
     print(res)

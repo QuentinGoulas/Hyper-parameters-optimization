@@ -36,7 +36,7 @@ def crossover(par1, par2, cp):
 def mutation(indiv, mp, hpspace):
     for key in list(indiv.keys()):
         if np.random.rand() < mp:
-            indiv.config[key] = hpspace[np.random.choice(range(len(hpspace)))]
+            indiv.config[key] = hpspace[np.random.choice(range(len(hpspace)))][key]
     return indiv
 
 def select_population(population, accuracies, bp, lp):
