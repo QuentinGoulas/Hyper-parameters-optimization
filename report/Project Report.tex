@@ -28,7 +28,7 @@
 \usepackage[ruled]{algorithm2e}
 
 \usepackage{hyperref}
-\usepackage{biblatex}
+\usepackage[backend=bibtex]{biblatex}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\dpart}[2]{\frac{\partial #1}{\partial #2}}
@@ -246,8 +246,8 @@ algorithm stops when a stopping criterion is met, such as a maximum number of
 generations or a convergence criterion. In our case each individual represents
 a hyperparameter configuration and the fitness of an individual is the accuracy
 of the model trained with this configuration. It is a similar algorithm to PSO
-but with a different methodology to evolve the population. The pseudo-code of a
-genetic algorithm is given below.
+but with a different methodology to evolve the population. The pseudo-code of
+the genetic algorithm is given below.
 
 \begin{algorithm}[H]
     \SetAlgoLined
@@ -300,7 +300,12 @@ One must carefully choose the values of $S$, $n_b$, $n_r$, $p_m$ and $p_c$ in
 order to assure a fast convergence to a good solution. The algortihm proposed
 and implemented in this project is a simple genetic algorithm, but there are
 many variations of genetic algorithms that can be very useful in the case of
-hyperparameter optimization.
+hyperparameter optimization. In our case, we will use a population size of
+around 10 individuals which is not sufficient to have a fine accuracy because
+we won't have enough diversity, but we are limited by computation time. A
+solution to this problem would be to increase the population size, use a more
+complex crossover method, or use an optimization method more appropriate to
+local search.
 
 \subsection{Bayesian Optimization HyperBand algorithm \cite{falknerBOHBRobustEfficient2018}}
 This method uses a probabilistic model of the accuracy function given the different tested configurations and iteratively returns the next configuration to try out by choosing the maximizer of expected improvement.  The probabilistic model used here is the Tree Parzen Estimator which uses a kernel density estimator to model the accuracy function of the model. To further improve the performance of the algorithm, the Hyper Band technique is used to dynamically allocate the amount of resources for each training. For this project, we rely on the \href{https://automl.github.io/HpBandSter/build/html/quickstart.html}{HpBandSter library [clickable link]} which provides a full BOHB optimizer framework ---similar to ours--- that we integrated to our framework. Furthermore, this library enables asynchronous processing to try out multiple configurations simultaneously, therefore drastically increasing computing efficiency.
@@ -317,7 +322,7 @@ responsible for navigating the input hyperparameter space and organizing the
 different hyperparameter configuration tests. The HPO object then calls a
 dedicated library to generate a model with the appropriate hyperparameters and
 launches the trainings. The system architecture is given in Figure
-\ref{fig:framework}.
+~\ref{fig:framework}.
 
 The accuracy function of the classifier is chosen as the proportion of accurate
 classifications from the model on a validation dataset.
@@ -386,6 +391,7 @@ We use the following parameters for each algorithm :
         Random search               & $p = 5.4\cdot 10^{-6}$                                        \\
         Particle Swarm Optimization & $S=5,\phi_l = 2,\ \phi_g = 2,\ w=0.5$                         \\
         BOHB                        & $min_{epochs} = 10,\ max_{epochs} = 40,\ N_{iterations} = 20$ \\
+        Genetic                     & $S=8, n_b=4, n_r=1, p_m=0.1, p_c=0.5, G=10, epoch=10$         \\
         \hline
     \end{tabular}
     \label{tab:parameters}
@@ -405,7 +411,7 @@ For every method, we consider the following hyperparameter space to search :
         \hline
         Hyperparameter       & Range     \\
         \hline
-        F6                   & [125,325] \\
+        F6                   & [125:325] \\
         \hline
         Number of C1 filters & [1:32]    \\
         \hline
@@ -414,8 +420,8 @@ For every method, we consider the following hyperparameter space to search :
         Number of C5 filters & [40:130]  \\
         \hline
     \end{tabular}
-    \label{tab:hpspace}
     \caption{Hyperparameter space}
+    \label{tab:hpspace}
 \end{figure}
 
 We select this hyperparameter space by using the initial hyperparameter
@@ -429,34 +435,47 @@ results. We still present the results in the following section.
 
 \section{Results}
 
-Running the algorithms returns us the following results :
+Running the algorithms returns us the following results in
+Figure~\ref{tab:results}. Due to the extreme resource consumption of grid
+search ($\sim 740\ 000\ 000$ epochs and $\sim 6\ 000\ 000$ compute hours), we
+weren't able to do a full run for this algorithm.
 \begin{figure}[h]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        \multirow{2}{*}{Algorithm} & \multicolumn{4}{c|}{Hyperparameter config} & \multirow{2}{*}{\begin{tabular}{c}Number of\\ training epochs\end{tabular}} & \multirow{2}{*}{\begin{tabular}{c}Validation\\ accuracy\end{tabular}}                                                                  \\
+        \multirow{2}{*}{Algorithm} & \multicolumn{4}{c|}{Hyperparameter config} & \multirow{2}{*}{\begin{tabular}{c}Number of\\ training epochs\end{tabular}} & \multirow{2}{*}{\begin{tabular}{c}Validation\\ accuracy\end{tabular}}                                                                   \\
         \cline{2-5}
-                                   & F6                                         & C1                                                                          & C3                                                                    & C5                                                             \\
+                                   & F6                                         & C1                                                                          & C3                                                                    & C5                                                              \\
         \hline
-        PSO                        & $ 324 $                                    & $26$                                                                        & $19$                                                                  & $40$ & $20\times 5\times 40$                        & $66.8\%$ \\ \hline
-        Genetic                    & $ 324 $                                    & $26$                                                                        & $19$                                                                  & $40$ & $10\times 8\times 10$                        & $66.8\%$ \\ \hline
-        BOHB                       & $318$                                      & $30$                                                                        & $15$                                                                  & $44$ & $40\times40$                                 & $66.5\%$ \\ \hline
-        Grid Search                & -                                          & -                                                                           & -                                                                     & -    & $200\times32\times32\times90\times40$        & -        \\ \hline
-        Random Search              & 224                                        & 27                                                                          & 30                                                                    & 40   & $p\times200\times32\times32\times90\times40$ & 67.83\%  \\ \hline
+        PSO                        & $ 324 $                                    & $26$                                                                        & $19$                                                                  & $40$  & $20\times 5\times 40$                        & $66.8\%$ \\ \hline
+        Genetic                    & $ 298 $                                    & $32$                                                                        & $32$                                                                  & $125$ & $10\times 8\times 10$                        & $68.9\%$ \\ \hline
+        BOHB                       & $318$                                      & $30$                                                                        & $15$                                                                  & $44$  & $40\times40$                                 & $66.5\%$ \\ \hline
+        Grid Search                & -                                          & -                                                                           & -                                                                     & -     & $200\times32\times32\times90\times40$        & -        \\ \hline
+        Random Search              & 224                                        & 27                                                                          & 30                                                                    & 40    & $p\times200\times32\times32\times90\times40$ & 67.83\%  \\ \hline
     \end{tabular}
-    \label{tab:results}
     \caption{Optimal hyperparameter configurations}
+    \label{tab:results}
 \end{figure}
 
-Due to the extreme resource consumption of grid search ($\sim 740\ 000\ 000$
-epochs and $\sim 6\ 000\ 000$ compute hours), we weren't able to do a full run
-for this algorithm.
+From these results, we observe that both PSO, genetic, random search and BOHB
+provide good solutions for hyperparameter optimization, with significantly
+reduced costs compared to Grid Search or Random Search. From this experiment,
+there is no clear way of knowing which of BOHB, PSO or genetic is best to solve
+this specific hyperparameter problem (whether ``best'' is defined by
+convergence speed or reliability). Maybe a combination of these algorithms
+could be used to improve the results: for example using PSO to explore the
+hyperparameter space and then using BOHB to refine the search, or using a
+random search on a very large amount of configurations to find a good starting
+point for a genetic algorithm.\\
 
-From these results, we observe that both PSO and BOHB provide good solutions
-for hyperparameter optimization, with significantly reduced costs compared to
-Grid Search or Random Search. From this experiment, there is no clear way of
-knowing which of BOHB or PSO is best to solve this specific hyperparameter
-problem (whether ``best'' is defined by convergence speed or reliability).
+At the end of this project, we can conclude that the implemented algorithms
+works well for the hyperparameter optimization of a LeNet-5 model on the
+CIFAR-10 dataset. The results obtained are satisfying and show that the
+algorithms are able to improve hyperparameter configurations after each
+iteration. However, the results are not sufficient to conclude on the best
+algorithm to use for hyperparameter optimization. The choice of the algorithm
+to use will depend on the specific problem to solve and the resources
+available.
 
 \addcontentsline{toc}{section}{References}
 \printbibliography

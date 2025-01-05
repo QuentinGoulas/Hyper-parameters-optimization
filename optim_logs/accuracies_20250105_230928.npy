@@ -1,0 +1,435 @@
+Method : Genetic
+Hyperparameters : F6 [125:325], C1_chan : [1:32], C3_chan : [1:32], C5_chan : [1:130]
+HPOptim.optimize('genetic',epochs = 10, max_iteration = 10, precision=1e-5, precision_iteration = 5, pop_size = 8, mutation_probability = 0.1, crossover_probability = 0.5, less_fit_proportion = 0.1, best_fit_proportion = 0.5)
+total_number_epoch = 800
+
+Genetic initialization  - Particle 1/8 - Testing hyperparameter config : {'F6': 146, 'C1_chan': 6, 'C3_chan': 6, 'C5_chan': 49}
+Epoch 1/10, Loss: 1.8390, Time: 16.72s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.4276, Time: 16.37s, Memory: 0.00GB
+Epoch 10/10, Loss: 1.2658, Time: 16.08s, Memory: 0.00GB
+Accuracy: 52.73%
+Genetic initialization  - Particle 2/8 - Testing hyperparameter config : {'F6': 187, 'C1_chan': 32, 'C3_chan': 31, 'C5_chan': 57}
+Epoch 1/10, Loss: 1.7312, Time: 17.77s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0610, Time: 19.22s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8339, Time: 21.11s, Memory: 0.00GB
+Accuracy: 66.60%
+Genetic initialization  - Particle 3/8 - Testing hyperparameter config : {'F6': 269, 'C1_chan': 2, 'C3_chan': 23, 'C5_chan': 61}
+Epoch 1/10, Loss: 1.8727, Time: 17.10s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.3868, Time: 16.37s, Memory: 0.00GB
+Epoch 10/10, Loss: 1.1617, Time: 17.01s, Memory: 0.00GB
+Accuracy: 53.67%
+Genetic initialization  - Particle 4/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 6, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7868, Time: 17.10s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1095, Time: 16.70s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8249, Time: 17.09s, Memory: 0.00GB
+Accuracy: 61.68%
+Genetic initialization  - Particle 5/8 - Testing hyperparameter config : {'F6': 211, 'C1_chan': 12, 'C3_chan': 20, 'C5_chan': 50}
+Epoch 1/10, Loss: 1.7816, Time: 17.81s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.2179, Time: 19.18s, Memory: 0.00GB
+Epoch 10/10, Loss: 1.0120, Time: 16.58s, Memory: 0.00GB
+Accuracy: 60.70%
+Genetic initialization  - Particle 6/8 - Testing hyperparameter config : {'F6': 195, 'C1_chan': 12, 'C3_chan': 24, 'C5_chan': 88}
+Epoch 1/10, Loss: 1.7908, Time: 15.90s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0829, Time: 16.67s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8475, Time: 16.49s, Memory: 0.00GB
+Accuracy: 65.05%
+Genetic initialization  - Particle 7/8 - Testing hyperparameter config : {'F6': 270, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7324, Time: 18.02s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1018, Time: 17.76s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8529, Time: 17.79s, Memory: 0.00GB
+Accuracy: 64.68%
+Genetic initialization  - Particle 8/8 - Testing hyperparameter config : {'F6': 220, 'C1_chan': 1, 'C3_chan': 4, 'C5_chan': 89}
+Epoch 1/10, Loss: 2.0068, Time: 16.28s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.5997, Time: 15.98s, Memory: 0.00GB
+Epoch 10/10, Loss: 1.4627, Time: 16.33s, Memory: 0.00GB
+Accuracy: 45.33%
+Genetic iteration 1 - Convergence count 0 - Best accuracy : 0.666
+[np.int64(1), np.int64(5), np.int64(6), np.int64(3), np.int64(4), np.int64(2), np.int64(0), np.int64(7)]
+new population : [{'F6': 195, 'C1_chan': 12, 'C3_chan': 24, 'C5_chan': 49}, {'F6': 244, 'C1_chan': 6, 'C3_chan': 32, 'C5_chan': 88}, {'F6': 270, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 6, 'C3_chan': 32, 'C5_chan': 65}, {'F6': 195, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 57}, {'F6': 187, 'C1_chan': 12, 'C3_chan': 31, 'C5_chan': 88}, {'F6': 270, 'C1_chan': 22, 'C3_chan': 32, 'C5_chan': 65}, {'F6': 251, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 99}]
+Genetic step 2 - Particle 1/8 - Testing hyperparameter config : {'F6': 195, 'C1_chan': 12, 'C3_chan': 24, 'C5_chan': 49}
+Epoch 1/10, Loss: 1.7734, Time: 16.38s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1858, Time: 16.24s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9860, Time: 16.15s, Memory: 0.00GB
+Accuracy: 60.93%
+Genetic step 2 - Particle 2/8 - Testing hyperparameter config : {'F6': 244, 'C1_chan': 6, 'C3_chan': 32, 'C5_chan': 88}
+Epoch 1/10, Loss: 1.7971, Time: 16.19s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1878, Time: 16.58s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9462, Time: 16.23s, Memory: 0.00GB
+Accuracy: 58.76%
+Genetic step 2 - Particle 3/8 - Testing hyperparameter config : {'F6': 270, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7441, Time: 17.99s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1382, Time: 17.43s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8670, Time: 17.29s, Memory: 0.00GB
+Accuracy: 64.50%
+Genetic step 2 - Particle 4/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 6, 'C3_chan': 32, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7336, Time: 15.96s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1201, Time: 16.36s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8918, Time: 16.20s, Memory: 0.00GB
+Accuracy: 63.32%
+Genetic step 2 - Particle 5/8 - Testing hyperparameter config : {'F6': 195, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 57}
+Epoch 1/10, Loss: 1.7679, Time: 17.57s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1279, Time: 17.32s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9158, Time: 17.61s, Memory: 0.00GB
+Accuracy: 65.09%
+Genetic step 2 - Particle 6/8 - Testing hyperparameter config : {'F6': 187, 'C1_chan': 12, 'C3_chan': 31, 'C5_chan': 88}
+Epoch 1/10, Loss: 1.7678, Time: 15.94s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1275, Time: 16.35s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8744, Time: 16.77s, Memory: 0.00GB
+Accuracy: 63.91%
+Genetic step 2 - Particle 7/8 - Testing hyperparameter config : {'F6': 270, 'C1_chan': 22, 'C3_chan': 32, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7441, Time: 16.79s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0921, Time: 16.90s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8575, Time: 18.37s, Memory: 0.00GB
+Accuracy: 64.98%
+Genetic step 2 - Particle 8/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7666, Time: 17.30s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0994, Time: 17.90s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8496, Time: 16.66s, Memory: 0.00GB
+Accuracy: 64.37%
+Genetic iteration 2 - Convergence count 0 - Best accuracy : 0.666
+[np.int64(4), np.int64(6), np.int64(2), np.int64(7), np.int64(5), np.int64(3), np.int64(0), np.int64(1)]
+new population : [{'F6': 270, 'C1_chan': 22, 'C3_chan': 4, 'C5_chan': 99}, {'F6': 270, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 65}, {'F6': 251, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 99}, {'F6': 195, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 57}, {'F6': 251, 'C1_chan': 22, 'C3_chan': 17, 'C5_chan': 99}, {'F6': 270, 'C1_chan': 25, 'C3_chan': 32, 'C5_chan': 65}, {'F6': 195, 'C1_chan': 25, 'C3_chan': 24, 'C5_chan': 57}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 17, 'C5_chan': 99}]
+Genetic step 3 - Particle 1/8 - Testing hyperparameter config : {'F6': 270, 'C1_chan': 22, 'C3_chan': 4, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7962, Time: 16.91s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.4293, Time: 17.09s, Memory: 0.00GB
+Epoch 10/10, Loss: 1.2495, Time: 16.90s, Memory: 0.00GB
+Accuracy: 52.87%
+Genetic step 3 - Particle 2/8 - Testing hyperparameter config : {'F6': 270, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7145, Time: 17.65s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1180, Time: 17.64s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8758, Time: 17.90s, Memory: 0.00GB
+Accuracy: 64.78%
+Genetic step 3 - Particle 3/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7047, Time: 17.34s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0371, Time: 17.10s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8273, Time: 16.80s, Memory: 0.00GB
+Accuracy: 66.02%
+Genetic step 3 - Particle 4/8 - Testing hyperparameter config : {'F6': 195, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 57}
+Epoch 1/10, Loss: 1.7468, Time: 17.15s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1289, Time: 17.14s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9032, Time: 17.21s, Memory: 0.00GB
+Accuracy: 65.28%
+Genetic step 3 - Particle 5/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 22, 'C3_chan': 17, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7340, Time: 16.76s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0962, Time: 16.69s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8607, Time: 16.42s, Memory: 0.00GB
+Accuracy: 64.51%
+Genetic step 3 - Particle 6/8 - Testing hyperparameter config : {'F6': 270, 'C1_chan': 25, 'C3_chan': 32, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7447, Time: 16.95s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0579, Time: 16.75s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7945, Time: 18.03s, Memory: 0.00GB
+Accuracy: 65.96%
+Genetic step 3 - Particle 7/8 - Testing hyperparameter config : {'F6': 195, 'C1_chan': 25, 'C3_chan': 24, 'C5_chan': 57}
+Epoch 1/10, Loss: 1.7628, Time: 17.21s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1182, Time: 17.67s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9239, Time: 17.38s, Memory: 0.00GB
+Accuracy: 63.99%
+Genetic step 3 - Particle 8/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 17, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7170, Time: 18.08s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0514, Time: 17.43s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8153, Time: 17.56s, Memory: 0.00GB
+Accuracy: 65.64%
+Genetic iteration 3 - Convergence count 0 - Best accuracy : 0.666
+[np.int64(2), np.int64(5), np.int64(7), np.int64(3), np.int64(1), np.int64(4), np.int64(6), np.int64(0)]
+new population : [{'F6': 251, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 65}, {'F6': 270, 'C1_chan': 25, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 195, 'C1_chan': 2, 'C3_chan': 17, 'C5_chan': 129}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}, {'F6': 270, 'C1_chan': 15, 'C3_chan': 17, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 65}, {'F6': 195, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 57}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}]
+Genetic step 4 - Particle 1/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7353, Time: 16.72s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1268, Time: 17.37s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9115, Time: 18.53s, Memory: 0.00GB
+Accuracy: 64.14%
+Genetic step 4 - Particle 2/8 - Testing hyperparameter config : {'F6': 270, 'C1_chan': 25, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6940, Time: 18.22s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9819, Time: 16.85s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7407, Time: 17.95s, Memory: 0.00GB
+Accuracy: 66.83%
+Genetic step 4 - Particle 3/8 - Testing hyperparameter config : {'F6': 195, 'C1_chan': 2, 'C3_chan': 17, 'C5_chan': 129}
+Epoch 1/10, Loss: 1.8640, Time: 15.75s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.3257, Time: 15.66s, Memory: 0.00GB
+Epoch 10/10, Loss: 1.1172, Time: 15.73s, Memory: 0.00GB
+Accuracy: 54.46%
+Genetic step 4 - Particle 4/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7081, Time: 17.60s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0323, Time: 17.63s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8002, Time: 17.67s, Memory: 0.00GB
+Accuracy: 66.24%
+Genetic step 4 - Particle 5/8 - Testing hyperparameter config : {'F6': 270, 'C1_chan': 15, 'C3_chan': 17, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7608, Time: 17.11s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1430, Time: 16.14s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9016, Time: 15.96s, Memory: 0.00GB
+Accuracy: 64.01%
+Genetic step 4 - Particle 6/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7051, Time: 17.12s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0161, Time: 17.44s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8169, Time: 17.70s, Memory: 0.00GB
+Accuracy: 66.39%
+Genetic step 4 - Particle 7/8 - Testing hyperparameter config : {'F6': 195, 'C1_chan': 25, 'C3_chan': 17, 'C5_chan': 57}
+Epoch 1/10, Loss: 1.7592, Time: 17.36s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1847, Time: 16.92s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9429, Time: 16.83s, Memory: 0.00GB
+Accuracy: 63.45%
+Genetic step 4 - Particle 8/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7353, Time: 17.25s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1018, Time: 17.04s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8726, Time: 16.99s, Memory: 0.00GB
+Accuracy: 64.48%
+New best accuracy found : 0.6683
+Genetic iteration 4 - Convergence count 0 - Best accuracy : 0.6683
+[np.int64(1), np.int64(5), np.int64(3), np.int64(7), np.int64(0), np.int64(4), np.int64(6), np.int64(2)]
+new population : [{'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 97}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 101}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 65}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 65}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 65}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}]
+Genetic step 5 - Particle 1/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 97}
+Epoch 1/10, Loss: 1.7114, Time: 17.04s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0612, Time: 17.08s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8153, Time: 17.02s, Memory: 0.00GB
+Accuracy: 65.79%
+Genetic step 5 - Particle 2/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 101}
+Epoch 1/10, Loss: 1.7063, Time: 17.48s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0177, Time: 17.12s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7829, Time: 17.23s, Memory: 0.00GB
+Accuracy: 66.36%
+Genetic step 5 - Particle 3/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7290, Time: 16.90s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0302, Time: 17.03s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8027, Time: 17.15s, Memory: 0.00GB
+Accuracy: 66.66%
+Genetic step 5 - Particle 4/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7204, Time: 18.34s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0302, Time: 17.13s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7901, Time: 17.11s, Memory: 0.00GB
+Accuracy: 65.53%
+Genetic step 5 - Particle 5/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6807, Time: 17.29s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9650, Time: 17.52s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7071, Time: 17.92s, Memory: 0.00GB
+Accuracy: 66.77%
+Genetic step 5 - Particle 6/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7345, Time: 20.27s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0949, Time: 17.20s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8713, Time: 17.02s, Memory: 0.00GB
+Accuracy: 64.97%
+Genetic step 5 - Particle 7/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7200, Time: 16.91s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0421, Time: 16.99s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8329, Time: 17.01s, Memory: 0.00GB
+Accuracy: 65.92%
+Genetic step 5 - Particle 8/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7338, Time: 16.97s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0226, Time: 17.11s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7705, Time: 17.68s, Memory: 0.00GB
+Accuracy: 66.14%
+Genetic iteration 5 - Convergence count 0 - Best accuracy : 0.6683
+[np.int64(4), np.int64(2), np.int64(1), np.int64(7), np.int64(6), np.int64(0), np.int64(3), np.int64(5)]
+new population : [{'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 65}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 101}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 65}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}]
+Genetic step 6 - Particle 1/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7206, Time: 17.10s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0421, Time: 17.47s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8165, Time: 17.63s, Memory: 0.00GB
+Accuracy: 66.05%
+Genetic step 6 - Particle 2/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6639, Time: 17.85s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9187, Time: 17.71s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.6767, Time: 17.69s, Memory: 0.00GB
+Accuracy: 68.65%
+Genetic step 6 - Particle 3/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7022, Time: 17.58s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0246, Time: 17.60s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7747, Time: 17.80s, Memory: 0.00GB
+Accuracy: 66.78%
+Genetic step 6 - Particle 4/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 101}
+Epoch 1/10, Loss: 1.6990, Time: 18.26s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0355, Time: 17.22s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7930, Time: 16.99s, Memory: 0.00GB
+Accuracy: 65.66%
+Genetic step 6 - Particle 5/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6729, Time: 17.20s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9587, Time: 17.21s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7006, Time: 17.36s, Memory: 0.00GB
+Accuracy: 68.12%
+Genetic step 6 - Particle 6/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 65}
+Epoch 1/10, Loss: 1.7520, Time: 17.02s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0933, Time: 17.24s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8876, Time: 17.19s, Memory: 0.00GB
+Accuracy: 63.81%
+Genetic step 6 - Particle 7/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6925, Time: 17.14s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9716, Time: 17.89s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7270, Time: 17.39s, Memory: 0.00GB
+Accuracy: 67.18%
+Genetic step 6 - Particle 8/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 24, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7239, Time: 17.28s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0043, Time: 17.00s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7530, Time: 17.24s, Memory: 0.00GB
+Accuracy: 67.55%
+New best accuracy found : 0.6865
+Genetic iteration 6 - Convergence count 0 - Best accuracy : 0.6865
+[np.int64(1), np.int64(4), np.int64(7), np.int64(6), np.int64(2), np.int64(0), np.int64(3), np.int64(5)]
+new population : [{'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 97}, {'F6': 251, 'C1_chan': 25, 'C3_chan': 32, 'C5_chan': 72}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 251, 'C1_chan': 3, 'C3_chan': 24, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}]
+Genetic step 7 - Particle 1/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6848, Time: 17.24s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9992, Time: 17.19s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7582, Time: 17.30s, Memory: 0.00GB
+Accuracy: 67.58%
+Genetic step 7 - Particle 2/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6838, Time: 17.18s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9541, Time: 17.15s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.6881, Time: 17.38s, Memory: 0.00GB
+Accuracy: 66.63%
+Genetic step 7 - Particle 3/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 97}
+Epoch 1/10, Loss: 1.6853, Time: 17.04s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9880, Time: 17.09s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7368, Time: 17.19s, Memory: 0.00GB
+Accuracy: 67.03%
+Genetic step 7 - Particle 4/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 25, 'C3_chan': 32, 'C5_chan': 72}
+Epoch 1/10, Loss: 1.7274, Time: 16.84s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0324, Time: 16.80s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7984, Time: 17.03s, Memory: 0.00GB
+Accuracy: 66.30%
+Genetic step 7 - Particle 5/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6903, Time: 17.14s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0109, Time: 17.54s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7516, Time: 17.46s, Memory: 0.00GB
+Accuracy: 66.76%
+Genetic step 7 - Particle 6/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6992, Time: 17.27s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9666, Time: 17.25s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.6953, Time: 17.38s, Memory: 0.00GB
+Accuracy: 67.22%
+Genetic step 7 - Particle 7/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 3, 'C3_chan': 24, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.8453, Time: 15.46s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.2270, Time: 15.54s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9608, Time: 15.45s, Memory: 0.00GB
+Accuracy: 58.88%
+Genetic step 7 - Particle 8/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7170, Time: 17.17s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0183, Time: 17.24s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7597, Time: 17.37s, Memory: 0.00GB
+Accuracy: 65.82%
+Genetic iteration 7 - Convergence count 0 - Best accuracy : 0.6865
+[np.int64(0), np.int64(5), np.int64(2), np.int64(4), np.int64(1), np.int64(3), np.int64(7), np.int64(6)]
+new population : [{'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 97}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 224, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 315, 'C1_chan': 15, 'C3_chan': 10, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 9, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}]
+Genetic step 8 - Particle 1/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6995, Time: 17.21s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9938, Time: 17.17s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7336, Time: 17.50s, Memory: 0.00GB
+Accuracy: 66.66%
+Genetic step 8 - Particle 2/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 97}
+Epoch 1/10, Loss: 1.6679, Time: 17.34s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9781, Time: 17.15s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7287, Time: 17.04s, Memory: 0.00GB
+Accuracy: 66.53%
+Genetic step 8 - Particle 3/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6708, Time: 17.65s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9529, Time: 17.39s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7046, Time: 17.80s, Memory: 0.00GB
+Accuracy: 67.91%
+Genetic step 8 - Particle 4/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6593, Time: 17.65s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9251, Time: 17.55s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.6518, Time: 17.05s, Memory: 0.00GB
+Accuracy: 68.23%
+Genetic step 8 - Particle 5/8 - Testing hyperparameter config : {'F6': 224, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6683, Time: 17.27s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9432, Time: 17.29s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.6824, Time: 16.84s, Memory: 0.00GB
+Accuracy: 68.00%
+Genetic step 8 - Particle 6/8 - Testing hyperparameter config : {'F6': 315, 'C1_chan': 15, 'C3_chan': 10, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7659, Time: 15.94s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.2379, Time: 15.82s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9580, Time: 16.01s, Memory: 0.00GB
+Accuracy: 61.55%
+Genetic step 8 - Particle 7/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 9, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7340, Time: 16.98s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1817, Time: 16.92s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9360, Time: 17.32s, Memory: 0.00GB
+Accuracy: 62.91%
+Genetic step 8 - Particle 8/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7049, Time: 17.17s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9666, Time: 16.89s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7050, Time: 17.11s, Memory: 0.00GB
+Accuracy: 67.22%
+Genetic iteration 8 - Convergence count 0 - Best accuracy : 0.6865
+[np.int64(3), np.int64(4), np.int64(2), np.int64(7), np.int64(0), np.int64(1), np.int64(6), np.int64(5)]
+new population : [{'F6': 298, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 7, 'C5_chan': 99}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 49}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 14, 'C5_chan': 125}, {'F6': 224, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 42}, {'F6': 224, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}]
+Genetic step 9 - Particle 1/8 - Testing hyperparameter config : {'F6': 298, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6943, Time: 17.23s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9715, Time: 17.36s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.6894, Time: 16.77s, Memory: 0.00GB
+Accuracy: 66.27%
+Genetic step 9 - Particle 2/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 7, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7556, Time: 16.45s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1841, Time: 16.70s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9653, Time: 16.81s, Memory: 0.00GB
+Accuracy: 62.25%
+Genetic step 9 - Particle 3/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 49}
+Epoch 1/10, Loss: 1.7398, Time: 17.23s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0624, Time: 17.13s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8555, Time: 16.95s, Memory: 0.00GB
+Accuracy: 65.61%
+Genetic step 9 - Particle 4/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 14, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6964, Time: 16.69s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.1049, Time: 16.97s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8381, Time: 17.27s, Memory: 0.00GB
+Accuracy: 64.45%
+Genetic step 9 - Particle 5/8 - Testing hyperparameter config : {'F6': 224, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6679, Time: 17.25s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9142, Time: 17.64s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.6562, Time: 17.64s, Memory: 0.00GB
+Accuracy: 67.86%
+Genetic step 9 - Particle 6/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6738, Time: 17.88s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9591, Time: 17.39s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7071, Time: 17.53s, Memory: 0.00GB
+Accuracy: 67.76%
+Genetic step 9 - Particle 7/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 42}
+Epoch 1/10, Loss: 1.6977, Time: 17.30s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0522, Time: 17.30s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.8350, Time: 17.53s, Memory: 0.00GB
+Accuracy: 66.04%
+Genetic step 9 - Particle 8/8 - Testing hyperparameter config : {'F6': 224, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.7083, Time: 17.81s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0050, Time: 17.66s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7575, Time: 17.32s, Memory: 0.00GB
+Accuracy: 67.77%
+Genetic iteration 9 - Convergence count 0 - Best accuracy : 0.6865
+[np.int64(4), np.int64(7), np.int64(5), np.int64(0), np.int64(6), np.int64(2), np.int64(3), np.int64(1)]
+new population : [{'F6': 200, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 118}, {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 298, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 185, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 231, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 298, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}, {'F6': 224, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}, {'F6': 224, 'C1_chan': 32, 'C3_chan': 12, 'C5_chan': 125}]
+Genetic step 10 - Particle 1/8 - Testing hyperparameter config : {'F6': 200, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 118}
+Epoch 1/10, Loss: 1.6870, Time: 17.25s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9619, Time: 17.02s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7061, Time: 17.11s, Memory: 0.00GB
+Accuracy: 67.15%
+Genetic step 10 - Particle 2/8 - Testing hyperparameter config : {'F6': 251, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6775, Time: 16.92s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.0143, Time: 17.78s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7374, Time: 17.13s, Memory: 0.00GB
+Accuracy: 66.10%
+Genetic step 10 - Particle 3/8 - Testing hyperparameter config : {'F6': 298, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6856, Time: 17.14s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9548, Time: 17.85s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7063, Time: 17.18s, Memory: 0.00GB
+Accuracy: 67.06%
+Genetic step 10 - Particle 4/8 - Testing hyperparameter config : {'F6': 185, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6945, Time: 17.18s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9712, Time: 18.30s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7123, Time: 17.52s, Memory: 0.00GB
+Accuracy: 67.17%
+Genetic step 10 - Particle 5/8 - Testing hyperparameter config : {'F6': 231, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6944, Time: 18.74s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9743, Time: 17.15s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7265, Time: 17.64s, Memory: 0.00GB
+Accuracy: 66.81%
+Genetic step 10 - Particle 6/8 - Testing hyperparameter config : {'F6': 298, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.6686, Time: 17.22s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9186, Time: 17.49s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.6406, Time: 17.29s, Memory: 0.00GB
+Accuracy: 68.94%
+Genetic step 10 - Particle 7/8 - Testing hyperparameter config : {'F6': 224, 'C1_chan': 32, 'C3_chan': 32, 'C5_chan': 99}
+Epoch 1/10, Loss: 1.6862, Time: 17.29s, Memory: 0.00GB
+Epoch 5/10, Loss: 0.9684, Time: 17.33s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.7132, Time: 16.86s, Memory: 0.00GB
+Accuracy: 67.50%
+Genetic step 10 - Particle 8/8 - Testing hyperparameter config : {'F6': 224, 'C1_chan': 32, 'C3_chan': 12, 'C5_chan': 125}
+Epoch 1/10, Loss: 1.7525, Time: 16.87s, Memory: 0.00GB
+Epoch 5/10, Loss: 1.2109, Time: 16.58s, Memory: 0.00GB
+Epoch 10/10, Loss: 0.9483, Time: 16.80s, Memory: 0.00GB
+Accuracy: 62.92%
+New best accuracy found : 0.6894

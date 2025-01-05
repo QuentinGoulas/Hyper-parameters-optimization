@@ -9,4 +9,4 @@
 \contentsline {section}{\numberline {3}Development framework}{6}{section.3}%
 \contentsline {section}{\numberline {4}Experimental setup}{6}{section.4}%
 \contentsline {section}{\numberline {5}Results}{7}{section.5}%
-\contentsline {section}{References}{7}{figure.caption.8}%
+\contentsline {section}{References}{8}{figure.caption.8}%
