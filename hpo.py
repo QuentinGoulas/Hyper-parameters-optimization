@@ -191,6 +191,11 @@ class HyperParameterOptimizer:
             Genetic algorithm
 
             Runs a genetic algorithm to find the best configuration
+            It is a simple genetic algorithm with a selection, crossover and mutation steps, with a stopping criterion,
+            a maximum number of iterations and a precision criterion to stop the algorithm.
+            crossovers and mutations are done with a probability given as input
+            a proportion of the best and less fitted individuals are selected to be kept for the next generation
+
             '''
 
             assert 'max_iteration' in list(kwargs.keys()), "no maximum number of iteration given at input keyword 'max_iteration'"
@@ -203,13 +208,13 @@ class HyperParameterOptimizer:
             assert 'best_fit_proportion' in list(kwargs.keys()), "no proportion of best fitted individual to be selected given at input keyword 'less_fit_proportion'"
 
             P = kwargs['pop_size']
-            mp = kwargs['mutation_propbability']
+            mp = kwargs['mutation_probability']
             cp = kwargs['crossover_probability']
             lp = kwargs['less_fit_proportion']
             bp = kwargs['best_fit_proportion']
 
-            assert lp + bp > 1, "sum less fit and best fit probabilities is greater than one, it must be in [0, 1]"
-            assert P % 2, "The population size must be even"
+            assert lp + bp < 1, "sum less fit and best fit probabilities is greater than one, it must be in [0, 1]"
+            assert P % 2 == 0, "The population size must be even"
 
             precision = kwargs['precision']
             max_iteration = kwargs['max_iteration']
@@ -239,6 +244,7 @@ class HyperParameterOptimizer:
             best_max = np.max(current_accuracies)
 
             while convergence_count < precision_iteration and cnt < max_iteration:
+                print(f"Genetic iteration {cnt} - Convergence count {convergence_count} - Best accuracy : {best_max}")
                 cnt += 1
                 if np.abs(old_max_a - max_a) < precision:
                     convergence_count += 1
@@ -251,13 +257,14 @@ class HyperParameterOptimizer:
                 while len(population) < P:
                     parent1, parent2 = np.random.choice(parents, 2, replace=False)
                     child1, child2 = gen.crossover(parent1, parent2, cp)
-                    child1 = gen.mutate(child1, mp, hpspace)
-                    child2 = gen.mutate(child2, mp, hpspace)
+                    child1 = gen.mutation(child1, mp, hpspace)
+                    child2 = gen.mutation(child2, mp, hpspace)
                     population.append(child1)
                     population.append(child2)
+                print(f"new population : {[population[i].config for i in range(P)]}")
 
                 for j in range(P):
-                    print(f"PSO step {cnt} - Particle {j+1}/{S} - Testing hyperparameter config : {population[j].config}")
+                    print(f"PSO step {cnt} - Particle {j+1}/{P} - Testing hyperparameter config : {population[j].config}")
                     self.update_hyperparam(population[j].config)
                     current_accuracies[j] = self.train_module(epochs)
                 max_a = np.max(current_accuracies)
@@ -265,6 +272,7 @@ class HyperParameterOptimizer:
                 if max_a > best_max:
                     best_hp = population[np.argmax(current_accuracies)].config
                     best_max = np.max(current_accuracies)
+                    print(f"New best accuracy found : {best_max}")
             
             acc = best_max
 
@@ -327,6 +335,7 @@ if __name__ == '__main__':
     HPOptim.load_data()
     # res = HPOptim.optimize('bohb',min_epochs = 10,max_epochs = 40, n_iterations = 20, n_workers = 2)
     # res = HPOptim.optimize('pso',epochs=40,swarm_size=5,local_step_size=2,global_step_size=2,precision=1e-5,inertia=0.5,n_iterations=50)
-    res = HPOptim.optimize('random_search',epochs=40,p=5.4e-6)
+    # res = HPOptim.optimize('random_search',epochs=40,p=5.4e-6)
     # res = HPOptim.optimize('grid_search')
+    res = HPOptim.optimize('genetic',epochs = 2, max_iteration = 10, precision=1e-5, precision_iteration = 5, pop_size = 10, mutation_probability = 0.1, crossover_probability = 0.5, less_fit_proportion = 0.1, best_fit_proportion = 0.5)
     print(res)
